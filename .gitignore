@@ -1,0 +1,10 @@
+/node_modules
+
+# production
+/build
+
+# idea
+.idea
+
+# vscode
+.vscode/*
