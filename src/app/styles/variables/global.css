@@ -29,4 +29,13 @@
 
   --font-size-xs: 12px;
   --font-lineheight-xs: 20px;
+
+  /* sizes */
+
+  --navbar-height: 60px;
+  --sidebar-width: 300px;
+  --sidebar-width-collapsed: 80px;
+
+  /* colors */
+  --white-color: #fff;
 }

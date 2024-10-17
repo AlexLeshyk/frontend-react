@@ -1,16 +1,32 @@
-import { Link, Route, Routes } from "react-router-dom";
-import { Suspense } from "react";
 import cx from "clsx";
 
 import { Theme } from "app/providers/ThemeProvider/lib/ThemeContext";
 import { useTheme } from "app/providers/ThemeProvider";
-import { AboutPage } from "pages/aboutPage";
-import { MainPage } from "pages/mainPage";
+import { AppRouter } from "./providers/router";
+import { Navbar } from "widgets/Navbar";
+import { Sidebar } from "widgets/Sidebar";
 // styles
 import "./styles/global.css";
+import { Suspense } from "react";
+import { useTranslation } from "react-i18next";
 
 export const App = () => {
-  const { theme, changeTheme } = useTheme();
+  const { theme } = useTheme();
+
+  const MyComponent = () => {
+    const { t, i18n } = useTranslation();
+
+    const toggleTranslate = () => {
+      i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
+    };
+
+    return (
+      <div>
+        <button onClick={toggleTranslate}>{t("Перевод")}</button>
+        <div>{t("Тестовый пример")}</div>
+      </div>
+    );
+  };
 
   return (
     <div
@@ -19,16 +35,13 @@ export const App = () => {
         dark: theme === Theme.DARK,
       })}
     >
-      <div>
-        <button onClick={changeTheme}>Сменить тему</button>
-      </div>
-      <Link to={"/"}>Главная страница</Link>
-      <Link to={"/about"}>О нас</Link>
-      <Suspense fallback={<div>...Загрузка</div>}>
-        <Routes>
-          <Route path={"/about"} element={<AboutPage />} />
-          <Route path={"/"} element={<MainPage />} />
-        </Routes>
+      <Suspense fallback="">
+        <Navbar className="navbar" />
+        <MyComponent />
+        <div className="content-page">
+          <Sidebar />
+          <AppRouter />
+        </div>
       </Suspense>
     </div>
   );

@@ -6,6 +6,20 @@ export function buildLoaders(
   options: BuildOptions
 ): Array<webpack.RuleSetRule> {
   const { isDev } = options;
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|woff|woff2)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
+    ],
+  };
+
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ["@svgr/webpack"],
+  };
   const cssLoader = {
     test: /\.css$/,
     use: [
@@ -18,7 +32,7 @@ export function buildLoaders(
           modules: {
             auto: (resPath: string) => Boolean(resPath.includes(".module.")),
             localIdentName: isDev
-              ? "[name]__[local][hash:base64:4]"
+              ? "[name]_[local]_[hash:base64:4]"
               : "[hash:base64:8]",
           },
         },
@@ -34,5 +48,5 @@ export function buildLoaders(
     exclude: /node_modules/,
   };
 
-  return [typescript, cssLoader];
+  return [fileLoader, svgLoader, typescript, cssLoader];
 }
