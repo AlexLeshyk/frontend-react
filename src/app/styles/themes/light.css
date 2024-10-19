@@ -4,5 +4,7 @@
 
   --primary-color: #041c65;
   --secondary-color: #0449e0;
-  --secondary-link-color: #8abdff;
+
+  --inverted-primary-color: #049604;
+  --inverted-secondary-color: #8abdff;
 }

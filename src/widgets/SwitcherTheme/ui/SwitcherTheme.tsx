@@ -6,7 +6,7 @@ import LightIcon from "shared/icons/theme-light.svg";
 
 import classes from "./SwitcherTheme.module.css";
 import { Button } from "shared/ui";
-import { ThemeButton } from "../Button/Button";
+import { ThemeButton } from "../../../shared/ui/Button/Button";
 
 interface SwitcherThemeProps {
   className?: string;

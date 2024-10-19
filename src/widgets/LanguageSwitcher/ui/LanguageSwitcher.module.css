@@ -1,0 +1,10 @@
+.language {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+
+.language button {
+  font-size: var(--font-size-s);
+  color: var(--inverted-primary-color);
+}

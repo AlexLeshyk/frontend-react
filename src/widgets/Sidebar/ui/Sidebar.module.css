@@ -10,6 +10,15 @@
   width: var(--sidebar-width-collapsed);
 }
 
+.collapsed :global(.language-switcher) {
+  margin: 8px 0 0;
+}
+
+.collapsed .switchers {
+  display: block;
+  margin-left: 10px;
+}
+
 .switchers {
   display: flex;
   justify-content: center;

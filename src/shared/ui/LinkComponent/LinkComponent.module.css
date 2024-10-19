@@ -3,7 +3,7 @@
 }
 
 .secondary {
-  color: var(--secondary-link-color);
+  color: var(--inverted-secondary-color);
 }
 
 .primary {
