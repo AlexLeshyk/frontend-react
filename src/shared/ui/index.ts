@@ -1,2 +1,2 @@
-export { LinkComponent } from "./LinkComponent/LinkComponent";
-export { Button } from "./Button/Button";
+export { LinkComponent } from './LinkComponent/LinkComponent';
+export { Button } from './Button/Button';

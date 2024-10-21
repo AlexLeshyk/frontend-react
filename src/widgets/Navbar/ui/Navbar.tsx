@@ -1,12 +1,12 @@
-import cx from "clsx";
+import cx from 'clsx';
 
 import {
   LinkComponent,
   LinkTheme,
-} from "shared/ui/LinkComponent/LinkComponent";
-import { SwitcherTheme } from "widgets/SwitcherTheme";
-import classes from "./Navbar.module.css";
-import { useTranslation } from "react-i18next";
+} from 'shared/ui/LinkComponent/LinkComponent';
+import { SwitcherTheme } from 'widgets/SwitcherTheme';
+import { useTranslation } from 'react-i18next';
+import classes from './Navbar.module.css';
 
 interface NavbarProps {
   className?: string;
@@ -14,7 +14,7 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation();
-  const { t: t_about } = useTranslation("about");
+  const { t: tAbout } = useTranslation('about');
 
   return (
     <div
@@ -25,11 +25,11 @@ export const Navbar = ({ className }: NavbarProps) => {
     >
       <SwitcherTheme className="left" />
       <div className={classes.links}>
-        <LinkComponent theme={LinkTheme.SECONDARY} to={"/"}>
-          {t("Main Page")}
+        <LinkComponent theme={LinkTheme.SECONDARY} to="/">
+          {t('Main Page')}
         </LinkComponent>
-        <LinkComponent theme={LinkTheme.SECONDARY} to={"/about"}>
-          {t_about("About")}
+        <LinkComponent theme={LinkTheme.SECONDARY} to="/about">
+          {tAbout('About')}
         </LinkComponent>
       </div>
     </div>

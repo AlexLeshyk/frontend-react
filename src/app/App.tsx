@@ -1,20 +1,19 @@
-import cx from "clsx";
-
-import { Theme } from "app/providers/ThemeProvider/lib/ThemeContext";
-import { useTheme } from "app/providers/ThemeProvider";
-import { AppRouter } from "./providers/router";
-import { Navbar } from "widgets/Navbar";
-import { Sidebar } from "widgets/Sidebar";
+import cx from 'clsx';
+import { Suspense } from 'react';
+import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
+import { useTheme } from 'app/providers/ThemeProvider';
+import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
+import { AppRouter } from './providers/router';
 // styles
-import "./styles/global.css";
-import { Suspense } from "react";
+import './styles/global.css';
 
 export const App = () => {
   const { theme } = useTheme();
 
   return (
     <div
-      className={cx("app", {
+      className={cx('app', {
         light: theme === Theme.LIGHT,
         dark: theme === Theme.DARK,
       })}

@@ -1,12 +1,12 @@
-import { Theme, useTheme } from "app/providers/ThemeProvider";
-import cx from "clsx";
-import DarkIcon from "shared/icons/theme-dark.svg";
-import LightIcon from "shared/icons/theme-light.svg";
+import { Theme, useTheme } from 'app/providers/ThemeProvider';
+import cx from 'clsx';
+import DarkIcon from 'shared/icons/theme-dark.svg';
+import LightIcon from 'shared/icons/theme-light.svg';
 // import UserIcon  from "shared/images/user-32-32.png";
 
-import classes from "./SwitcherTheme.module.css";
-import { Button } from "shared/ui";
-import { ThemeButton } from "../../../shared/ui/Button/Button";
+import { Button } from 'shared/ui';
+import classes from './SwitcherTheme.module.css';
+import { ThemeButton } from '../../../shared/ui/Button/Button';
 
 interface SwitcherThemeProps {
   className?: string;

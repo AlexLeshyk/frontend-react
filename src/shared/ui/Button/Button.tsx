@@ -1,10 +1,10 @@
-import cx from "clsx";
-import { ButtonHTMLAttributes, FC } from "react";
+import cx from 'clsx';
+import { ButtonHTMLAttributes, FC } from 'react';
 
-import classes from "./Button.module.css";
+import classes from './Button.module.css';
 
 export enum ThemeButton {
-  CLEAR = "clear",
+  CLEAR = 'clear',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,10 +13,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: FC<ButtonProps> = (props) => {
-  const { className, children, theme, ...otherProps } = props;
+  const {
+    className, children, theme, ...otherProps
+  } = props;
 
   return (
     <button
+      type="button"
       className={cx({
         [classes.button]: true,
         [classes[className]]: className,

@@ -1,12 +1,12 @@
-import { FC } from "react";
-import { Link, LinkProps } from "react-router-dom";
-import cx from "clsx";
+import { FC } from 'react';
+import { Link, LinkProps } from 'react-router-dom';
+import cx from 'clsx';
 
-import classes from "./LinkComponent.module.css";
+import classes from './LinkComponent.module.css';
 
 export enum LinkTheme {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
 }
 
 interface LinkComponentProps extends LinkProps {

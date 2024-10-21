@@ -1,1 +1,1 @@
-export { SwitcherTheme } from "./ui/SwitcherTheme";
+export { SwitcherTheme } from './ui/SwitcherTheme';
