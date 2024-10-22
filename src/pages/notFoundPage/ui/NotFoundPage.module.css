@@ -1,0 +1,6 @@
+.wrapper {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  font: var(--font-xl);
+}
