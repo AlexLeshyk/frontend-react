@@ -42,11 +42,22 @@ export function buildLoaders(
     ],
   };
 
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env'],
+      },
+    },
+  };
+
   const typescript = {
     test: /\.tsx?$/,
     use: 'ts-loader',
     exclude: /node_modules/,
   };
 
-  return [fileLoader, svgLoader, typescript, cssLoader];
+  return [fileLoader, svgLoader, babelLoader, typescript, cssLoader];
 }
