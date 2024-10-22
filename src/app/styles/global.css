@@ -1,7 +1,7 @@
-@import "reset";
-@import "variables/global.css";
-@import "themes/light";
-@import "themes/dark";
+@import url("reset");
+@import url("variables/global.css");
+@import url("themes/light");
+@import url("themes/dark");
 
 .app {
   width: var(--size-full-width);
