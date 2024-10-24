@@ -1,0 +1,26 @@
+.button {
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.clear {
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.primary {
+  padding: 8px 24px;
+  color: var(--inverted-secondary-color);
+  background-color: var(--bg-color-inverted);
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+}
+
+.switcher-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--white-color);
+}

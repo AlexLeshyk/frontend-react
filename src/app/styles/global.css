@@ -1,0 +1,22 @@
+@import url("reset");
+@import url("variables/global.css");
+@import url("themes/light");
+@import url("themes/dark");
+
+.app {
+  width: var(--size-full-width);
+  min-height: 100vh;
+
+  font: var(--font-md);
+  background: var(--bg-color);
+  color: var(--primary-color);
+}
+
+.content-page {
+  display: flex;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 20px;
+}

@@ -1,0 +1,41 @@
+:root {
+  --size-half-width: 50%;
+  --size-full-width: 100%;
+
+  --font-family-main: Open Sans, "Verdana", "Arial", sans-serif;
+
+  --font-size-xl: 32px;
+  --font-lineheight-xl: 40px;
+  --font-xl: var(--font-size-xl) / var(--font-lineheight-xl)
+    var(--font-family-main);
+
+  --font-size-l: 24px;
+  --font-lineheight-l: 32px;
+  --font-l: var(--font-size-l) / var(--font-lineheight-l)
+    var(--font-family-main);
+
+  --font-size-md: 18px;
+  --font-lineheight-md: 26px;
+  --font-md: var(--font-size-md) / var(--font-lineheight-md)
+    var(--font-family-main);
+
+  --font-size-sm: 16px;
+  --font-lineheight-sm: 24px;
+  --font-sm: var(--font-size-sm) / var(--font-lineheight-sm)
+    var(--font-family-main);
+
+  --font-size-s: 14px;
+  --font-lineheight-s: 22px;
+
+  --font-size-xs: 12px;
+  --font-lineheight-xs: 20px;
+
+  /* sizes */
+
+  --navbar-height: 60px;
+  --sidebar-width: 300px;
+  --sidebar-width-collapsed: 80px;
+
+  /* colors */
+  --white-color: #fff;
+}

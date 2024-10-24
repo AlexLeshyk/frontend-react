@@ -1,0 +1,16 @@
+.wrapper {
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--bg-color-inverted);
+  justify-content: space-between;
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+}
