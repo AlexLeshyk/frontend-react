@@ -1,8 +1,8 @@
+/* eslint-disable i18next/no-literal-string */
 import cx from 'clsx';
-import { useState } from 'react';
-
 import { LanguageSwitcher } from 'widgets/LanguageSwitcher';
 import { SwitcherTheme } from 'widgets/SwitcherTheme';
+import { useToggle } from 'shared/hooks/useToggle';
 import classes from './Sidebar.module.css';
 
 interface SidebarProps {
@@ -10,21 +10,17 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({ className }: SidebarProps) => {
-  const [collapsed, setCollapsed] = useState<boolean>(false);
-
-  const onToggle = () => {
-    setCollapsed((prev) => !prev);
-  };
+  const [collapsedSidebar, toggleSidebar] = useToggle(false);
 
   return (
     <div
       className={cx({
         [classes.sidebar]: true,
         [className]: className,
-        [classes.collapsed]: collapsed,
+        [classes.collapsed]: collapsedSidebar,
       })}
     >
-      <button type="button" onClick={onToggle}>toggle</button>
+      <button type="button" onClick={toggleSidebar}>toggle</button>
       <div className={classes.switchers}>
         <SwitcherTheme />
         <LanguageSwitcher className="language-switcher" />
