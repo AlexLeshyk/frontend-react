@@ -33,9 +33,13 @@ const MainPage = () => {
   return (
     <div>
       <h2>{t('Main Page')}</h2>
+      <div>
+        Count:
+        {count}
+      </div>
       <form>
         <div>
-          <label htmlFor="some" style={{ display: 'block' }}>Count:</label>
+          <label htmlFor="some" style={{ display: 'block' }}>Input:</label>
           {' '}
           <input
             value={inputState}
