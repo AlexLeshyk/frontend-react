@@ -14,13 +14,14 @@ export const Sidebar = ({ className }: SidebarProps) => {
 
   return (
     <div
+      data-testid="sidebar"
       className={cx({
         [classes.sidebar]: true,
         [className]: className,
         [classes.collapsed]: collapsedSidebar,
       })}
     >
-      <button type="button" onClick={toggleSidebar}>toggle</button>
+      <button type="button" onClick={toggleSidebar} data-testid="sidebar-toggle">toggle</button>
       <div className={classes.switchers}>
         <SwitcherTheme />
         <LanguageSwitcher className="language-switcher" />
