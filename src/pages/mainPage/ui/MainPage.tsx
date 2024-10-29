@@ -109,7 +109,7 @@ const MainPage = () => {
       </div>
       <div style={{ marginTop: '20px' }}>
         <Button
-          theme={ThemeButton.PRIMARY}
+          theme={ThemeButton.OUTLINE}
           type="button"
           onClick={() => {
             setCount(count + 1);

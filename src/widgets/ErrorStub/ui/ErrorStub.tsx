@@ -1,6 +1,6 @@
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button/Button';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import classes from './ErrorStub.module.css';
 
 interface ErrorPageProps {
@@ -18,7 +18,7 @@ export const ErrorStub = ({ className }: ErrorPageProps) => {
   return (
     <div className={cx({ [classes.pageError]: true, [className]: className })}>
       <p>{t('Unexpected error')}</p>
-      <Button onClick={reloadPage}>
+      <Button onClick={reloadPage} theme={ThemeButton.OUTLINE}>
         {t('Reload page')}
       </Button>
     </div>
