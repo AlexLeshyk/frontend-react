@@ -40,6 +40,10 @@ module.exports = {
       "error",
       { required: { some: ["nesting", "id"] } },
     ],
+    "linebreak-style": [
+      "error",
+      process.platform === "win32" ? "windows" : "unix",
+    ],
   },
   globals: {
     __IS_DEV__: true,
