@@ -9,3 +9,6 @@
 # vscode
 .vscode/*
 *storybook.log
+
+#storybook
+/storybook-static

@@ -1,20 +1,20 @@
-name: linting, testing, building
+name: lint, testing, build
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
 jobs:
-  Pipeline-Actions:
+  pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-      node-version: [ 20.x ]
+        node-version: ['20.x']
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
@@ -25,5 +25,9 @@ jobs:
         run: npm run lint:ts
       - name: lint css
         run: npm run stylelint:check
-      - name: unit test
+      - name: unit testing
         run: npm run unit
+      - name: storybook build
+        run: npm run build-storybook
+      - name: ui screenshot testing
+        run: npm run test:ui:ci

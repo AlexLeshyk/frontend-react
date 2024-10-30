@@ -2,6 +2,7 @@
   "extends": ["stylelint-config-standard", "stylelint-config-css-modules"],
   "rules": {
     "custom-property-pattern": null,
+    "keyframes-name-pattern": null,
     "selector-class-pattern": null,
     "declaration-empty-line-before": null,
     "declaration-block-no-redundant-longhand-properties": null,
