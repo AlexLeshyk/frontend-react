@@ -1,4 +1,4 @@
-name: lint, test, build
+name: linting, testing, building
 on:
   push:
     branches: [ master ]
@@ -8,8 +8,9 @@ jobs:
   Pipeline-Actions:
     runs-on: ubuntu-latest
     strategy:
-        matrix:
-        node-version: [ 17.x ]
+      matrix:
+      node-version: [ 20.x ]
+
     steps:
       - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}
