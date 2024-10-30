@@ -28,7 +28,6 @@ export const Navbar = ({ className }: NavbarProps) => {
         <LinkComponent theme={LinkTheme.SECONDARY} to="/">
           {t('Main Page')}
         </LinkComponent>
-        {/* eslint-disable-next-line i18next/no-literal-string */}
         <LinkComponent theme={LinkTheme.SECONDARY} to="/about">
           {tAbout('About')}
         </LinkComponent>

@@ -6,6 +6,7 @@ import classes from './Button.module.css';
 export enum ThemeButton {
   CLEAR = 'clear',
   PRIMARY = 'primary',
+  OUTLINE = 'outline'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
