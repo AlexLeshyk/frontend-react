@@ -13,8 +13,8 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
-  const { t } = useTranslation();
   const { t: tAbout } = useTranslation('about');
+  const { t } = useTranslation();
 
   return (
     <div
@@ -28,6 +28,7 @@ export const Navbar = ({ className }: NavbarProps) => {
         <LinkComponent theme={LinkTheme.SECONDARY} to="/">
           {t('Main Page')}
         </LinkComponent>
+        {/* eslint-disable-next-line i18next/no-literal-string */}
         <LinkComponent theme={LinkTheme.SECONDARY} to="/about">
           {tAbout('About')}
         </LinkComponent>
