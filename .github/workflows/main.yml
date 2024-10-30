@@ -1,0 +1,28 @@
+name: lint, test, build
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  Pipeline-Actions:
+    runs-on: ubuntu-latest
+    strategy:
+        matrix:
+        node-version: [ 17.x ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: npm install
+      - name: build production frontend
+        run: npm run build:prod
+      - name: lint typescript
+        run: npm run lint:ts
+      - name: lint css
+        run: npm run stylelint:check
+      - name: unit test
+        run: npm run unit
