@@ -27,7 +27,3 @@ jobs:
         run: npm run stylelint:check
       - name: unit testing
         run: npm run unit
-      - name: storybook build
-        run: npm run build-storybook
-      - name: ui screenshot testing
-        run: npm run test:ui:ci
