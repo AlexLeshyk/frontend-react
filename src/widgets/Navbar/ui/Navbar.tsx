@@ -13,7 +13,6 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
-  const { t: tAbout } = useTranslation('about');
   const { t } = useTranslation();
 
   return (
@@ -23,13 +22,10 @@ export const Navbar = ({ className }: NavbarProps) => {
         [className]: className,
       })}
     >
-      <SwitcherTheme className="left" />
+      <SwitcherTheme />
       <div className={classes.links}>
         <LinkComponent theme={LinkTheme.SECONDARY} to="/">
           {t('Main Page')}
-        </LinkComponent>
-        <LinkComponent theme={LinkTheme.SECONDARY} to="/about">
-          {tAbout('About')}
         </LinkComponent>
       </div>
     </div>

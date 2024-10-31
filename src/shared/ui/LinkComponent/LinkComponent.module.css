@@ -3,6 +3,10 @@
 }
 
 .secondary {
+  color: var(--inverted-primary-color);
+}
+
+.secondary:hover {
   color: var(--inverted-secondary-color);
 }
 

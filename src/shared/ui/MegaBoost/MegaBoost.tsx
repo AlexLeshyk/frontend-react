@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { Button, ThemeButton } from '../Button/Button';
+import { Button, ButtonTheme } from '../Button/Button';
 
 interface MegaBoostProps {
   handleClick: () => void
@@ -9,7 +9,7 @@ export const MegaBoost = memo(({ handleClick }: MegaBoostProps) => {
 
   return (
     <Button
-      theme={ThemeButton.PRIMARY}
+      theme={ButtonTheme.PRIMARY}
       type="button"
       className="mega-boost-button"
       onClick={handleClick}

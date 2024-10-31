@@ -1,5 +1,8 @@
-/* stylelint-disable-next-line block-no-empty */
-.switcher {
+.switcherButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--white-color);
 }
 
 .left {

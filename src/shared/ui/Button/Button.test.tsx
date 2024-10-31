@@ -1,6 +1,6 @@
 /* eslint-disable i18next/no-literal-string */
 import { render, screen } from '@testing-library/react';
-import { Button, ThemeButton } from './Button';
+import { Button, ButtonTheme } from './Button';
 
 describe('Button', () => {
   test('only button', () => {
@@ -9,12 +9,12 @@ describe('Button', () => {
   });
 
   test('button with clear', () => {
-    render(<Button theme={ThemeButton.CLEAR}>Test</Button>);
+    render(<Button theme={ButtonTheme.CLEAR}>Test</Button>);
     expect(screen.getByText('Test')).toHaveClass('clear');
   });
 
   test('button with primary', () => {
-    render(<Button theme={ThemeButton.PRIMARY}>Test</Button>);
+    render(<Button theme={ButtonTheme.PRIMARY}>Test</Button>);
     expect(screen.getByText('Test')).toHaveClass('primary');
   });
 });
