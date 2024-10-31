@@ -1,8 +1,9 @@
 {
   "Test example": "Test example",
   "Translate": "Translate",
-  "Language": "Rus.",
+  "Language": "Russian",
   "some on english": "Some on english",
   "Main Page": "Main Page",
-  "Not Found": "Page not found"
+  "Not Found": "Page not found",
+  "ShortLanguage": "Ru"
 }
