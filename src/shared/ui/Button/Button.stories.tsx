@@ -20,6 +20,14 @@ Primary.args = {
   theme: ButtonTheme.PRIMARY,
 };
 
+export const PrimaryDark = Template.bind({});
+PrimaryDark.args = {
+  children: 'Primary',
+  theme: ButtonTheme.PRIMARY,
+};
+
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+
 export const Clear = Template.bind({});
 Clear.args = {
   children: 'Clear',

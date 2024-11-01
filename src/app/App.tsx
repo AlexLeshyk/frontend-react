@@ -5,8 +5,6 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { AppRouter } from './providers/router';
-// styles
-import './styles/global.css';
 
 export const App = () => {
   const { theme } = useTheme();
@@ -21,7 +19,7 @@ export const App = () => {
       <Suspense fallback="">
         <Navbar className="navbar" />
         <div className="content-page">
-          <Sidebar />
+          <Sidebar className="sidebar" />
           <AppRouter />
         </div>
       </Suspense>

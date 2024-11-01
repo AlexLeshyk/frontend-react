@@ -14,3 +14,7 @@
   display: flex;
   gap: 16px;
 }
+
+:global(.dark) .wrapper {
+  background: var(--bg-color);
+}
