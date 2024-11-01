@@ -1,4 +1,5 @@
 .button {
+  padding: 10px 14px;
   cursor: pointer;
   color: var(--primary-color);
 }
@@ -18,16 +19,60 @@
   border-radius: 8px;
 }
 
-.switcher-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--white-color);
-}
-
 .outline {
-  padding: 10px 15px;
+  padding: 8px 11px;
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
   background: none;
+}
+
+.outline.medium {
+  padding: 10px 12px;
+}
+
+.outline.large {
+  padding: 12px 15px;
+}
+
+.background {
+  color: var(--primary-color);
+  background: var(--bg-color);
+  border: none;
+}
+
+.backgroundInverted {
+  color: var(--inverted-primary-color);
+  background: var(--bg-color-inverted);
+  border: none;
+}
+
+.square {
+  padding: 0;
+}
+
+.square.small {
+  width: var(--font-lineheight-sm);
+  height: var(--font-lineheight-sm);
+}
+
+.square.medium {
+  width: var(--font-lineheight-l);
+  height: var(--font-lineheight-l);
+}
+
+.square.large {
+  width: var(--font-lineheight-xl);
+  height: var(--font-lineheight-xl);
+}
+
+.small {
+  font-size: var(--font-size-sm);
+}
+
+.medium {
+  font-size: var(--font-size-md);
+}
+
+.large {
+  font-size: var(--font-size-l);
 }

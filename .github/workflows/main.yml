@@ -21,9 +21,13 @@ jobs:
         run: npm install
       - name: build production frontend
         run: npm run build:prod
+        if: always()
       - name: lint typescript
         run: npm run lint:ts
+        if: always()
       - name: lint css
         run: npm run stylelint:check
+        if: always()
       - name: unit testing
         run: npm run unit
+        if: always()

@@ -3,20 +3,30 @@ import { ButtonHTMLAttributes, FC } from 'react';
 
 import classes from './Button.module.css';
 
-export enum ThemeButton {
+export enum ButtonTheme {
   CLEAR = 'clear',
   PRIMARY = 'primary',
-  OUTLINE = 'outline'
+  OUTLINE = 'outline',
+  BACKGROUND = 'background',
+  BACKGROUND_INVERTED ='backgroundInverted',
+}
+
+export enum ButtonSize {
+  SMALL = 'small',
+  MEDIUM = 'medium',
+  LARGE = 'large',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  theme?: ThemeButton;
+  theme?: ButtonTheme;
+  square?: boolean;
+  size?: ButtonSize;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
   const {
-    className, children, theme, ...otherProps
+    className, children, size, square, theme, ...otherProps
   } = props;
 
   return (
@@ -24,8 +34,10 @@ export const Button: FC<ButtonProps> = (props) => {
       type="button"
       className={cx({
         [classes.button]: true,
-        [classes[className]]: className,
+        [className]: className,
         [classes[theme]]: theme,
+        [classes.square]: square,
+        [classes[size]]: size,
       })}
       {...otherProps}
     >

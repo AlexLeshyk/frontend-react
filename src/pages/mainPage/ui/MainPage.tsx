@@ -2,7 +2,7 @@
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, MegaBoost } from 'shared/ui';
-import { ThemeButton } from 'shared/ui/Button/Button';
+import { ButtonTheme } from 'shared/ui/Button/Button';
 
 const MainPage = () => {
   const { t } = useTranslation();
@@ -109,7 +109,7 @@ const MainPage = () => {
       </div>
       <div style={{ marginTop: '20px' }}>
         <Button
-          theme={ThemeButton.OUTLINE}
+          theme={ButtonTheme.OUTLINE}
           type="button"
           onClick={() => {
             setCount(count + 1);
