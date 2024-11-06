@@ -43,7 +43,3 @@
   transform: scale(0.2);
   transition: transform 0.25s ease-in-out;
 }
-
-:global(.dark) .content {
-  color: var(--inverted-primary-color);
-}

@@ -3,7 +3,6 @@ import React, {
 } from 'react';
 import { Portal } from 'shared/ui';
 import cx from 'clsx';
-import { useTheme } from 'app/providers/ThemeProvider';
 
 import classes from './Modal.module.css';
 
@@ -22,7 +21,6 @@ export const Modal: FC<ModalProps> = (props) => {
   const ANIMATION_DELAY = 250;
   const [isClosing, setIsClosing] = useState<boolean>(false);
   const timerRef = useRef <ReturnType<typeof setTimeout>>();
-  const { theme } = useTheme();
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -62,7 +60,6 @@ export const Modal: FC<ModalProps> = (props) => {
           [className]: className,
           [classes.opened]: isOpen,
           [classes.closed]: isClosing,
-          [theme]: true,
         })}
         data-testid="modal"
       >

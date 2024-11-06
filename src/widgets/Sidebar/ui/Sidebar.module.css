@@ -44,9 +44,9 @@
   color: var(--inverted-secondary-color);
 }
 
-:global(.dark) .link:hover .icon {
+/* :global(.dark) .link:hover .icon {
   color: var(--secondary-color);
-}
+} */
 
 .link + .link {
   margin-top: 24px;
@@ -62,9 +62,9 @@
   color: var(--inverted-primary-color);
 }
 
-:global(.dark) .icon {
+/* :global(.dark) .icon {
   color: var(--primary-color);
-}
+} */
 
 .collapsed .switchers {
   flex-direction: column;
@@ -88,8 +88,4 @@
 .collapsed .collapsedBtn {
   left: 50%;
   transform: translateX(-50%);
-}
-
-:global(.dark) .sidebar {
-  background: var(--bg-color);
 }

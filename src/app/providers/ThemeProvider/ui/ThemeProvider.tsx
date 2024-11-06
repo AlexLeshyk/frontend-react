@@ -9,6 +9,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
   const { children, initialTheme } = props;
   const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME) as Theme) || Theme.LIGHT;
   const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
+  document.body.className = theme;
 
   const memoizedTheme = useMemo(() => ({
     theme,
