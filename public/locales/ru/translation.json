@@ -5,5 +5,7 @@
   "Main Page": "Главная страница",
   "Not Found": "Страница не найдена",
   "ShortLanguage": "Анг.",
-  "Login": "Войти"
+  "Login": "Войти",
+  "increment": "увеличить",
+  "decrement": "уменьшить"
 }

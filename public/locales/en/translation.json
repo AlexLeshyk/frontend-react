@@ -6,5 +6,7 @@
   "Main Page": "Main Page",
   "Not Found": "Page not found",
   "ShortLanguage": "Ru",
-  "Login": "Login"
+  "Login": "Login",
+  "increment": "increment",
+  "decrement": "decrement"
 }
