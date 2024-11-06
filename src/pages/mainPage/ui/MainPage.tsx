@@ -1,4 +1,5 @@
 /* eslint-disable i18next/no-literal-string */
+import { Counter } from 'entities/Counter';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, MegaBoost } from 'shared/ui';
@@ -33,6 +34,7 @@ const MainPage = () => {
   return (
     <div>
       <h2>{t('Main Page')}</h2>
+      <Counter />
       <div>
         Count:
         {count}

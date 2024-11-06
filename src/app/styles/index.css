@@ -3,13 +3,15 @@
 @import url("themes/light");
 @import url("themes/dark");
 
+body {
+  font: var(--font-md);
+  color: var(--primary-color);
+}
+
 .app {
   width: var(--size-full-width);
   min-height: 100vh;
-
-  font: var(--font-md);
   background: var(--bg-color);
-  color: var(--primary-color);
 }
 
 .content-page {

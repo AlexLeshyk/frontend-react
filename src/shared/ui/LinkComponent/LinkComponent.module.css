@@ -10,6 +10,14 @@
   color: var(--inverted-secondary-color);
 }
 
+:global(.dark) .secondary {
+  color: var(--primary-color);
+}
+
+:global(.dark) .secondary:hover {
+  color: var(--secondary-color);
+}
+
 .primary {
   color: var(--primary-color);
 }

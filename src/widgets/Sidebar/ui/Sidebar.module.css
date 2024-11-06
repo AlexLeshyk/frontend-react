@@ -24,7 +24,7 @@
 
 .collapsedBtn {
   position: absolute;
-  right: 0;
+  left: 24px;
   top: 0;
 }
 
@@ -44,6 +44,10 @@
   color: var(--inverted-secondary-color);
 }
 
+:global(.dark) .link:hover .icon {
+  color: var(--secondary-color);
+}
+
 .link + .link {
   margin-top: 24px;
 }
@@ -56,6 +60,10 @@
 
 .icon {
   color: var(--inverted-primary-color);
+}
+
+:global(.dark) .icon {
+  color: var(--primary-color);
 }
 
 .collapsed .switchers {
@@ -80,5 +88,8 @@
 .collapsed .collapsedBtn {
   left: 50%;
   transform: translateX(-50%);
-  right: auto;
+}
+
+:global(.dark) .sidebar {
+  background: var(--bg-color);
 }

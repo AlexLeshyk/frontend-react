@@ -4,5 +4,8 @@
   "Language": "Английский",
   "Main Page": "Главная страница",
   "Not Found": "Страница не найдена",
-  "ShortLanguage": "Анг."
+  "ShortLanguage": "Анг.",
+  "Login": "Войти",
+  "increment": "увеличить",
+  "decrement": "уменьшить"
 }
