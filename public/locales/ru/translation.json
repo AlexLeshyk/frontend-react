@@ -7,5 +7,9 @@
   "ShortLanguage": "Анг.",
   "Login": "Войти",
   "increment": "увеличить",
-  "decrement": "уменьшить"
+  "decrement": "уменьшить",
+  "enterText": "Введите текст",
+  "userName": "Имя пользователя",
+  "enterUsername": "Введите имя пользователя",
+  "password": "Пароль"
 }
