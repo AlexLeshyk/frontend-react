@@ -3,7 +3,7 @@ import cx from 'clsx';
 import { SwitcherTheme } from 'widgets/SwitcherTheme';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui';
-import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button.model';
 import { useToggle } from 'shared/hooks/useToggle';
 import { LoginModal } from 'features/AuthUserName';
 

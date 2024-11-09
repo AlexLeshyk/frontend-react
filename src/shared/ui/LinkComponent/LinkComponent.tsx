@@ -3,11 +3,7 @@ import { Link, LinkProps } from 'react-router-dom';
 import cx from 'clsx';
 
 import classes from './LinkComponent.module.css';
-
-export enum LinkTheme {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-}
+import { LinkTheme } from './LinkComponent.model';
 
 interface LinkComponentProps extends LinkProps {
   className?: string;

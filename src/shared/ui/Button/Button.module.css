@@ -77,3 +77,7 @@
 .large {
   font-size: var(--font-size-l);
 }
+
+.button:disabled {
+  opacity: 0.4;
+}

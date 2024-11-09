@@ -2,7 +2,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
-import { Button, ButtonSize, ButtonTheme } from './Button';
+import { Button } from './Button';
+import { ButtonSize, ButtonTheme } from './Button.model';
 
 export default {
   title: 'shared/Button',
@@ -98,4 +99,11 @@ SquareSizeL.args = {
   theme: ButtonTheme.BACKGROUND_INVERTED,
   square: true,
   size: ButtonSize.LARGE,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: 'Disabled',
+  theme: ButtonTheme.OUTLINE,
+  disabled: true,
 };

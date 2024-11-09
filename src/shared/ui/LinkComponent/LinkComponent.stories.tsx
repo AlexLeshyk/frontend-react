@@ -2,7 +2,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
-import { LinkComponent, LinkTheme } from './LinkComponent';
+import { LinkComponent } from './LinkComponent';
+import { LinkTheme } from './LinkComponent.model';
 
 export default {
   title: 'shared/Link',

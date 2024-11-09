@@ -2,7 +2,7 @@
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Input, MegaBoost } from 'shared/ui';
-import { ButtonTheme } from 'shared/ui/Button/Button';
+import { ButtonTheme } from 'shared/ui/Button/Button.model';
 
 const MainPage = () => {
   const { t } = useTranslation();

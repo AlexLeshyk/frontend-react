@@ -1,5 +1,6 @@
 import { memo } from 'react';
-import { Button, ButtonTheme } from '../Button/Button';
+import { Button } from '../Button/Button';
+import { ButtonTheme } from '../Button/Button.model';
 
 interface MegaBoostProps {
   handleClick: () => void
