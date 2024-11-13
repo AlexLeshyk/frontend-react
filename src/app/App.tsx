@@ -1,21 +1,20 @@
 import cx from 'clsx';
-import { Suspense } from 'react';
-import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
-import { useTheme } from 'app/providers/ThemeProvider';
+import { Suspense, useEffect } from 'react';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
+import { useDispatch } from 'react-redux';
+import { userActions } from 'entities/User';
 import { AppRouter } from './providers/router';
 
 export const App = () => {
-  const { theme } = useTheme();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(userActions.initAuthData());
+  }, [dispatch]);
 
   return (
-    <div
-      className={cx('app', {
-        light: theme === Theme.LIGHT,
-        dark: theme === Theme.DARK,
-      })}
-    >
+    <div className={cx('app')}>
       <Suspense fallback="">
         <Navbar className="navbar" />
         <div className="content-page">

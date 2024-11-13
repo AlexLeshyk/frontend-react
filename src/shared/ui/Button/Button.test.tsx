@@ -1,6 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import { render, screen } from '@testing-library/react';
-import { Button, ButtonTheme } from './Button';
+import { Button } from './Button';
+import { ButtonTheme } from './Button.model';
 
 describe('Button', () => {
   test('only button', () => {

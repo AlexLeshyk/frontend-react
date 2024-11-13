@@ -8,5 +8,12 @@
   "ShortLanguage": "Ru",
   "Login": "Login",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "enterText": "Enter text",
+  "enterUsername": "enter Username",
+  "userName": "Username",
+  "password": "Password",
+  "AuthorizationForm": "Authorization form",
+  "Incorrect login password": "You have entered an incorrect login or password.",
+  "Logout": "Logout"
 }

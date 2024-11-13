@@ -7,5 +7,12 @@
   "ShortLanguage": "Анг.",
   "Login": "Войти",
   "increment": "увеличить",
-  "decrement": "уменьшить"
+  "decrement": "уменьшить",
+  "enterText": "Введите текст",
+  "userName": "Имя пользователя",
+  "enterUsername": "Введите имя пользователя",
+  "password": "Пароль",
+  "AuthorizationForm": "Форма авторизации",
+  "Incorrect login password": "Вы ввели неверный логин или пароль.",
+  "Logout": "Выйти"
 }

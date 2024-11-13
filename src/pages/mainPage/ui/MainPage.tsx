@@ -1,9 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
-import { Counter } from 'entities/Counter';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, MegaBoost } from 'shared/ui';
-import { ButtonTheme } from 'shared/ui/Button/Button';
+import { Button, Input, MegaBoost } from 'shared/ui';
+import { ButtonTheme } from 'shared/ui/Button/Button.model';
 
 const MainPage = () => {
   const { t } = useTranslation();
@@ -23,7 +22,7 @@ const MainPage = () => {
     tomatoes: false,
   };
 
-  const [checkboxState, setCheckboxState] = useState<{[key: string]: boolean}>(initialCheckboxes);
+  const [checkboxState, setCheckboxState] = useState<{ [key: string]: boolean }>(initialCheckboxes);
 
   const checkboxList = Object.keys(initialCheckboxes);
 
@@ -34,20 +33,18 @@ const MainPage = () => {
   return (
     <div>
       <h2>{t('Main Page')}</h2>
-      <Counter />
       <div>
         Count:
         {count}
       </div>
       <form>
         <div>
-          <label htmlFor="some" style={{ display: 'block' }}>Input:</label>
-          {' '}
-          <input
+          <Input
             value={inputState}
-            id="some"
-            onChange={(event) => {
-              setInputState(event.target.value);
+            htmlFor="some"
+            label="input"
+            onChange={(value) => {
+              setInputState(value);
             }}
           />
         </div>

@@ -35,10 +35,6 @@
   animation: lds-ellipsis3 0.6s infinite;
 }
 
-:global(.dark) .lds-ellipsis div {
-  background: var(--bg-color);
-}
-
 @keyframes lds-ellipsis1 {
   0% {
     transform: scale(0);

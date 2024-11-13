@@ -1,6 +1,7 @@
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button/Button';
+import { ButtonTheme } from 'shared/ui/Button/Button.model';
 import classes from './ErrorStub.module.css';
 
 interface ErrorPageProps {
