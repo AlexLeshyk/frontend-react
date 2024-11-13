@@ -11,5 +11,8 @@
   "enterText": "Введите текст",
   "userName": "Имя пользователя",
   "enterUsername": "Введите имя пользователя",
-  "password": "Пароль"
+  "password": "Пароль",
+  "AuthorizationForm": "Форма авторизации",
+  "Incorrect login password": "Вы ввели неверный логин или пароль.",
+  "Logout": "Выйти"
 }

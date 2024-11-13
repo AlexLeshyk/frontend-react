@@ -22,7 +22,7 @@ const MainPage = () => {
     tomatoes: false,
   };
 
-  const [checkboxState, setCheckboxState] = useState<{[key: string]: boolean}>(initialCheckboxes);
+  const [checkboxState, setCheckboxState] = useState<{ [key: string]: boolean }>(initialCheckboxes);
 
   const checkboxList = Object.keys(initialCheckboxes);
 

@@ -5,3 +5,4 @@ export { MegaBoost } from './MegaBoost/MegaBoost';
 export { Modal } from './Modal/Modal';
 export { Portal } from './Portal/Portal';
 export { Input } from './Input/Input';
+export { Text } from './Text/Text';

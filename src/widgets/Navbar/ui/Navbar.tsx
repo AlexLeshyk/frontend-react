@@ -4,9 +4,11 @@ import { SwitcherTheme } from 'widgets/SwitcherTheme';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui';
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button.model';
-import { useToggle } from 'shared/hooks/useToggle';
 import { LoginModal } from 'features/AuthUserName';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserAuthData, userActions } from 'entities/User';
+import { useCallback, useState } from 'react';
 import classes from './Navbar.module.css';
 
 interface NavbarProps {
@@ -15,7 +17,23 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation();
-  const [isAuthModal, _, closeModal, openModal] = useToggle(false);
+  const [isAuthModal, setIsAuthModal] = useState(false);
+  const dispatch = useDispatch();
+
+  const authData = useSelector(getUserAuthData);
+
+  const onCloseModal = useCallback(() => {
+    setIsAuthModal(false);
+  }, []);
+
+  const onShowModal = useCallback(() => {
+    setIsAuthModal(true);
+  }, []);
+
+  const onLogout = useCallback(() => {
+    dispatch(userActions.logout());
+    onCloseModal();
+  }, [dispatch, onCloseModal]);
 
   return (
     <div
@@ -26,11 +44,18 @@ export const Navbar = ({ className }: NavbarProps) => {
     >
       <SwitcherTheme />
       <div className={classes.links}>
-        <Button theme={ButtonTheme.CLEAR} size={ButtonSize.SMALL} onClick={openModal}>
-          {t('Login')}
-        </Button>
+        {authData
+          ? (
+            <Button theme={ButtonTheme.CLEAR} size={ButtonSize.SMALL} onClick={onLogout}>
+              {t('Logout')}
+            </Button>
+          ) : (
+            <Button theme={ButtonTheme.CLEAR} size={ButtonSize.SMALL} onClick={onShowModal}>
+              {t('Login')}
+            </Button>
+          )}
       </div>
-      <LoginModal isOpen={isAuthModal} onClose={closeModal} />
+      {!authData && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
     </div>
   );
 };

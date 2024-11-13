@@ -1,12 +1,14 @@
 import cx from 'clsx';
-import { Button, Input } from 'shared/ui';
+import { Button, Input, Text } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginActions } from 'features/AuthUserName/model/slice/loginSlice';
-import classes from './LoginForm.module.css';
+import { TextTheme } from 'shared/ui/Text/Text.model';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUserName } from '../../model/services/loginByUserName/loginByUserName';
+
+import classes from './LoginForm.module.css';
 
 interface LoginFormProps {
   className?: string;
@@ -14,11 +16,10 @@ interface LoginFormProps {
 
 export const LoginForm = memo((props: LoginFormProps) => {
   const { className } = props;
-
+  const loginForm = useSelector(getLoginState);
+  const { error } = loginForm;
   const { t } = useTranslation();
   const dispatch = useDispatch();
-
-  const loginForm = useSelector(getLoginState);
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value));
@@ -39,6 +40,8 @@ export const LoginForm = memo((props: LoginFormProps) => {
         [className]: className,
       })}
     >
+      <Text title={t('AuthorizationForm')} />
+      {error && <Text theme={TextTheme.ERROR} text={t('Incorrect login password')} />}
       <Input
         autofocus
         className={classes.input}

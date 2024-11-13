@@ -9,8 +9,8 @@ import classes from './Modal.module.css';
 interface ModalProps {
   className?: string;
   children?: ReactNode;
-  isOpen? : boolean;
-  onClose? : () => void;
+  isOpen?: boolean;
+  onClose?: () => void;
   lazy?: boolean;
 }
 
@@ -23,7 +23,7 @@ export const Modal: FC<ModalProps> = (props) => {
   const [isClosing, setIsClosing] = useState<boolean>(false);
   const [isOpening, setIsOpening] = useState<boolean>(false);
   const [isMounted, setIsMounted] = useState<boolean>(false);
-  const timerRef = useRef <ReturnType<typeof setTimeout>>();
+  const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const onCloseHandler = useCallback(() => {
     if (onClose) {
@@ -31,6 +31,7 @@ export const Modal: FC<ModalProps> = (props) => {
       timerRef.current = setTimeout(() => {
         onClose();
         setIsClosing(false);
+        setIsMounted(false);
       }, ANIMATION_DELAY);
     }
   }, [onClose]);
@@ -64,9 +65,6 @@ export const Modal: FC<ModalProps> = (props) => {
     if (isOpen) {
       setIsMounted(true);
     }
-    return () => {
-      setIsMounted(false);
-    };
   }, [isOpen]);
 
   if (lazy && !isMounted) {
