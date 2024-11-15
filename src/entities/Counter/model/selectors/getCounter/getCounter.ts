@@ -1,3 +1,3 @@
-import { StateModel } from 'app/providers/StoreProvider/config/StateModel';
+import { StateModel } from 'app/providers/StoreProvider';
 
 export const getCounter = (state: StateModel) => state.counter;
