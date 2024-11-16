@@ -1,12 +1,13 @@
 import cx from 'clsx';
 
-import { Modal } from 'shared/ui';
-import { LoginForm } from '../LoginForm/LoginForm';
+import { Loader, Modal } from 'shared/ui';
+import { Suspense } from 'react';
+import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 
 interface LoginModalProps {
   className?: string;
-  isOpen : boolean;
-  onClose : () => void;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 export const LoginModal = (props: LoginModalProps) => {
@@ -20,7 +21,9 @@ export const LoginModal = (props: LoginModalProps) => {
       onClose={onClose}
       lazy
     >
-      <LoginForm />
+      <Suspense fallback={<Loader />}>
+        <LoginFormAsync />
+      </Suspense>
     </Modal>
   );
 };
