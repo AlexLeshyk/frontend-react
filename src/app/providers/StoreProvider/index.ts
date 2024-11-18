@@ -1,4 +1,6 @@
 export { StoreProvider } from './ui/StoreProvider';
 export { createReduxStore, AppDispatch } from './config/store';
 
-export { StateModel, ReduxStoreWithManager } from './config/StateModel';
+export {
+  StateModel, ReduxStoreWithManager, ThunkExtraArg, ThunkConfig,
+} from './config/StateModel';
