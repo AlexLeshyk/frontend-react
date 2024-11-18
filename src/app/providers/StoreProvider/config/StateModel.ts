@@ -2,6 +2,7 @@ import {
   AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { CounterModel } from 'entities/Counter';
+import { ProfileModel } from 'entities/Profile';
 import { UserModel } from 'entities/User';
 import { LoginModel } from 'features/AuthUserName/model/types/loginModel';
 
@@ -10,7 +11,8 @@ export interface StateModel {
   user: UserModel,
 
   // async reducers
-  loginForm?: LoginModel
+  loginForm?: LoginModel,
+  profile?: ProfileModel
 }
 
 export type StateModelKey = keyof StateModel;

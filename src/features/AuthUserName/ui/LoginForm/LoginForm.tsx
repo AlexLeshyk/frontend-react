@@ -2,10 +2,11 @@ import cx from 'clsx';
 import { Button, Input, Text } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { loginActions, loginReducer } from 'features/AuthUserName/model/slice/loginSlice';
 import { TextTheme } from 'shared/ui/Text/Text.model';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib';
+import { useAppDispatch } from 'shared/hooks';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
@@ -16,6 +17,7 @@ import classes from './LoginForm.module.css';
 
 export interface LoginFormProps {
   className?: string;
+  onCLoseModal: () => void;
 }
 
 const initialReducers: ReducersList = {
@@ -23,13 +25,13 @@ const initialReducers: ReducersList = {
 };
 
 const LoginForm = memo((props: LoginFormProps) => {
-  const { className } = props;
+  const { className, onCLoseModal } = props;
   const userName = useSelector(getLoginUserName);
   const password = useSelector(getLoginPassword);
   const error = useSelector(getLoginError);
   const isLoading = useSelector(getLoginIsLoading);
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value));
@@ -39,8 +41,11 @@ const LoginForm = memo((props: LoginFormProps) => {
     dispatch(loginActions.setPassword(password));
   }, [dispatch]);
 
-  const onLoginClick = useCallback(() => {
-    dispatch(loginByUserName({ username: userName, password }));
+  const onLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUserName({ username: userName, password }));
+    if (result.meta.requestStatus === 'fulfilled') {
+      onCLoseModal();
+    }
   }, [dispatch, userName, password]);
 
   return (

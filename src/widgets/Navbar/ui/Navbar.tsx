@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import cx from 'clsx';
 import { SwitcherTheme } from 'widgets/SwitcherTheme';
 import { useTranslation } from 'react-i18next';
@@ -6,19 +5,20 @@ import { Button } from 'shared/ui';
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button.model';
 import { LoginModal } from 'features/AuthUserName';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from 'shared/hooks';
 import { getUserAuthData, userActions } from 'entities/User';
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import classes from './Navbar.module.css';
 
 interface NavbarProps {
   className?: string;
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const authData = useSelector(getUserAuthData);
 
@@ -58,4 +58,4 @@ export const Navbar = ({ className }: NavbarProps) => {
       {!authData && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
     </div>
   );
-};
+});

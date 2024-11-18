@@ -3,6 +3,7 @@ import cx from 'clsx';
 
 import { Button } from 'shared/ui';
 import { ButtonTheme } from 'shared/ui/Button/Button.model';
+import { memo } from 'react';
 import classes from './LanguageSwitcher.module.css';
 
 interface LanguageSwitcherProps {
@@ -10,7 +11,7 @@ interface LanguageSwitcherProps {
   short?: boolean
 }
 
-export const LanguageSwitcher = ({ className, short }: LanguageSwitcherProps) => {
+export const LanguageSwitcher = memo(({ className, short }: LanguageSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
   const toggleTranslate = () => {
@@ -28,4 +29,4 @@ export const LanguageSwitcher = ({ className, short }: LanguageSwitcherProps) =>
       </Button>
     </div>
   );
-};
+});

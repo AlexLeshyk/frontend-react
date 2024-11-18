@@ -1,5 +1,5 @@
 import cx from 'clsx';
-import { ButtonHTMLAttributes, FC } from 'react';
+import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
 import { ButtonSize, ButtonTheme } from './Button.model';
 
 import classes from './Button.module.css';
@@ -10,9 +10,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   square?: boolean;
   size?: ButtonSize;
   disabled?: boolean;
+  children?: ReactNode;
 }
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button = memo((props: ButtonProps) => {
   const {
     className, disabled, children, size, square, theme, ...otherProps
   } = props;
@@ -33,4 +34,4 @@ export const Button: FC<ButtonProps> = (props) => {
       {children}
     </button>
   );
-};
+});

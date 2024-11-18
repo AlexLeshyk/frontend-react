@@ -1,0 +1,34 @@
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.link:hover .icon {
+  color: var(--inverted-secondary-color);
+}
+
+.link + .link {
+  margin-top: 24px;
+}
+
+.text {
+  margin-left: 10px;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out, width 0.2s ease;
+}
+
+.icon {
+  color: var(--inverted-primary-color);
+}
+
+.collapsed .text {
+  margin: 0;
+  width: 0;
+  line-height: 0;
+  opacity: 0;
+}
+
+.collapsed.link {
+  justify-content: center;
+}
