@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ReactNode } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import cx from 'clsx';
 
@@ -8,9 +8,10 @@ import { LinkTheme } from './LinkComponent.model';
 interface LinkComponentProps extends LinkProps {
   className?: string;
   theme?: LinkTheme;
+  children?: ReactNode
 }
 
-export const LinkComponent: FC<LinkComponentProps> = (props) => {
+export const LinkComponent = (props: LinkComponentProps) => {
   const {
     className,
     children,

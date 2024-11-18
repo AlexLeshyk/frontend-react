@@ -34,55 +34,12 @@
   flex-direction: column;
 }
 
-.link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.link:hover .icon {
-  color: var(--inverted-secondary-color);
-}
-
-/* :global(.dark) .link:hover .icon {
-  color: var(--secondary-color);
-} */
-
-.link + .link {
-  margin-top: 24px;
-}
-
-.text {
-  margin-left: 10px;
-  opacity: 1;
-  transition: opacity 0.2s ease-in-out, width 0.2s ease;
-}
-
-.icon {
-  color: var(--inverted-primary-color);
-}
-
-/* :global(.dark) .icon {
-  color: var(--primary-color);
-} */
-
 .collapsed .switchers {
   flex-direction: column;
 }
 
-.collapsed .link {
-  justify-content: center;
-}
-
 .collapsed .links {
   margin: 48px auto 0;
-}
-
-.collapsed .text {
-  margin: 0;
-  width: 0;
-  line-height: 0;
-  opacity: 0;
 }
 
 .collapsed .collapsedBtn {

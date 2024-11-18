@@ -1,4 +1,5 @@
 import cx from 'clsx';
+import { memo } from 'react';
 import { TextTheme } from './Text.model';
 import classes from './Text.module.css';
 
@@ -9,7 +10,7 @@ interface TextProps {
   theme?: TextTheme
 }
 
-export const Text = (props: TextProps) => {
+export const Text = memo((props: TextProps) => {
   const {
     className, title, text, theme = TextTheme.PRIMARY,
   } = props;
@@ -26,4 +27,4 @@ export const Text = (props: TextProps) => {
       {text && <p className={classes.text}>{text}</p>}
     </div>
   );
-};
+});

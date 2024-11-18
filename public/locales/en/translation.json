@@ -15,5 +15,7 @@
   "password": "Password",
   "AuthorizationForm": "Authorization form",
   "Incorrect login password": "You have entered an incorrect login or password.",
-  "Logout": "Logout"
+  "Logout": "Logout",
+  "Profile": "Profile Page",
+  "About": "About us"
 }
