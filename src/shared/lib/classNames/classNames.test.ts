@@ -32,7 +32,7 @@ describe('classNames', () => {
     const expectedClass = 'someClass classA classB hovered';
     expect(classNames(
       'someClass',
-      { hovered: true, scrollable: undefined },
+      { hovered: true, scrollable: '' },
       ['classA', 'classB'],
     )).toBe(expectedClass);
   });

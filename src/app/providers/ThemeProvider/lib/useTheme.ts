@@ -11,10 +11,10 @@ export const useTheme = (): useThemeResult => {
 
   const changeTheme = () => {
     const activeTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
-    setTheme(activeTheme);
+    setTheme?.(activeTheme);
     document.body.className = activeTheme;
     localStorage.setItem(LOCAL_STORAGE_THEME, activeTheme);
   };
 
-  return { theme, changeTheme };
+  return { theme: theme || Theme.LIGHT, changeTheme };
 };

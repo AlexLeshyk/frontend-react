@@ -24,7 +24,7 @@ export const LinkComponent = (props: LinkComponentProps) => {
       to={to}
       className={cx({
         [classes.link]: true,
-        [className]: className,
+        [className as string]: className,
         [classes[theme]]: theme,
       })}
       {...otherProps}

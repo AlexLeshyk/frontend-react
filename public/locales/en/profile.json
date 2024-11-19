@@ -1,3 +1,7 @@
 {
-  "Profile": "Profile Page."
+  "Profile": "Profile Page.",
+  "Edit": "Edit",
+  "UserProfile": "User profile",
+  "Enter Name": "Enter Name:",
+  "Enter LastName": "Enter LastName:"
 }

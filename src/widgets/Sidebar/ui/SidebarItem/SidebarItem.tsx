@@ -8,7 +8,7 @@ import { SidebarItemType } from '../../model/items';
 import classes from './SidebarItem.module.css';
 
 interface SidebarItemProps {
-  item?: SidebarItemType;
+  item: SidebarItemType;
   collapsed: boolean;
 }
 
@@ -17,7 +17,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
   return (
     <LinkComponent
       theme={LinkTheme.SECONDARY}
-      to={item.path}
+      to={item?.path}
       className={cx({
         [classes.link]: true,
         [classes.collapsed]: collapsed,

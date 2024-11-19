@@ -5,7 +5,7 @@ import { ButtonTheme } from 'shared/ui/Button/Button.model';
 import classes from './ErrorStub.module.css';
 
 interface ErrorPageProps {
-    className?: string;
+  className?: string;
 }
 
 export const ErrorStub = ({ className }: ErrorPageProps) => {
@@ -17,7 +17,7 @@ export const ErrorStub = ({ className }: ErrorPageProps) => {
   };
 
   return (
-    <div className={cx({ [classes.pageError]: true, [className]: className })}>
+    <div className={cx({ [classes.pageError]: true, [className as string]: className })}>
       <p>{t('Unexpected error')}</p>
       <Button onClick={reloadPage} theme={ButtonTheme.OUTLINE}>
         {t('Reload page')}

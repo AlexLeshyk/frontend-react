@@ -15,7 +15,7 @@ export const LoginModal = (props: LoginModalProps) => {
   return (
     <Modal
       className={cx({
-        [className]: className,
+        [className as string]: className,
       })}
       isOpen={isOpen}
       onClose={onClose}

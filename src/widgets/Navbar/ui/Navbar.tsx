@@ -39,7 +39,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     <div
       className={cx({
         [classes.wrapper]: true,
-        [className]: className,
+        [className as string]: className,
       })}
     >
       <SwitcherTheme />

@@ -1,5 +1,5 @@
 import React, {
-  FC, ReactNode, useCallback, useEffect, useRef, useState,
+  FC, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { Portal } from 'shared/ui';
 import cx from 'clsx';
@@ -23,7 +23,7 @@ export const Modal: FC<ModalProps> = (props) => {
   const [isClosing, setIsClosing] = useState<boolean>(false);
   const [isOpening, setIsOpening] = useState<boolean>(false);
   const [isMounted, setIsMounted] = useState<boolean>(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
   const onCloseHandler = useCallback(() => {
     if (onClose) {
