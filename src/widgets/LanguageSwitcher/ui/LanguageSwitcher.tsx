@@ -21,7 +21,7 @@ export const LanguageSwitcher = memo(({ className, short }: LanguageSwitcherProp
     <div
       className={cx({
         [classes.language]: true,
-        [className]: className,
+        [className as string]: className,
       })}
     >
       <Button theme={ButtonTheme.CLEAR} onClick={toggleTranslate}>

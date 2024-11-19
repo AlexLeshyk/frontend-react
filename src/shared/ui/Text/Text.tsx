@@ -19,7 +19,7 @@ export const Text = memo((props: TextProps) => {
     <div
       className={cx({
         [classes.text]: true,
-        [className]: className,
+        [className as string]: className,
         [classes[theme]]: true,
       })}
     >

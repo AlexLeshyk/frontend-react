@@ -53,7 +53,7 @@ const LoginForm = memo((props: LoginFormProps) => {
       <div
         className={cx({
           [classes.wrapper]: true,
-          [className]: className,
+          [className as string]: className,
         })}
       >
         <Text title={t('AuthorizationForm')} />

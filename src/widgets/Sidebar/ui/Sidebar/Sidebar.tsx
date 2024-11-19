@@ -23,7 +23,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       data-testid="sidebar"
       className={cx({
         [classes.sidebar]: true,
-        [className]: className,
+        [className as string]: className,
         [classes.collapsed]: collapsedSidebar,
       })}
     >

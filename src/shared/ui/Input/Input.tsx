@@ -10,7 +10,7 @@ interface InputProps extends HTMLInputProps {
   autofocus?: boolean,
   className?: string;
   value?: string;
-  onChange? : (value: string) => void
+  onChange?: (value: string) => void
   label?: string
   htmlFor?: string
 }
@@ -36,7 +36,7 @@ export const Input = memo((props: InputProps) => {
     <div
       className={cx({
         [classes.wrapper]: true,
-        [className]: className,
+        [className as string]: className,
       })}
       data-testid="input"
     >
