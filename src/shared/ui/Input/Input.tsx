@@ -5,19 +5,20 @@ import {
 
 import classes from './Input.module.css';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>;
 interface InputProps extends HTMLInputProps {
   autofocus?: boolean,
   className?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (value: string) => void
   label?: string
   htmlFor?: string
+  readonly?: boolean
 }
 
 export const Input = memo((props: InputProps) => {
   const {
-    autofocus, className, htmlFor, onChange, label, placeholder, type = 'text', value, ...otherProps
+    autofocus, className, htmlFor, onChange, label, placeholder, type = 'text', value, readonly, ...otherProps
   } = props;
   const [_, setIsFocused] = useState(false);
   const ref = useRef<HTMLInputElement>(null);
@@ -37,10 +38,11 @@ export const Input = memo((props: InputProps) => {
       className={cx({
         [classes.wrapper]: true,
         [className as string]: className,
+        [classes.readonly]: readonly,
       })}
       data-testid="input"
     >
-      {label && <label className={classes.label} htmlFor={htmlFor}>{label}</label>}
+      {label && htmlFor && <label className={classes.label} htmlFor={htmlFor}>{label}</label>}
       <input
         ref={ref}
         className={classes.input}
@@ -49,6 +51,7 @@ export const Input = memo((props: InputProps) => {
         placeholder={placeholder}
         onChange={onChangeHandler}
         value={value}
+        readOnly={readonly}
         {...otherProps}
       />
     </div>

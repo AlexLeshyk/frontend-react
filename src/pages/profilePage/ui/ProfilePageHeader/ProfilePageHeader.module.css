@@ -1,0 +1,12 @@
+.edit {
+  margin-left: auto;
+}
+
+.save {
+  margin-left: 16px;
+}
+
+.header {
+  margin-bottom: 30px;
+  display: flex;
+}

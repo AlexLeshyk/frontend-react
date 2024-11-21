@@ -1,11 +1,14 @@
 .title {
   font: var(--font-l);
-  color: var(--primary-color);
 }
 
 .text {
   font: var(--font-md);
   color: var(--secondary-color);
+}
+
+.primary {
+  color: var(--primary-color);
 }
 
 .error .title {
@@ -14,4 +17,16 @@
 
 .error .text {
   color: var(--red-dark);
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
 }

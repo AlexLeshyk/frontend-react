@@ -34,9 +34,9 @@ module.exports = {
     "no-undef": "off",
     "i18next/no-literal-string": [
       "error",
-      { markupOnly: true, ignoreAttribute: ["data-testid", "to"] },
+      { markupOnly: true, ignoreAttribute: ["data-testid", "to", "htmlFor"] },
     ],
-    "max-len": ["error", { ignoreComments: true, code: 100 }],
+    "max-len": ["error", { ignoreComments: true, code: 120 }],
     "jsx-a11y/label-has-associated-control": [
       "error",
       { required: { some: ["nesting", "id"] } },
@@ -46,6 +46,7 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "no-param-reassign": "off",
+    "no-unused-vars": "off",
   },
   globals: {
     __IS_DEV__: true,
