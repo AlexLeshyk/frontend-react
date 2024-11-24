@@ -46,7 +46,7 @@ const LoginForm = memo((props: LoginFormProps) => {
     if (result.meta.requestStatus === 'fulfilled') {
       onCLoseModal();
     }
-  }, [dispatch, userName, password]);
+  }, [dispatch, userName, password, onCLoseModal]);
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
@@ -56,7 +56,7 @@ const LoginForm = memo((props: LoginFormProps) => {
           [className as string]: className,
         })}
       >
-        <Text title={t('AuthorizationForm')} />
+        <Text title={t('AuthorizationForm')} className={classes.title} />
         {error && <Text theme={TextTheme.ERROR} text={t('Incorrect login password')} />}
         <Input
           autofocus

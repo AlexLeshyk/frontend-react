@@ -1,18 +1,19 @@
 import cx from 'clsx';
 import { memo } from 'react';
-import { TextTheme } from './Text.model';
+import { TextTheme, TextAlign } from './Text.model';
 import classes from './Text.module.css';
 
 interface TextProps {
   className?: string;
   text?: string;
   title?: string;
-  theme?: TextTheme
+  theme?: TextTheme;
+  align?: TextAlign;
 }
 
 export const Text = memo((props: TextProps) => {
   const {
-    className, title, text, theme = TextTheme.PRIMARY,
+    className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT,
   } = props;
 
   return (
@@ -21,6 +22,7 @@ export const Text = memo((props: TextProps) => {
         [classes.text]: true,
         [className as string]: className,
         [classes[theme]]: true,
+        [classes[align]]: true,
       })}
     >
       {title && <p className={classes.title}>{title}</p>}

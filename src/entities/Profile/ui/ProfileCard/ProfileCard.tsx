@@ -1,27 +1,70 @@
 import cx from 'clsx';
-
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'shared/hooks';
-import { useSelector } from 'react-redux';
-import { getProfileData } from 'entities/Profile/model/selectors/getProfileData/getProfileData';
+import { Input, Loader, Text } from 'shared/ui';
 
-import { Button, Input, Text } from 'shared/ui';
-import { ButtonTheme } from 'shared/ui/Button/Button.model';
-import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
-import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
+import { Profile } from 'entities/Profile';
+import { TextAlign, TextTheme } from 'shared/ui/Text/Text.model';
 import classes from './ProfileCard.module.css';
 
 interface ProfileCardProps {
   className?: string;
+  data?: Profile;
+  error?: string;
+  readonly?: boolean;
+  isLoading?: boolean;
+  onChangeFirstName: (value?: string) => void;
+  onChangeLastName: (value?: string) => void;
+  onChangeCity: (value?: string) => void;
+  onChangeAge: (value?: string) => void;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
-  const { className } = props;
-  const data = useSelector(getProfileData);
-  const error = useSelector(getProfileError);
-  const isLoading = useSelector(getProfileIsLoading);
+  const {
+    className,
+    data,
+    isLoading,
+    error,
+    onChangeLastName,
+    onChangeFirstName,
+    onChangeCity,
+    onChangeAge,
+    readonly,
+  } = props;
+
   const { t } = useTranslation('profile');
   const dispatch = useAppDispatch();
+
+  if (isLoading) {
+    return (
+      <div className={cx({
+        [classes.card]: true,
+        [classes.loading]: true,
+        [className as string]: className,
+      })}
+      >
+        <Loader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={cx({
+        [classes.card]: true,
+        [classes.error]: true,
+        [className as string]: className,
+      })}
+      >
+        <Text
+          align={TextAlign.CENTER}
+          theme={TextTheme.ERROR}
+          text={t('ProfileTextError')}
+          title={t('ProfileError')}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={cx({
@@ -29,28 +72,45 @@ export const ProfileCard = (props: ProfileCardProps) => {
       [className as string]: className,
     })}
     >
-      <div className={classes.header}>
-        <Text title={t('UserProfile')} />
-        <Button theme={ButtonTheme.OUTLINE} className={classes.edit}>{t('Edit')}</Button>
+      <div className={classes.inputWrapper}>
+        <Input
+          label={t('Name')}
+          htmlFor="name"
+          value={data?.first}
+          placeholder={t('Enter Name')}
+          onChange={onChangeFirstName}
+          readonly={readonly}
+        />
       </div>
-      <div className={classes.wrapper}>
-        <div className={classes.input}>
-          <label htmlFor="name">Name:</label>
-          <Input
-            id="name"
-            value={data?.first}
-            placeholder={t('Enter Name')}
-          />
-        </div>
-        <div className={classes.input}>
-          <label htmlFor="surname">Surname:</label>
-          <Input
-            id="surname"
-            value={data?.lastname}
-            placeholder={t('Enter LastName')}
-          />
-        </div>
-
+      <div className={classes.inputWrapper}>
+        <Input
+          label={t('Surname')}
+          htmlFor="surname"
+          value={data?.lastname}
+          placeholder={t('Enter LastName')}
+          onChange={onChangeLastName}
+          readonly={readonly}
+        />
+      </div>
+      <div className={classes.inputWrapper}>
+        <Input
+          label={t('City')}
+          htmlFor="city"
+          value={data?.city}
+          placeholder={t('Enter City')}
+          onChange={onChangeCity}
+          readonly={readonly}
+        />
+      </div>
+      <div className={classes.inputWrapper}>
+        <Input
+          label={t('Age')}
+          htmlFor="age"
+          value={data?.age}
+          placeholder={t('Enter Age')}
+          onChange={onChangeAge}
+          readonly={readonly}
+        />
       </div>
     </div>
   );

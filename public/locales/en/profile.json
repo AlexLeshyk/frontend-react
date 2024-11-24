@@ -3,5 +3,15 @@
   "Edit": "Edit",
   "UserProfile": "User profile",
   "Enter Name": "Enter Name:",
-  "Enter LastName": "Enter LastName:"
+  "Enter LastName": "Enter LastName:",
+  "ProfileError": "An error occurred while loading the profile.",
+  "ProfileTextError":"Refreshing the page",
+  "Name": "Name:",
+  "Surname": "Surname:",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Age": "Your age:",
+  "City": "Your city:",
+  "Enter Age": "Enter age",
+  "Enter City": "Enter city"
 }
