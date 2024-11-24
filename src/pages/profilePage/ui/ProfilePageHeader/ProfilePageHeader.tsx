@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, Text } from 'shared/ui';
 import { ButtonTheme } from 'shared/ui/Button/Button.model';
 import { useSelector } from 'react-redux';
-import { getProfileReadOnly, profileActions } from 'entities/Profile';
+import { getProfileReadOnly, profileActions, updateProfileData } from 'entities/Profile';
 import { useAppDispatch } from 'shared/hooks';
 
 import { useCallback } from 'react';
@@ -23,7 +23,7 @@ export const ProfilePageHeader = () => {
   }, [dispatch]);
 
   const onSaveProfile = useCallback(() => {
-    // dispatch(profileActions.updateProfile());
+    dispatch(updateProfileData());
   }, [dispatch]);
 
   return (
