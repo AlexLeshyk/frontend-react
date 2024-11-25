@@ -1,18 +1,26 @@
 .wrapper {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .label {
-  margin-right: 8px;
+  margin-bottom: 8px;
+  font: var(--font-sm);
+}
+
+.labelReadOnly {
+  opacity: 0.7;
 }
 
 .select {
+  min-width: 120px;
   padding: 4px 12px 4px 4px;
   background: none;
   outline: none;
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
+  font: var(--font-md);
 }
 
 .option {

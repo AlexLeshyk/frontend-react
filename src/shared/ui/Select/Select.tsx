@@ -41,7 +41,11 @@ export const Select = memo(({
         [className as string]: className,
       })}
     >
-      {label && <span className={classes.label}>{label}</span>}
+      {label && (
+        <span className={cx({ [classes.label]: true, [classes.labelReadOnly]: readonly })}>
+          {label}
+        </span>
+      )}
       <select className={classes.select} value={value} onChange={onChangeSelect} disabled={readonly}>
         {optionsList}
       </select>
