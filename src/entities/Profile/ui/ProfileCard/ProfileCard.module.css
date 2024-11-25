@@ -1,6 +1,10 @@
 .card {
   padding: 20px;
-  border: 1px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.editing {
+  border: 2px solid var(--inverted-primary-color);
 }
 
 .inputWrapper + .inputWrapper {
@@ -12,5 +16,11 @@
   height: 300px;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.avatarWrapper {
+  display: flex;
+  width: 100%;
   justify-content: center;
 }
