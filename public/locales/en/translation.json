@@ -17,5 +17,7 @@
   "Incorrect login password": "You have entered an incorrect login or password.",
   "Logout": "Logout",
   "Profile": "Profile Page",
-  "About": "About us"
+  "About": "About us",
+  "Currency": "Specify currency:",
+  "Country": "Select country:"
 }

@@ -6,3 +6,5 @@ export { Modal } from './Modal/Modal';
 export { Portal } from './Portal/Portal';
 export { Input } from './Input/Input';
 export { Text } from './Text/Text';
+export { Avatar } from './Avatar/Avatar';
+export { Select } from './Select/Select';

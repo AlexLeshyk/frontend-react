@@ -5,7 +5,7 @@
   "Enter Name": "Enter Name:",
   "Enter LastName": "Enter LastName:",
   "ProfileError": "An error occurred while loading the profile.",
-  "ProfileTextError":"Refreshing the page",
+  "ProfileTextError": "Refreshing the page",
   "Name": "Name:",
   "Surname": "Surname:",
   "Cancel": "Cancel",
@@ -13,5 +13,9 @@
   "Age": "Your age:",
   "City": "Your city:",
   "Enter Age": "Enter age",
-  "Enter City": "Enter city"
+  "Enter City": "Enter city",
+  "Avatar": "Avatar:",
+  "Enter Avatar": "Enter avatar",
+  "Username": "Username:",
+  "Enter Username": "Enter username"
 }
