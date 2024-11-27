@@ -3,6 +3,10 @@
   border: 2px solid var(--primary-color);
 }
 
+.card + .card {
+  margin-top: 16px;
+}
+
 .editing {
   border: 2px solid var(--inverted-primary-color);
 }
