@@ -22,19 +22,10 @@
 }
 
 .outline {
-  min-width: 150px;
   padding: 8px 11px;
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
   background: none;
-}
-
-.outline.medium {
-  padding: 10px 12px;
-}
-
-.outline.large {
-  padding: 12px 15px;
 }
 
 .background {
@@ -46,7 +37,7 @@
 .backgroundInverted {
   color: var(--inverted-primary-color);
   background: var(--bg-color-inverted);
-  border: none;
+  border: 1px solid var(--bg-color-inverted);
 }
 
 .square {
@@ -73,11 +64,13 @@
 }
 
 .medium {
+  padding: 10px 12px;
   font-size: var(--font-size-md);
 }
 
 .large {
   font-size: var(--font-size-l);
+  padding: 12px 15px;
 }
 
 .button:disabled {

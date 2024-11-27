@@ -19,5 +19,10 @@
   "Profile": "Profile Page",
   "About": "About us",
   "Currency": "Specify currency:",
-  "Country": "Select country:"
+  "Country": "Select country:",
+  "Armenia": "Armenia",
+  "Belarus": "Belarus",
+  "Kazakhstan": "Kazakhstan",
+  "Russia": "Russia",
+  "Ukraine": "Ukraine"
 }

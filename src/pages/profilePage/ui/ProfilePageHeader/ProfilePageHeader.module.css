@@ -10,3 +10,38 @@
   margin-bottom: 30px;
   display: flex;
 }
+
+@media screen and (max-width: 991px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .title {
+    width: 100%;
+  }
+
+  .save {
+    margin-left: 0;
+    margin-top: 16px;
+  }
+
+  .edit {
+    margin: 16px 16px 0 0;
+  }
+
+  .save,
+  .edit {
+    width: calc(50% - 8px);
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .save,
+  .edit {
+    width: 100%;
+  }
+
+  .edit {
+    margin: 16px 0 0;
+  }
+}
