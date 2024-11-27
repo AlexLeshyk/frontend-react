@@ -5,6 +5,7 @@ import cx from 'clsx';
 import { LinkTheme } from 'shared/ui/LinkComponent/LinkComponent.model';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
+import { useMediaQuery } from '@mantine/hooks';
 import { SidebarItemType } from '../../model/items';
 
 import classes from './SidebarItem.module.css';
@@ -16,7 +17,7 @@ interface SidebarItemProps {
 
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
   const { t } = useTranslation();
-
+  const isMobile = useMediaQuery('(max-width: 767px)');
   const isAuth = useSelector(getUserAuthData);
 
   if (item.authOnly && !isAuth) {
@@ -29,7 +30,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
       to={item?.path}
       className={cx({
         [classes.link]: true,
-        [classes.collapsed]: collapsed,
+        [classes.collapsed]: collapsed || isMobile,
       })}
     >
       <item.Icon className={classes.icon} />

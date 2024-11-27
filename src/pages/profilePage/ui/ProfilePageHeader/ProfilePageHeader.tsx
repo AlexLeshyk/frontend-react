@@ -28,7 +28,7 @@ export const ProfilePageHeader = () => {
 
   return (
     <div className={classes.header}>
-      <Text title={t('UserProfile')} />
+      <Text title={t('UserProfile')} className={classes.title} />
       {readonly
         ? (
           <Button
