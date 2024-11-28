@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
 import { Text } from './Text';
@@ -10,34 +10,33 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof Text>;
+} as Meta<typeof Text>;
+type Story = StoryObj<typeof Text>;
 
-const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
-
-export const Primary = Template.bind({});
+export const Primary: Story = {};
 Primary.args = {
   title: 'Primary title',
   text: 'A lot of some text',
 };
 
-export const OnlyText = Template.bind({});
+export const OnlyText: Story = {};
 OnlyText.args = {
   text: 'Only a lot of some text',
 };
 
-export const OnlyTitle = Template.bind({});
+export const OnlyTitle: Story = {};
 OnlyTitle.args = {
   title: 'Only title',
 };
 
-export const Error = Template.bind({});
+export const Error: Story = {};
 Error.args = {
   title: 'Error title',
   text: 'A lot of some text',
   theme: TextTheme.ERROR,
 };
 
-export const PrimaryDark = Template.bind({});
+export const PrimaryDark: Story = {};
 PrimaryDark.args = {
   title: 'Title dark',
   text: 'A lot of some text',
@@ -45,14 +44,14 @@ PrimaryDark.args = {
 
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const OnlyTextDark = Template.bind({});
+export const OnlyTextDark: Story = {};
 OnlyTextDark.args = {
   text: 'Only a lot of dark text',
 };
 
 OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const OnlyTitleDark = Template.bind({});
+export const OnlyTitleDark: Story = {};
 OnlyTitleDark.args = {
   title: 'Only title dark',
 };

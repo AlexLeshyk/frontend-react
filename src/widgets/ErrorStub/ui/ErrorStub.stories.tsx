@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
 import { ErrorStub } from './ErrorStub';
@@ -9,14 +9,14 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ErrorStub>;
+} as Meta<typeof ErrorStub>;
 
-const Template: ComponentStory<typeof ErrorStub> = (args) => <ErrorStub {...args} />;
+type Story = StoryObj<typeof ErrorStub>;
 
-export const Light = Template.bind({});
+export const Light: Story = {};
 Light.args = {};
 
-export const Dark = Template.bind({});
+export const Dark: Story = {};
 Dark.args = {};
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import avatar from 'shared/images/tests/oduvanchik-na-solncze.jpg';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
@@ -10,11 +10,11 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ProfileCard>;
+} as Meta<typeof ProfileCard>;
 
-const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
+type Story = StoryObj<typeof ProfileCard>;
 
-export const Primary = Template.bind({});
+export const Primary: Story = {};
 Primary.args = {
   data: {
     username: 'Alex',
@@ -28,12 +28,12 @@ Primary.args = {
   },
 };
 
-export const withError = Template.bind({});
+export const withError: Story = {};
 withError.args = {
   error: 'true',
 };
 
-export const Loading = Template.bind({});
+export const Loading: Story = {};
 Loading.args = {
   isLoading: true,
 };

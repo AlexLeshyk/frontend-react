@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { Input } from './Input';
 
@@ -8,11 +8,11 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof Input>;
+} as Meta<typeof Input>;
 
-const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
+type Story = StoryObj<typeof Input>;
 
-export const InputText = Template.bind({});
+export const InputText: Story = {};
 InputText.args = {
   placeholder: 'Введите текст',
   label: 'Заголовок',
