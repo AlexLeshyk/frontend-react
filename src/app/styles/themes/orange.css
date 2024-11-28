@@ -1,0 +1,9 @@
+.orange_theme {
+  --bg-color: #fc7000;
+  --bg-color-inverted: #fca310;
+
+  --primary-color: #fbf7f4;
+  --inverted-primary-color: #030201;
+  --secondary-color: #9c4803;
+  --inverted-secondary-color: #fcc729;
+}
