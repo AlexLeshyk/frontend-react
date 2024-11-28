@@ -6,6 +6,7 @@ import { useToggle } from 'shared/hooks';
 import { Button } from 'shared/ui';
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button.model';
 import { memo } from 'react';
+import { useMediaQuery } from '@mantine/hooks';
 import { SidebarItemList } from '../../model/items';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
@@ -16,6 +17,7 @@ interface SidebarProps {
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
+  const isMobile = useMediaQuery('(max-width: 767px)');
   const [collapsedSidebar, toggleSidebar] = useToggle(false);
 
   return (
@@ -24,20 +26,22 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       className={cx({
         [classes.sidebar]: true,
         [className as string]: className,
-        [classes.collapsed]: collapsedSidebar,
+        [classes.collapsed]: collapsedSidebar || isMobile,
       })}
     >
-      <Button
-        type="button"
-        onClick={toggleSidebar}
-        data-testid="sidebar-toggle"
-        className={classes.collapsedBtn}
-        theme={ButtonTheme.BACKGROUND_INVERTED}
-        square
-        size={ButtonSize.MEDIUM}
-      >
-        {collapsedSidebar ? '>' : '<'}
-      </Button>
+      {!isMobile && (
+        <Button
+          type="button"
+          onClick={toggleSidebar}
+          data-testid="sidebar-toggle"
+          className={classes.collapsedBtn}
+          theme={ButtonTheme.BACKGROUND_INVERTED}
+          square
+          size={ButtonSize.MEDIUM}
+        >
+          {collapsedSidebar ? '>' : '<'}
+        </Button>
+      )}
 
       <div className={classes.links}>
         {SidebarItemList.map((item) => (
@@ -46,7 +50,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       </div>
       <div className={classes.switchers}>
         <SwitcherTheme />
-        <LanguageSwitcher className="language-switcher" short={collapsedSidebar} />
+        <LanguageSwitcher className="language-switcher" short={collapsedSidebar || isMobile} />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
 import LoginForm from './LoginForm';
@@ -9,31 +9,40 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof LoginForm>;
+} as Meta<typeof LoginForm>;
 
-const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
+type Story = StoryObj<typeof LoginForm>;
 
-export const Primary = Template.bind({});
+export const Primary: Story = {};
 Primary.args = {};
 
-Primary.decorators = [StoreDecorator({
-  loginForm: {
-    userName: 'user', password: '123',
-  },
-})];
+Primary.decorators = [
+  StoreDecorator({
+    loginForm: {
+      userName: 'user',
+      password: '123',
+    },
+  }),
+];
 
-export const withError = Template.bind({});
+export const withError: Story = {};
 withError.args = {};
 
-withError.decorators = [StoreDecorator({
-  loginForm: {
-    userName: 'user', password: '123', error: 'ERROR',
-  },
-})];
+withError.decorators = [
+  StoreDecorator({
+    loginForm: {
+      userName: 'user',
+      password: '123',
+      error: 'ERROR',
+    },
+  }),
+];
 
-export const Loading = Template.bind({});
+export const Loading: Story = {};
 Loading.args = {};
 
-Loading.decorators = [StoreDecorator({
-  loginForm: { isLoading: true },
-})];
+Loading.decorators = [
+  StoreDecorator({
+    loginForm: { isLoading: true },
+  }),
+];

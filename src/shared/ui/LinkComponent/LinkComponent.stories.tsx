@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
@@ -6,7 +6,7 @@ import { LinkComponent } from './LinkComponent';
 import { LinkTheme } from './LinkComponent.model';
 
 export default {
-  title: 'shared/Link',
+  title: 'shared/LinkComponent',
   component: LinkComponent,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -14,32 +14,36 @@ export default {
   args: {
     to: '/',
   },
-} as ComponentMeta<typeof LinkComponent>;
+} as Meta<typeof LinkComponent>;
 
-const Template: ComponentStory<typeof LinkComponent> = (args) => <LinkComponent {...args} />;
+type Story = StoryObj<typeof LinkComponent>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  children: 'Primary',
-  theme: LinkTheme.PRIMARY,
+export const Primary: Story = {
+  args: {
+    children: 'Primary',
+    theme: LinkTheme.PRIMARY,
+  },
 };
 
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {
-  children: 'Primary Dark',
-  theme: LinkTheme.PRIMARY,
+export const PrimaryDark: Story = {
+  args: {
+    children: 'Primary Dark',
+    theme: LinkTheme.PRIMARY,
+  },
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  children: 'Secondary',
-  theme: LinkTheme.SECONDARY,
+export const Secondary: Story = {
+  args: {
+    children: 'Secondary',
+    theme: LinkTheme.SECONDARY,
+  },
 };
 
-export const SecondaryDark = Template.bind({});
-SecondaryDark.args = {
-  children: 'Secondary Dark',
-  theme: LinkTheme.SECONDARY,
+export const SecondaryDark: Story = {
+  args: {
+    children: 'Secondary Dark',
+    theme: LinkTheme.SECONDARY,
+  },
 };
 
 SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];

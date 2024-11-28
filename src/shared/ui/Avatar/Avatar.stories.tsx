@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import AvatarImage from './avatar.jpg';
 
 import { Avatar } from './Avatar';
@@ -9,11 +9,11 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof Avatar>;
+} as Meta<typeof Avatar>;
 
-const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
+type Story = StoryObj<typeof Avatar>;
 
-export const Primary = Template.bind({});
+export const Primary: Story = {};
 Primary.args = {
   size: 150,
   src: AvatarImage,

@@ -1,9 +1,10 @@
 .sidebar {
-  height: calc(100vh - var(--navbar-height));
+  height: 100%;
   width: var(--sidebar-width);
   position: relative;
   background: var(--bg-color-inverted);
   transition: width 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 .collapsed {
@@ -17,9 +18,12 @@
 .switchers {
   display: flex;
   justify-content: center;
+  padding: 0 10px;
   position: absolute;
   bottom: 20px;
-  left: 12px;
+  left: 20px;
+  transform: translateX(0);
+  transition: all 0.3s ease;
 }
 
 .collapsedBtn {
@@ -36,6 +40,8 @@
 
 .collapsed .switchers {
   flex-direction: column;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .collapsed .links {

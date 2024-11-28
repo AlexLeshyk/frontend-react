@@ -17,5 +17,10 @@
   "Avatar": "Avatar:",
   "Enter Avatar": "Enter avatar",
   "Username": "Username:",
-  "Enter Username": "Enter username"
+  "Enter Username": "Enter username",
+  "Incorrect Age": "Your age must be filled in",
+  "Incorrect City": "The city must be filled in",
+  "Incorrect User": "User data must be filled in",
+  "No Data": "No Data",
+  "Server error": "Server Error"
 }

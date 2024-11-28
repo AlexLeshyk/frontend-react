@@ -1,6 +1,7 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
+import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
 import { Sidebar } from './Sidebar';
 
 export default {
@@ -9,14 +10,31 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof Sidebar>;
+  decorators: [
+    (Story) => (
+      <div style={{ height: '100vh' }}>
+        <Story />
+      </div>
+    ),
+  ],
+} as Meta<typeof Sidebar>;
 
-const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;
+type Story = StoryObj<typeof Sidebar>;
 
-export const Light = Template.bind({});
+export const Light: Story = {};
 Light.args = {};
 
-export const Dark = Template.bind({});
+Light.decorators = [StoreDecorator({ user: { authData: {} } })];
+
+export const Dark: Story = {};
 Dark.args = {};
 
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({ user: { authData: {} } }),
+];
+
+export const NotAuth: Story = {};
+NotAuth.args = {};
+
+NotAuth.decorators = [StoreDecorator({ user: {} })];
