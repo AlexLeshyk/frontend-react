@@ -6,7 +6,9 @@ export interface CounterState {
   value: number
 }
 
-const initialState: UserModel = {};
+const initialState: UserModel = {
+  mounted: false,
+};
 
 export const userSlice = createSlice({
   name: 'user',
@@ -20,6 +22,7 @@ export const userSlice = createSlice({
       if (user) {
         state.authData = JSON.parse(user);
       }
+      state.mounted = true;
     },
     logout: (state) => {
       localStorage.removeItem(USER_LOCALSTORAGE_KEY);
