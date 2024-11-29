@@ -21,7 +21,6 @@ module.exports = {
     ],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
-    "no-unused-vars": "warn",
     "react/require-default-props": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-react": "off",
@@ -47,6 +46,7 @@ module.exports = {
     "react-hooks/exhaustive-deps": "warn",
     "no-param-reassign": "off",
     "no-unused-vars": "off",
+    "react/static-property-placement": ["warn", "static public field"],
   },
   globals: {
     __IS_DEV__: true,

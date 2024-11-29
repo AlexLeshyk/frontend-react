@@ -5,4 +5,5 @@ export interface User {
 
 export interface UserModel {
   authData?: User;
+  mounted: boolean;
 }

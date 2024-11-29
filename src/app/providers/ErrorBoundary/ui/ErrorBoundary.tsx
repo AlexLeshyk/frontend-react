@@ -3,6 +3,7 @@ import {
   Component, ErrorInfo, ReactNode, Suspense,
 } from 'react';
 import { ErrorStub } from 'widgets/ErrorStub';
+import PropTypes from 'prop-types';
 
 interface ErrorBoundaryProps {
   children: ReactNode
@@ -12,6 +13,8 @@ interface ErrorBoundaryState {
   hasError: boolean
 }
 class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  static propTypes = { children: PropTypes.node.isRequired };
+
   constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };
