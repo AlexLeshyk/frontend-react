@@ -8,3 +8,4 @@ export { Input } from './Input/Input';
 export { Text } from './Text/Text';
 export { Avatar } from './Avatar/Avatar';
 export { Select } from './Select/Select';
+export { Title } from './Title/Title';

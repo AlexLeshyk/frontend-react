@@ -1,5 +1,11 @@
-.avatar {
+.skeletonImage {
   margin: 0 auto;
+}
+
+.avatar {
+  display: block;
+  margin: 0 auto 40px;
+  object-fit: contain;
 }
 
 .title {
@@ -8,4 +14,20 @@
 
 .skeleton {
   margin-top: 16px;
+}
+
+.views,
+.time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-size-s);
+}
+
+.views {
+  margin-bottom: 4px;
+}
+
+.time {
+  margin-bottom: 24px;
 }

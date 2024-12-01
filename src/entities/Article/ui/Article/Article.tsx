@@ -1,13 +1,15 @@
-/* eslint-disable i18next/no-literal-string */
 import cx from 'clsx';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib';
 import { memo, useEffect } from 'react';
 import { useAppDispatch } from 'shared/hooks';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Text } from 'shared/ui';
+import { Avatar, Text, Title } from 'shared/ui';
 import { TextAlign, TextTheme } from 'shared/ui/Text/Text.model';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import EyeIcon from 'shared/icons/eye.svg';
+import CalendarIcon from 'shared/icons/calendar.svg';
+import { TitleSize } from 'shared/ui/Title/Title';
 import { getArticleById } from '../../model/services/getArticleById/getArticleById';
 import { articleReducer } from '../../model/slices/articleSlice';
 import { getArticleData, getArticleError, getArticleIsLoading } from '../../model/selectors/article';
@@ -28,7 +30,7 @@ export const Article = memo((props: ArticleProps) => {
   let content;
   const dispatch = useAppDispatch();
   const { t } = useTranslation('article');
-  const data = useSelector(getArticleData);
+  const article = useSelector(getArticleData);
   const error = useSelector(getArticleError);
   const isLoading = useSelector(getArticleIsLoading);
 
@@ -39,7 +41,7 @@ export const Article = memo((props: ArticleProps) => {
   if (isLoading) {
     content = (
       <>
-        <Skeleton border="50%" width={200} height={200} className={classes.avatar} />
+        <Skeleton border="50%" width={200} height={200} className={classes.skeletonImage} />
         <Skeleton width={300} height={32} className={classes.title} />
         <Skeleton width={600} height={24} className={classes.skeleton} />
         <Skeleton width="100%" height={200} className={classes.skeleton} />
@@ -58,9 +60,21 @@ export const Article = memo((props: ArticleProps) => {
     );
   }
 
-  if (data) {
+  if (article) {
     content = (
-      <div>Article</div>
+      <>
+        <Avatar src={article?.img} size={200} className={classes.avatar} />
+        <Title title={article?.title} size={TitleSize.H2} />
+        <Text text={article.subtitle} />
+        <div className={classes.views}>
+          <EyeIcon className={classes.icon} />
+          <span>{article.views}</span>
+        </div>
+        <div className={classes.time}>
+          <CalendarIcon className={classes.icon} />
+          <time>{article.createdAt}</time>
+        </div>
+      </>
     );
   }
 

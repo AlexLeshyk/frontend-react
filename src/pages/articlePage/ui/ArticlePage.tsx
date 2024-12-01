@@ -18,7 +18,7 @@ const ArticlePage = () => {
 
   return (
     <>
-      <div>{t('ArticlePage')}</div>
+      {/* <div>{t('ArticlePage')}</div> */}
       <Article id={id} />
     </>
   );
