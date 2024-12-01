@@ -1,4 +1,5 @@
 {
   "ArticlePage": "Article Page",
-  "ArticleNotFound": "Article Not Found"
+  "ArticleNotFound": "Article Not Found",
+  "ArticleError": "There was an error loading the article"
 }

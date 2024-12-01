@@ -6,4 +6,7 @@
   --inverted-primary-color: #030201;
   --secondary-color: #9c4803;
   --inverted-secondary-color: #fcc729;
+
+  --skeleton-color: #fff;
+  --skeleton-shadow: rgba(0 0 0 / 20%);
 }

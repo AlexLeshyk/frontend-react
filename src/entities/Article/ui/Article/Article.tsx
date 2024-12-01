@@ -5,10 +5,14 @@ import { memo, useEffect } from 'react';
 import { useAppDispatch } from 'shared/hooks';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Loader } from 'shared/ui';
+import { Text } from 'shared/ui';
+import { TextAlign, TextTheme } from 'shared/ui/Text/Text.model';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { getArticleById } from '../../model/services/getArticleById/getArticleById';
 import { articleReducer } from '../../model/slices/articleSlice';
 import { getArticleData, getArticleError, getArticleIsLoading } from '../../model/selectors/article';
+
+import classes from './Article.module.css';
 
 interface ArticleProps {
   className?: string;
@@ -34,15 +38,23 @@ export const Article = memo((props: ArticleProps) => {
 
   if (isLoading) {
     content = (
-      <div>
-        <Loader />
-      </div>
+      <>
+        <Skeleton border="50%" width={200} height={200} className={classes.avatar} />
+        <Skeleton width={300} height={32} className={classes.title} />
+        <Skeleton width={600} height={24} className={classes.skeleton} />
+        <Skeleton width="100%" height={200} className={classes.skeleton} />
+        <Skeleton width="100%" height={200} className={classes.skeleton} />
+      </>
     );
   }
 
   if (error) {
     content = (
-      <div>{error}</div>
+      <Text
+        align={TextAlign.CENTER}
+        theme={TextTheme.ERROR}
+        title={t('ArticleError')}
+      />
     );
   }
 
