@@ -1,0 +1,12 @@
+.title {
+  margin-bottom: 16px;
+}
+
+.paragraph + .paragraph {
+  margin-top: 8px;
+}
+
+.paragraph p {
+  font-size: var(--font-size-s);
+  line-height: var(--font-lineheight-s);
+}

@@ -2,6 +2,7 @@ import {
   AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
+import { ArticleDetailsModel } from 'entities/Article';
 import { CounterModel } from 'entities/Counter';
 import { ProfileModel } from 'entities/Profile';
 import { UserModel } from 'entities/User';
@@ -14,7 +15,8 @@ export interface StateModel {
 
   // async reducers
   loginForm?: LoginModel,
-  profile?: ProfileModel
+  profile?: ProfileModel,
+  article?: ArticleDetailsModel,
 }
 
 export type StateModelKey = keyof StateModel;

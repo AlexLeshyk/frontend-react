@@ -1,3 +1,5 @@
 {
-  "ArticlePage": "Статья"
+  "ArticlePage": "Статья",
+  "ArticleNotFound": "Статья не найдена",
+  "ArticleError": "Произошла ошибка при загрузке статьи"
 }

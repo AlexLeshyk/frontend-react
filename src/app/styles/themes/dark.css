@@ -6,4 +6,8 @@
   --inverted-primary-color: #0232c2;
   --secondary-color: #04ff04;
   --inverted-secondary-color: #21cf28;
+
+  --skeleton-color: #1515ad;
+  --skeleton-shadow: #2b2be8;
+  --code-bg: #1212a1;
 }

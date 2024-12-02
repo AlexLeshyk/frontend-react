@@ -4,6 +4,11 @@
 
   --font-family-main: Open Sans, "Verdana", "Arial", sans-serif;
 
+  --font-size-2xl: 36px;
+  --font-lineheight-2xl: 44px;
+  --font-2xl: var(--font-size-2xl) / var(--font-lineheight-2xl)
+    var(--font-family-main);
+
   --font-size-xl: 32px;
   --font-lineheight-xl: 40px;
   --font-xl: var(--font-size-xl) / var(--font-lineheight-xl)
