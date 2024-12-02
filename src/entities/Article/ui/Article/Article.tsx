@@ -1,6 +1,6 @@
 import cx from 'clsx';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib';
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useAppDispatch } from 'shared/hooks';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -13,11 +13,14 @@ import { TitleSize } from 'shared/ui/Title/Title';
 import { getArticleById } from '../../model/services/getArticleById/getArticleById';
 import { articleReducer } from '../../model/slices/articleSlice';
 import { getArticleData, getArticleError, getArticleIsLoading } from '../../model/selectors/article';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 import classes from './Article.module.css';
 
 interface ArticleProps {
-  className?: string;
   id: string;
 }
 
@@ -26,13 +29,25 @@ const reducers: ReducersList = {
 };
 
 export const Article = memo((props: ArticleProps) => {
-  const { className, id } = props;
+  const { id } = props;
   let content;
   const dispatch = useAppDispatch();
   const { t } = useTranslation('article');
   const article = useSelector(getArticleData);
   const error = useSelector(getArticleError);
   const isLoading = useSelector(getArticleIsLoading);
+
+  const renderBlock = useCallback((block: ArticleBlock) => {
+    switch (block.type) {
+      case ArticleBlockType.CODE:
+        return <ArticleCodeBlockComponent className={classes.block} block={block} />;
+      case ArticleBlockType.IMAGE:
+        return <ArticleImageBlockComponent className={classes.block} block={block} />;
+      case ArticleBlockType.TEXT:
+        return <ArticleTextBlockComponent className={classes.block} block={block} />;
+      default: return null;
+    }
+  }, []);
 
   useEffect(() => {
     dispatch(getArticleById(id));
@@ -74,6 +89,7 @@ export const Article = memo((props: ArticleProps) => {
           <CalendarIcon className={classes.icon} />
           <time>{article.createdAt}</time>
         </div>
+        {article.blocks.map(renderBlock)}
       </>
     );
   }
@@ -81,7 +97,7 @@ export const Article = memo((props: ArticleProps) => {
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
       <div className={cx({
-        [className as string]: className,
+        [classes.wrapper]: true,
       })}
       >
         {content}
