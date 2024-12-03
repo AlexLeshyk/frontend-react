@@ -4,9 +4,10 @@ import { memo, useCallback, useEffect } from 'react';
 import { useAppDispatch } from 'shared/hooks';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Avatar, Text, Title } from 'shared/ui';
+import {
+  Avatar, Text, Title, Skeleton,
+} from 'shared/ui';
 import { TextAlign, TextTheme } from 'shared/ui/Text/Text.model';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import EyeIcon from 'shared/icons/eye.svg';
 import CalendarIcon from 'shared/icons/calendar.svg';
 import { TitleSize } from 'shared/ui/Title/Title';

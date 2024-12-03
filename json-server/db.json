@@ -14,15 +14,175 @@
   "comments": [
     {
       "id": "1",
-      "body": "some comment",
-      "postId": 1
+      "text": "some comment",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "text": "some comment 2",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "3",
+      "text": "some comment 3",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "4Cljjzl"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123asfasf",
+      "id": "AEM4Dvc"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "123asfasf",
+      "id": "IFEOWl0"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "привет мир",
+      "id": "dBacYRZ"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "хехехехе",
+      "id": "rBX_C-e"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "фыафыа",
+      "id": "5k0ApX-"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "sdfsdfsd",
+      "id": "w-HDIRq"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "asdasdasd",
+      "id": "MVvGQoZ"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "text": "comment 1",
+      "id": "bAs7YBE"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "python!!!",
+      "id": "p5rMadd"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "text": "123213",
+      "id": "Zu_RNuF"
+    },
+    {
+      "articleId": "8",
+      "userId": "1",
+      "text": "dfdsf",
+      "id": "4rFHQgJ"
+    },
+    {
+      "articleId": "8",
+      "userId": "1",
+      "text": "sdfsdf",
+      "id": "yYEdTI-"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "123213",
+      "id": "TR1yDY6"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "112",
+      "id": "wSAhqy5"
+    },
+    {
+      "articleId": "18",
+      "userId": "1",
+      "text": "12",
+      "id": "r6b1z-N"
+    },
+    {
+      "articleId": "18",
+      "userId": "2",
+      "text": "привет",
+      "id": "DENfTu6"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "33",
+      "id": "Ps59wrg"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "123",
+      "id": "zzYVth3"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "123",
+      "id": "WjF4c_d"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "privet",
+      "id": "fta748h"
+    },
+    {
+      "articleId": "2",
+      "userId": "2",
+      "text": "питон топ",
+      "id": "ZlmlUrg"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "123",
+      "id": "KmtWJR_"
     }
   ],
   "users": [
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "role": "ADMIN",
+      "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
+    },
+    {
+      "id": "2",
+      "username": "man",
+      "password": "456",
+      "role": "USER",
+      "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
     }
   ],
   "profile": {
