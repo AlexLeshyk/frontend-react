@@ -3,6 +3,7 @@
   padding: 20px;
   border: 1px solid var(--primary-color);
   background: var(--code-bg);
+  overflow-x: auto;
 }
 
 .copyBtn {

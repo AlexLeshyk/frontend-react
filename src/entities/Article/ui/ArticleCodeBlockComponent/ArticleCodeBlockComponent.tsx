@@ -3,6 +3,8 @@ import { memo } from 'react';
 import { Code } from 'shared/ui';
 import { ArticleCodeBlock } from '../../model/types/article';
 
+import classes from './ArticleCodeBlockComponent.module.css';
+
 interface ArticleCodeBlockComponentProps {
   className?: string;
   block: ArticleCodeBlock
@@ -12,6 +14,7 @@ export const ArticleCodeBlockComponent = memo((props: ArticleCodeBlockComponentP
   return (
     <div className={cx({
       [className as string]: className,
+      [classes.wrapper]: true,
     })}
     >
       <Code text={block.code} />

@@ -40,17 +40,19 @@ export const Article = memo((props: ArticleProps) => {
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
       case ArticleBlockType.CODE:
-        return <ArticleCodeBlockComponent className={classes.block} block={block} />;
+        return <ArticleCodeBlockComponent className={classes.block} block={block} key={block.id} />;
       case ArticleBlockType.IMAGE:
-        return <ArticleImageBlockComponent className={classes.block} block={block} />;
+        return <ArticleImageBlockComponent className={classes.block} block={block} key={block.id} />;
       case ArticleBlockType.TEXT:
-        return <ArticleTextBlockComponent className={classes.block} block={block} />;
+        return <ArticleTextBlockComponent className={classes.block} block={block} key={block.id} />;
       default: return null;
     }
   }, []);
 
   useEffect(() => {
-    dispatch(getArticleById(id));
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(getArticleById(id));
+    }
   }, [dispatch, id]);
 
   if (isLoading) {
@@ -89,7 +91,7 @@ export const Article = memo((props: ArticleProps) => {
           <CalendarIcon className={classes.icon} />
           <time>{article.createdAt}</time>
         </div>
-        {article.blocks.map(renderBlock)}
+        {article.blocks.map((renderBlock))}
       </>
     );
   }
