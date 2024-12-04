@@ -1,7 +1,8 @@
-import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
+import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { StateModel } from 'app/providers/StoreProvider';
 import { Comment } from 'entities/Comment';
 import { ArticleCommentsModel } from '../types/articleCommentsModel';
+import { getCommentsByArticleId } from '../services/getCommentsByArticleId/getCommentsByArticleId';
 
 const commentsAdapter = createEntityAdapter<Comment>({
   selectId: (comment: Comment) => comment.id,
@@ -12,28 +13,28 @@ const articleCommentsSlice = createSlice({
   initialState: commentsAdapter.getInitialState<ArticleCommentsModel>({
     isLoading: false,
     error: undefined,
-    ids: ['1', '2'],
-    entities: {
-      1: {
-        id: '1',
-        user: {
-          userName: 'A',
-          id: '1',
-        },
-        text: 'some 1',
-      },
-      2: {
-        id: '2',
-        user: {
-          userName: 'b',
-          id: '3',
-        },
-        text: 'some 2',
-      },
-    },
+    ids: [],
+    entities: {},
   }),
   reducers: {
-
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getCommentsByArticleId.pending, (state) => {
+        state.error = undefined;
+        state.isLoading = true;
+      })
+      .addCase(getCommentsByArticleId.fulfilled, (
+        state,
+        action: PayloadAction<Array<Comment>>,
+      ) => {
+        state.isLoading = false;
+        commentsAdapter.setAll(state, action.payload);
+      })
+      .addCase(getCommentsByArticleId.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
   },
 });
 

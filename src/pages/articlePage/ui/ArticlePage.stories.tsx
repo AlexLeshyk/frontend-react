@@ -3,6 +3,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
 import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import avatar from 'shared/images/tests/oduvanchik-na-solncze.jpg';
 import ArticlePage from './ArticlePage';
 
 export default {
@@ -10,6 +11,11 @@ export default {
   component: ArticlePage,
   argTypes: {
     backgroundColor: { control: 'color' },
+  },
+  parameters: {
+    query: {
+      id: '1',
+    },
   },
 } as Meta<typeof ArticlePage>;
 
@@ -91,9 +97,43 @@ Light.decorators = [StoreDecorator({
       ],
     },
   },
+  articleComments: {
+    ids: ['1', '2'],
+    entities: {
+      1: {
+        user: {
+          username: 'Alex',
+          id: '1',
+          avatar,
+        },
+        text: 'some text',
+        id: '1',
+      },
+      2: {
+        user: {
+          username: 'Dan',
+          id: '2',
+          avatar,
+        },
+        text: 'new comment',
+        id: '2',
+      },
+    },
+  },
 })];
+
+export const WithId = {
+  render: () => {
+    const urlParams = new URLSearchParams(document.location.search);
+    const mockedId = urlParams.get('id');
+
+    return (
+      <div>{mockedId}</div>
+    );
+  },
+};
 
 export const Dark: Story = {};
 Dark.args = {};
 
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

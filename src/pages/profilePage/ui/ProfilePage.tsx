@@ -10,9 +10,9 @@ import {
   getProfileValidateErrors,
   ValidateProfileError,
 } from 'entities/Profile';
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/hooks';
+import { useAppDispatch, useInitialEffect } from 'shared/hooks';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
@@ -43,11 +43,9 @@ const ProfilePage = () => {
     [ValidateProfileError.SERVER_ERROR]: t('Server error'),
   }), [t]);
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
-    }
-  }, [dispatch]);
+  useInitialEffect(() => {
+    dispatch(fetchProfileData());
+  });
 
   const onChangeFirstName = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ first: value }));

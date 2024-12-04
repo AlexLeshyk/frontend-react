@@ -7,9 +7,11 @@ import { Title } from 'shared/ui';
 import { TitleSize } from 'shared/ui/Title/Title';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib';
 import { useSelector } from 'react-redux';
+import { useAppDispatch, useInitialEffect } from 'shared/hooks';
 import classes from './ArticlePage.module.css';
 import { articleCommentsReducer, getArticleComments } from '../model/slice/articleCommentsSlice';
 import { getArticleCommentsIsLoading } from '../model/selectors/comments';
+import { getCommentsByArticleId } from '../model/services/getCommentsByArticleId/getCommentsByArticleId';
 
 const reducers: ReducersList = {
   articleComments: articleCommentsReducer,
@@ -17,11 +19,15 @@ const reducers: ReducersList = {
 
 const ArticlePage = () => {
   const { t } = useTranslation('article');
-
+  const dispatch = useAppDispatch();
   const { id } = useParams<{ id: string }>();
 
   const comments = useSelector(getArticleComments.selectAll);
   const isLoading = useSelector(getArticleCommentsIsLoading);
+
+  useInitialEffect(() => {
+    dispatch(getCommentsByArticleId(id));
+  });
 
   if (!id) {
     return (

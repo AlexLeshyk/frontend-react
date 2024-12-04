@@ -16,8 +16,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
   const { className, comment, isLoading } = props;
 
   const { t } = useTranslation('article');
-
-  const { user, id, text } = comment;
+  const { user, text } = comment;
 
   if (isLoading) {
     return (
@@ -43,7 +42,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
     >
       <div className={classes.header}>
         {user.avatar && <Avatar size={30} src={user.avatar} />}
-        <Text title={user.userName} />
+        <Text title={user.username} />
       </div>
       <Text text={text} className={classes.commentText} />
     </div>

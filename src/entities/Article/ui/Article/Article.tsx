@@ -1,7 +1,7 @@
 import cx from 'clsx';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib';
-import { memo, useCallback, useEffect } from 'react';
-import { useAppDispatch } from 'shared/hooks';
+import { memo, useCallback } from 'react';
+import { useAppDispatch, useInitialEffect } from 'shared/hooks';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
@@ -50,11 +50,9 @@ export const Article = memo((props: ArticleProps) => {
     }
   }, []);
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(getArticleById(id));
-    }
-  }, [dispatch, id]);
+  useInitialEffect(() => {
+    dispatch(getArticleById(id));
+  });
 
   if (isLoading) {
     content = (

@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import avatar from 'shared/images/tests/oduvanchik-na-solncze.jpg';
 import { CommentCard } from './CommentCard';
 
 export default {
@@ -13,5 +14,14 @@ type Story = StoryObj<typeof CommentCard>;
 
 export const Primary: Story = {
   args: {
+    comment: {
+      user: {
+        username: 'Alex',
+        id: '1',
+        avatar,
+      },
+      text: 'some text',
+      id: '1',
+    },
   },
 };
