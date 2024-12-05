@@ -8,8 +8,13 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  text-decoration: none;
 }
 
 .commentText {
   margin-top: 10px;
+}
+
+.headerTitle:hover {
+  text-decoration: underline;
 }

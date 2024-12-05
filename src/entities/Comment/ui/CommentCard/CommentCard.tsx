@@ -1,8 +1,9 @@
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { Avatar, Text } from 'shared/ui';
+import { Avatar, LinkComponent, Text } from 'shared/ui';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Comment } from '../../model/types/comment';
 import classes from './CommentCard.module.css';
 
@@ -40,10 +41,10 @@ export const CommentCard = memo((props: CommentCardProps) => {
       [className as string]: className,
     })}
     >
-      <div className={classes.header}>
+      <LinkComponent className={classes.header} to={`${RoutePath.profile}${user.id}`}>
         {user.avatar && <Avatar size={30} src={user.avatar} />}
-        <Text title={user.username} />
-      </div>
+        <Text title={user.username} className={classes.headerTitle} />
+      </LinkComponent>
       <Text text={text} className={classes.commentText} />
     </div>
   );

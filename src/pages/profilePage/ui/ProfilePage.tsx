@@ -19,6 +19,7 @@ import { Country } from 'entities/Country';
 import { Text } from 'shared/ui';
 import { TextTheme } from 'shared/ui/Text/Text.model';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const initialReducers: ReducersList = {
@@ -32,7 +33,7 @@ const ProfilePage = () => {
   const isLoading = useSelector(getProfileIsLoading);
   const readonly = useSelector(getProfileReadOnly);
   const validateErrors = useSelector(getProfileValidateErrors);
-
+  const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
 
   const validateErrorsTranslates = useMemo(() => ({
@@ -44,7 +45,9 @@ const ProfilePage = () => {
   }), [t]);
 
   useInitialEffect(() => {
-    dispatch(fetchProfileData());
+    if (id) {
+      dispatch(fetchProfileData(id));
+    }
   });
 
   const onChangeFirstName = useCallback((value?: string) => {

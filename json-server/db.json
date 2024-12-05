@@ -185,7 +185,9 @@
       "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
     }
   ],
-  "profile": {
+  "profile": [
+    {
+    "id": "1",
     "first": "Александр",
     "lastname": "Лешик",
     "age": 38,
@@ -195,6 +197,18 @@
     "username": "admin",
     "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
   },
+  {
+    "id": "2",
+    "first": "Андрей",
+    "lastname": "Малышкин",
+    "age": 46,
+    "currency": "EUR",
+    "country": "Ukraine",
+    "city": "Xarkiv",
+    "username": "maly",
+    "avatar": "https://avatarzo.ru/wp-content/uploads/kolenok-na-plede.jpg"
+  }
+  ],
   "articles": [
     {
       "id": "1",
