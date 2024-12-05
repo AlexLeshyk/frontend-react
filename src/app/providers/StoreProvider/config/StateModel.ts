@@ -6,6 +6,7 @@ import { ArticleDetailsModel } from 'entities/Article';
 import { CounterModel } from 'entities/Counter';
 import { ProfileModel } from 'entities/Profile';
 import { UserModel } from 'entities/User';
+import { AddCommentFormModel } from 'features/AddCommentForm';
 import { LoginModel } from 'features/AuthUserName/model/types/loginModel';
 import { ArticleCommentsModel } from 'pages/articlePage';
 import { NavigateOptions, To } from 'react-router-dom';
@@ -18,7 +19,8 @@ export interface StateModel {
   loginForm?: LoginModel,
   profile?: ProfileModel,
   article?: ArticleDetailsModel,
-  articleComments?: ArticleCommentsModel
+  articleComments?: ArticleCommentsModel,
+  addCommentForm?: AddCommentFormModel,
 }
 
 export type StateModelKey = keyof StateModel;

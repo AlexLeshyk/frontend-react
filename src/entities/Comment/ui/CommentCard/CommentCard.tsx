@@ -1,5 +1,4 @@
 import cx from 'clsx';
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { Avatar, LinkComponent, Text } from 'shared/ui';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
@@ -16,7 +15,6 @@ interface CommentCardProps {
 export const CommentCard = memo((props: CommentCardProps) => {
   const { className, comment, isLoading } = props;
 
-  const { t } = useTranslation('article');
   const { user, text } = comment;
 
   if (isLoading) {

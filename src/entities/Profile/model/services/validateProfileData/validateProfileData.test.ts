@@ -12,6 +12,7 @@ const data = {
   city: 'Копище',
   username: 'admin',
   avatar: 'https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg',
+  id: '1',
 };
 describe('validateProfileData', () => {
   test('success validation', () => {

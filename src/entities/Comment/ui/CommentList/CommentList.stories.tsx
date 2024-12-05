@@ -3,7 +3,7 @@ import avatar from 'shared/images/tests/oduvanchik-na-solncze.jpg';
 import { CommentList } from './CommentList';
 
 export default {
-  title: 'entities/CommentList',
+  title: 'entities/Comment/CommentList',
   component: CommentList,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -34,5 +34,12 @@ export const Primary: Story = {
         id: '2',
       },
     ],
+  },
+};
+
+export const isLoading: Story = {
+  args: {
+    isLoading: true,
+    comments: [],
   },
 };

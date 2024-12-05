@@ -167,6 +167,18 @@
       "userId": "1",
       "text": "123",
       "id": "KmtWJR_"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Find comment is possible",
+      "id": "IVtB4cx"
+    },
+    {
+      "articleId": "2",
+      "userId": "2",
+      "text": "python new comment",
+      "id": "mDQ2TCN"
     }
   ],
   "users": [
@@ -182,32 +194,32 @@
       "username": "man",
       "password": "456",
       "role": "USER",
-      "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
+      "avatar": "https://avatarzo.ru/wp-content/uploads/kolenok-na-plede.jpg"
     }
   ],
   "profile": [
     {
-    "id": "1",
-    "first": "Александр",
-    "lastname": "Лешик",
-    "age": 38,
-    "currency": "USD",
-    "country": "Belarus",
-    "city": "Копище",
-    "username": "admin",
-    "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
-  },
-  {
-    "id": "2",
-    "first": "Андрей",
-    "lastname": "Малышкин",
-    "age": 46,
-    "currency": "EUR",
-    "country": "Ukraine",
-    "city": "Xarkiv",
-    "username": "maly",
-    "avatar": "https://avatarzo.ru/wp-content/uploads/kolenok-na-plede.jpg"
-  }
+      "id": "1",
+      "first": "Александр",
+      "lastname": "Лешик",
+      "age": 38,
+      "currency": "USD",
+      "country": "Belarus",
+      "city": "Копище",
+      "username": "admin",
+      "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Андрей",
+      "lastname": "Малышкин",
+      "age": 42,
+      "currency": "EUR",
+      "country": "Ukraine",
+      "city": "Харьков",
+      "username": "maly",
+      "avatar": "https://avatarzo.ru/wp-content/uploads/kolenok-na-plede.jpg"
+    }
   ],
   "articles": [
     {
