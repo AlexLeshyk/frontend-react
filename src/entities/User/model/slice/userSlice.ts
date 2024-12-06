@@ -2,10 +2,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { User, UserModel } from '../types/userModel';
 
-export interface CounterState {
-  value: number
-}
-
 const initialState: UserModel = {
   mounted: false,
 };

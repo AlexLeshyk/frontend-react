@@ -1,8 +1,11 @@
 /* eslint-disable i18next/no-literal-string */
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, Input, MegaBoost } from 'shared/ui';
+import {
+  Button, Input, MegaBoost, Title,
+} from 'shared/ui';
 import { ButtonTheme } from 'shared/ui/Button/Button.model';
+import { TitleSize } from 'shared/ui/Title/Title';
 
 const MainPage = () => {
   const { t } = useTranslation();
@@ -32,7 +35,7 @@ const MainPage = () => {
 
   return (
     <div>
-      <h2>{t('Main Page')}</h2>
+      <Title size={TitleSize.H2} title={t('Main Page')} />
       <div>
         Count:
         {count}

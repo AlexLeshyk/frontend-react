@@ -7,10 +7,9 @@ import { loginActions, loginReducer } from 'features/AuthUserName/model/slice/lo
 import { TextTheme } from 'shared/ui/Text/Text.model';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib';
 import { useAppDispatch } from 'shared/hooks';
-import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
-import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
-import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
-import { getLoginUserName } from '../../model/selectors/getLoginUserName/getLoginUserName';
+import {
+  getLoginError, getLoginIsLoading, getLoginPassword, getLoginUserName,
+} from '../../model/selectors/authUserName';
 import { loginByUserName } from '../../model/services/loginByUserName/loginByUserName';
 
 import classes from './LoginForm.module.css';

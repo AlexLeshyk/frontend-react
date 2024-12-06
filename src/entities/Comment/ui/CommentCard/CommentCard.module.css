@@ -1,0 +1,20 @@
+.card {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.commentText {
+  margin-top: 10px;
+}
+
+.headerTitle:hover {
+  text-decoration: underline;
+}

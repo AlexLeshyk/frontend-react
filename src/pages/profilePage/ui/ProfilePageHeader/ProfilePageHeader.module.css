@@ -11,9 +11,19 @@
   display: flex;
 }
 
+.btnsWrapper {
+  margin-left: auto;
+}
+
 @media screen and (max-width: 991px) {
   .header {
     flex-wrap: wrap;
+  }
+
+  .btnsWrapper {
+    width: 100%;
+    display: flex;
+    margin: 0;
   }
 
   .title {

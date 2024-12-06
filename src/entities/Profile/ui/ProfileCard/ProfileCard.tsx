@@ -2,7 +2,7 @@
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
 import {
-  Avatar, Input, Loader, Text,
+  Avatar, Input, Loader, Skeleton, Text,
 } from 'shared/ui';
 
 import { Profile } from 'entities/Profile';
@@ -48,13 +48,40 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={cx({
-        [classes.card]: true,
-        [classes.loading]: true,
-        [className as string]: className,
-      })}
-      >
-        <Loader />
+      <div className={classes.skeletonBlock}>
+        <Skeleton width={100} height={100} border="50%" className={classes.skeletonAvatar} />
+        <div className={classes.skeletonWrapper}>
+          <Skeleton width={100} height={24} />
+          <Skeleton width="100%" height={38} />
+        </div>
+        <div className={classes.skeletonWrapper}>
+          <Skeleton width={100} height={24} />
+          <Skeleton width="100%" height={38} />
+        </div>
+        <div className={classes.skeletonWrapper}>
+          <Skeleton width={100} height={24} />
+          <Skeleton width="100%" height={38} />
+        </div>
+        <div className={classes.skeletonWrapper}>
+          <Skeleton width={100} height={24} />
+          <Skeleton width="100%" height={38} />
+        </div>
+        <div className={classes.skeletonWrapper}>
+          <Skeleton width={100} height={24} />
+          <Skeleton width="100%" height={38} />
+        </div>
+        <div className={classes.skeletonWrapper}>
+          <Skeleton width={100} height={24} />
+          <Skeleton width="100%" height={38} />
+        </div>
+        <div className={classes.skeletonWrapper}>
+          <Skeleton width={100} height={24} />
+          <Skeleton width={120} height={34} />
+        </div>
+        <div className={classes.skeletonWrapper}>
+          <Skeleton width={100} height={24} />
+          <Skeleton width={140} height={34} />
+        </div>
       </div>
     );
   }

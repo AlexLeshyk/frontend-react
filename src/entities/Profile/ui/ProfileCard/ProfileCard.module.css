@@ -28,3 +28,25 @@
   width: 100%;
   justify-content: center;
 }
+
+.skeletonBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeletonWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeletonAvatar {
+  align-self: center;
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    padding: 16px 12px;
+  }
+}

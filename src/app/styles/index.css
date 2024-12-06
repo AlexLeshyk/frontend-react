@@ -24,10 +24,5 @@ body {
   flex-grow: 1;
   padding: 20px;
   overflow-y: auto;
-}
-
-@media screen and (max-width: 767px) {
-  .page-wrapper {
-    width: calc(100% - var(--sidebar-width-collapsed));
-  }
+  flex-shrink: 100;
 }

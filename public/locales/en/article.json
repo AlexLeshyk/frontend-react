@@ -1,3 +1,10 @@
 {
-  "ArticlePage": "Article Page"
+  "ArticlePage": "Article Page",
+  "ArticleNotFound": "Article Not Found",
+  "ArticleError": "There was an error loading the article",
+  "Comments": "Comments",
+  "NoComments": "There are no comments.",
+  "EnterComment": "Enter your comment",
+  "Send": "Send",
+  "Comment": "Comment:"
 }

@@ -1,0 +1,31 @@
+.title.h1 {
+  margin-bottom: 32px;
+  font: var(--font-2xl);
+  font-weight: bold;
+}
+
+.title.h2 {
+  margin-bottom: 24px;
+  font: var(--font-xl);
+  font-weight: bold;
+}
+
+.title.h3 {
+  margin-bottom: 20px;
+  font: var(--font-l);
+}
+
+.title.h4 {
+  margin-bottom: 16px;
+  font: var(--font-l);
+}
+
+.title.h5 {
+  margin-bottom: 12px;
+  font: var(--font-md);
+}
+
+.title.h6 {
+  margin-bottom: 8px;
+  font: var(--font-sm);
+}

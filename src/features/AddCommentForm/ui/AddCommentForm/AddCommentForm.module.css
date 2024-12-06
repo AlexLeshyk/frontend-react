@@ -1,0 +1,16 @@
+.form {
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid var(--primary-color);
+}
+
+.input {
+  flex-grow: 1;
+}
+
+.button {
+  align-self: flex-end;
+}
