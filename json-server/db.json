@@ -45,12 +45,6 @@
     {
       "articleId": "1",
       "userId": "2",
-      "text": "123asfasf",
-      "id": "IFEOWl0"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
       "text": "привет мир",
       "id": "dBacYRZ"
     },
@@ -179,6 +173,12 @@
       "userId": "2",
       "text": "python new comment",
       "id": "mDQ2TCN"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Новый комментарий!!!",
+      "id": "a9tuGvV"
     }
   ],
   "users": [

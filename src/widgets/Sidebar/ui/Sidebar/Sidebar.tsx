@@ -1,13 +1,13 @@
-/* eslint-disable i18next/no-literal-string */
 import cx from 'clsx';
 import { LanguageSwitcher } from 'widgets/LanguageSwitcher';
 import { SwitcherTheme } from 'widgets/SwitcherTheme';
 import { useToggle } from 'shared/hooks';
 import { Button } from 'shared/ui';
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button.model';
-import { memo } from 'react';
+import { memo, useMemo } from 'react';
 import { useMediaQuery } from '@mantine/hooks';
-import { SidebarItemList } from '../../model/items';
+import { useSelector } from 'react-redux';
+import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 import classes from './Sidebar.module.css';
@@ -19,6 +19,12 @@ interface SidebarProps {
 export const Sidebar = memo(({ className }: SidebarProps) => {
   const isMobile = useMediaQuery('(max-width: 767px)');
   const [collapsedSidebar, toggleSidebar] = useToggle(false);
+
+  const sidebarItemList = useSelector(getSidebarItems);
+
+  const itemsList = useMemo(() => sidebarItemList.map((item) => (
+    <SidebarItem item={item} collapsed={collapsedSidebar} key={item.path} />
+  )), [collapsedSidebar, sidebarItemList]);
 
   return (
     <div
@@ -44,9 +50,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       )}
 
       <div className={classes.links}>
-        {SidebarItemList.map((item) => (
-          <SidebarItem item={item} collapsed={collapsedSidebar} key={item.path} />
-        ))}
+        {itemsList}
       </div>
       <div className={classes.switchers}>
         <SwitcherTheme />

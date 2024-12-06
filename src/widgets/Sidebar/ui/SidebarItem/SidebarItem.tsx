@@ -6,7 +6,7 @@ import { LinkTheme } from 'shared/ui/LinkComponent/LinkComponent.model';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
 import { useMediaQuery } from '@mantine/hooks';
-import { SidebarItemType } from '../../model/items';
+import { SidebarItemType } from '../../model/types/sidebar';
 
 import classes from './SidebarItem.module.css';
 
