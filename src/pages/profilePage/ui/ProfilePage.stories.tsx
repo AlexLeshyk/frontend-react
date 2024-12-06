@@ -23,6 +23,7 @@ Light.decorators = [
   StoreDecorator({
     profile: {
       form: {
+        id: '1',
         first: 'Александр',
         lastname: 'Лешик',
         age: 5,

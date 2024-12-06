@@ -35,17 +35,10 @@ const ArticlePage = () => {
     dispatch(addCommentForArticle(value));
   }, [dispatch]);
 
-  if (!id) {
-    return (
-      <div>
-        {t('ArticleNotFound')}
-      </div>
-    );
-  }
-
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <Article id={id} />
+      {/* temparary to fix storybook */}
+      <Article id={id as string} />
       <Title title={t('Comments')} size={TitleSize.H3} className={classes.commentTitle} />
       <AddCommentForm onAddComment={onAddComment} />
       <CommentList
