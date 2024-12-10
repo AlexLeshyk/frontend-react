@@ -1,0 +1,57 @@
+.item {
+  width: 100%;
+}
+
+.tile {
+  width: 230px;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.image {
+  max-width: 100%;
+}
+
+.date {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px 8px 0;
+  margin: 0 -16px;
+  gap: 8px 4px;
+  background: var(--light-gray);
+}
+
+.types {
+  width: 140px;
+}
+
+.types p {
+  font-size: var(--font-size-sm);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.views {
+  margin-left: auto;
+}
+
+.views p {
+  font-size: 14px;
+}
+
+.title {
+  width: 100%;
+  margin-top: 8px;
+}
