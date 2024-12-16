@@ -1,3 +1,5 @@
+import { User } from 'entities/User';
+
 export enum ArticleType {
   ALL = 'ALL',
   IT = 'IT',
@@ -50,4 +52,5 @@ export interface Article {
   userId: string;
   type: Array<ArticleType>;
   blocks: Array<ArticleBlock>;
+  user: User;
 }
