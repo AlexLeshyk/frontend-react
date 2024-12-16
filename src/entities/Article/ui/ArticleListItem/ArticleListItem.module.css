@@ -16,6 +16,13 @@
 
 .image {
   max-width: 100%;
+  object-fit: contain;
+}
+
+.tile .image {
+  height: 180px;
+  margin: 0 auto;
+  display: block;
 }
 
 .tile .date {
@@ -41,7 +48,7 @@
 }
 
 .tile .types {
-  width: 140px;
+  width: auto;
 }
 
 .tile .types p {
@@ -52,6 +59,10 @@
 
 .tile .title {
   margin: 0;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .types p {
@@ -89,7 +100,6 @@
   margin: 16px auto;
   width: 100%;
   max-height: 200px;
-  object-fit: contain;
 }
 
 .header {

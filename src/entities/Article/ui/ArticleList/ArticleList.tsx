@@ -35,6 +35,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
     );
   }
 
+  if (articles.length === 0) {
+    return null;
+  }
+
   return (
     <div className={cx({
       [classes.wrapper]: true,
