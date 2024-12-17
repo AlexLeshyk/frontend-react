@@ -1,0 +1,8 @@
+.active {
+  color: var(--primary-color);
+}
+
+.view {
+  display: flex;
+  justify-content: flex-end;
+}

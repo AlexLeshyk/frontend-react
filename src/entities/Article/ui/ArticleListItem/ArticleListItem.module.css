@@ -21,14 +21,14 @@
 
 .tile .image {
   height: 180px;
-  margin: 0 auto;
+  margin: 0 auto 8px;
   display: block;
 }
 
 .tile .date {
+  height: 0;
   visibility: hidden;
   opacity: 0;
-  height: 0;
   position: absolute;
   top: 0;
   right: 0;
@@ -36,11 +36,12 @@
 }
 
 .info {
+  height: 100%;
+  padding: 8px 16px 16px;
+  margin: 0 -16px -16px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 8px 16px 16px;
-  margin: 0 -16px -16px;
   gap: 8px 4px;
   background: var(--light-gray);
   border-bottom-left-radius: 12px;
@@ -60,9 +61,10 @@
 .tile .title {
   margin: 0;
   width: 100%;
-  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  white-space: nowrap;
 }
 
 .types p {
