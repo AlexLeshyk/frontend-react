@@ -11,3 +11,4 @@ export { Select } from './Select/Select';
 export { Title } from './Title/Title';
 export { Code } from './Code/Code';
 export { Skeleton } from './Skeleton/Skeleton';
+export { Card } from './Card/Card';

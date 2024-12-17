@@ -1,0 +1,14 @@
+.active {
+  color: var(--primary-color);
+}
+
+.view {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 767px) {
+  .view {
+    justify-content: flex-start;
+  }
+}

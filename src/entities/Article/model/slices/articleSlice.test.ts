@@ -12,6 +12,10 @@ const data = {
   createdAt: '10.12.2023',
   userId: '123',
   type: [ArticleType.ECONOMICS],
+  user: {
+    username: 'Alex',
+    id: '1',
+  },
   blocks: [
     {
       id: '1',
