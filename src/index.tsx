@@ -10,12 +10,9 @@ import 'app/styles/index.css';
 
 import 'shared/config/i18n/i18n';
 
-const container = document.getElementById('root');
+const container = document.getElementById('root') as HTMLElement;
 
-if (!container) {
-  throw new Error('Контейнер root не найден');
-}
-const root = createRoot(container);
+export const root = createRoot(container);
 
 root.render(
   <BrowserRouter>
