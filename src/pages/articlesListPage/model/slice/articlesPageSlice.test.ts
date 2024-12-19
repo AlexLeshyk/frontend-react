@@ -72,9 +72,17 @@ describe('articlesPageSlice', () => {
     expect(articlesPageReducer(state as ArticlePageModel, articlesPageActions.setView(ArticleListView.TILE))).toEqual({ view: 'tile' });
   });
 
+  test('test setPage', () => {
+    const state: DeepPartial<ArticlePageModel> = { page: 1 };
+    expect(articlesPageReducer(state as ArticlePageModel, articlesPageActions.setPage(2))).toEqual({ page: 2 });
+  });
+
   test('test initState', () => {
     const state: DeepPartial<ArticlePageModel> = { view: ArticleListView.LIST };
-    expect(articlesPageReducer(state as ArticlePageModel, articlesPageActions.initState())).toEqual({ view: 'tile' });
+    expect(articlesPageReducer(
+      state as ArticlePageModel,
+      articlesPageActions.initState(),
+    )).toEqual({ view: 'tile', limit: 9, inited: true });
   });
 
   test('test getArticlesList pending state', () => {
@@ -92,13 +100,16 @@ describe('articlesPageSlice', () => {
     const state: DeepPartial<ArticlePageModel> = {
       isLoading: true,
       view: ArticleListView.LIST,
+      hasPage: false,
+      ids: [],
+      entities: {},
     };
     expect(articlesPageReducer(
       state as ArticlePageModel,
-      getArticlesList.fulfilled(articles, ''),
+      getArticlesList.fulfilled(articles, '', { page: 1 }),
     )).toEqual({
+      hasPage: true,
       isLoading: false,
-      error: undefined,
       view: 'list',
       ids: ['1', '2'],
       entities: {

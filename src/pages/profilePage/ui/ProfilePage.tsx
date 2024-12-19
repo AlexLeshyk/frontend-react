@@ -20,6 +20,7 @@ import { Text } from 'shared/ui';
 import { TextTheme } from 'shared/ui/Text/Text.model';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
+import { Page } from 'widgets/Page';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const initialReducers: ReducersList = {
@@ -85,23 +86,25 @@ const ProfilePage = () => {
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
-      <ProfilePageHeader />
-      {validateErrors?.length && validateErrors.map((err) => (
-        <Text key={err} theme={TextTheme.ERROR} text={validateErrorsTranslates[err]} />))}
-      <ProfileCard
-        data={formData}
-        isLoading={isLoading}
-        error={error}
-        readonly={readonly}
-        onChangeLastName={onChangeLastName}
-        onChangeFirstName={onChangeFirstName}
-        onChangeAge={onChangeAge}
-        onChangeCity={onChangeCity}
-        onChangeAvatar={onChangeAvatar}
-        onChangeUsername={onChangeUsername}
-        onChangeCurrency={onChangeCurrency}
-        onChangeCountry={onChangeCountry}
-      />
+      <Page>
+        <ProfilePageHeader />
+        {validateErrors?.length && validateErrors.map((err) => (
+          <Text key={err} theme={TextTheme.ERROR} text={validateErrorsTranslates[err]} />))}
+        <ProfileCard
+          data={formData}
+          isLoading={isLoading}
+          error={error}
+          readonly={readonly}
+          onChangeLastName={onChangeLastName}
+          onChangeFirstName={onChangeFirstName}
+          onChangeAge={onChangeAge}
+          onChangeCity={onChangeCity}
+          onChangeAvatar={onChangeAvatar}
+          onChangeUsername={onChangeUsername}
+          onChangeCurrency={onChangeCurrency}
+          onChangeCountry={onChangeCountry}
+        />
+      </Page>
     </DynamicModuleLoader>
   );
 };

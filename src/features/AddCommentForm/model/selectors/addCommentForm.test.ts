@@ -24,6 +24,6 @@ describe('addCommentFormData', () => {
 
   test('should work with empty addCommentForm message state', () => {
     const state: DeepPartial<StateModel> = {};
-    expect(getAddCommentFormMessage(state as StateModel)).toEqual(undefined);
+    expect(getAddCommentFormMessage(state as StateModel)).toEqual('');
   });
 });

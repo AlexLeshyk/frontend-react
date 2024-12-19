@@ -10,11 +10,12 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch, useInitialEffect } from 'shared/hooks';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import classes from './ArticlePage.module.css';
+import { Page } from 'widgets/Page';
 import { articleCommentsReducer, getArticleComments } from '../model/slice/articleCommentsSlice';
 import { getArticleCommentsIsLoading } from '../model/selectors/comments';
 import { getCommentsByArticleId } from '../model/services/getCommentsByArticleId/getCommentsByArticleId';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
+import classes from './ArticlePage.module.css';
 
 const reducers: ReducersList = {
   articleComments: articleCommentsReducer,
@@ -43,14 +44,16 @@ const ArticlePage = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <Button onClick={onBackToList}>{t('List back')}</Button>
-      <Article id={id as string} />
-      <Title title={t('Comments')} size={TitleSize.H3} className={classes.commentTitle} />
-      <AddCommentForm onAddComment={onAddComment} />
-      <CommentList
-        isLoading={isLoading}
-        comments={comments}
-      />
+      <Page>
+        <Button onClick={onBackToList}>{t('List back')}</Button>
+        <Article id={id as string} />
+        <Title title={t('Comments')} size={TitleSize.H3} className={classes.commentTitle} />
+        <AddCommentForm onAddComment={onAddComment} />
+        <CommentList
+          isLoading={isLoading}
+          comments={comments}
+        />
+      </Page>
     </DynamicModuleLoader>
   );
 };

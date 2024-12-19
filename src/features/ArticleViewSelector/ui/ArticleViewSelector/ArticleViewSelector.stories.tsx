@@ -12,8 +12,14 @@ export default {
 
 type Story = StoryObj<typeof ArticleViewSelector>;
 
-export const Primary: Story = {
+export const TileSelected: Story = {
   args: {
     view: ArticleListView.TILE,
+  },
+};
+
+export const ListSelected: Story = {
+  args: {
+    view: ArticleListView.LIST,
   },
 };

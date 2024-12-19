@@ -19,21 +19,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
     <ArticleListItem key={article.id} article={article} view={view} />
   );
 
-  const getSkeletons = (view: ArticleListView) => new Array(view === ArticleListView.TILE ? 9 : 3)
+  const getSkeletons = (view: ArticleListView) => new Array(view === ArticleListView.TILE ? 8 : 3)
     // eslint-disable-next-line react/no-array-index-key
     .fill(0).map((_, index) => (<ArticleListItemSkeleton view={view} key={index} />));
-
-  if (isLoading) {
-    return (
-      <div className={cx({
-        [classes.wrapper]: true,
-        [classes[view]]: view,
-      })}
-      >
-        {getSkeletons(view)}
-      </div>
-    );
-  }
 
   if (articles.length === 0) {
     return null;
@@ -46,6 +34,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     })}
     >
       {articles?.length > 0 ? articles?.map(renderArticle) : null}
+      {isLoading && getSkeletons(view)}
     </div>
   );
 });
