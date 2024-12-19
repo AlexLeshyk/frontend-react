@@ -2,11 +2,12 @@ import { ArticleList, ArticleListView } from 'entities/Article';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib';
-import { Page, Title } from 'shared/ui';
+import { Title } from 'shared/ui';
 import { TitleSize } from 'shared/ui/Title/Title';
 import { useAppDispatch, useInitialEffect } from 'shared/hooks';
 import { useSelector } from 'react-redux';
 import { ArticleViewSelector } from 'features/ArticleViewSelector';
+import { Page } from 'widgets/Page';
 import { articlesPageReducer, articlesPageActions, getArticles } from '../model/slice/articlesPageSlice';
 import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView }
   from '../model/selectors/articlesPageSelectors';

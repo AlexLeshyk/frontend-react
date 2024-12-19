@@ -12,4 +12,3 @@ export { Title } from './Title/Title';
 export { Code } from './Code/Code';
 export { Skeleton } from './Skeleton/Skeleton';
 export { Card } from './Card/Card';
-export { Page } from './Page/Page';

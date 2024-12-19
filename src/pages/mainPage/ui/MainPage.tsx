@@ -2,10 +2,12 @@
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  Button, Input, MegaBoost, Page, Title,
+  Button, Input, MegaBoost, Title,
 } from 'shared/ui';
+
 import { ButtonTheme } from 'shared/ui/Button/Button.model';
 import { TitleSize } from 'shared/ui/Title/Title';
+import { Page } from 'widgets/Page';
 
 const MainPage = () => {
   const { t } = useTranslation();

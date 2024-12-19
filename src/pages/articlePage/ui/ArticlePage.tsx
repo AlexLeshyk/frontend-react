@@ -3,18 +3,19 @@ import { CommentList } from 'entities/Comment';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Button, Page, Title } from 'shared/ui';
+import { Button, Title } from 'shared/ui';
 import { TitleSize } from 'shared/ui/Title/Title';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib';
 import { useSelector } from 'react-redux';
 import { useAppDispatch, useInitialEffect } from 'shared/hooks';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import classes from './ArticlePage.module.css';
+import { Page } from 'widgets/Page';
 import { articleCommentsReducer, getArticleComments } from '../model/slice/articleCommentsSlice';
 import { getArticleCommentsIsLoading } from '../model/selectors/comments';
 import { getCommentsByArticleId } from '../model/services/getCommentsByArticleId/getCommentsByArticleId';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
+import classes from './ArticlePage.module.css';
 
 const reducers: ReducersList = {
   articleComments: articleCommentsReducer,
