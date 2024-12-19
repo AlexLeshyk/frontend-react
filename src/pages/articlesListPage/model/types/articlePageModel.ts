@@ -5,4 +5,7 @@ export interface ArticlePageModel extends EntityState<Article> {
   isLoading?: boolean;
   error?: string;
   view: ArticleListView;
+  limit?: number;
+  page: number;
+  hasPage: boolean;
 }

@@ -1,6 +1,8 @@
 import { StateModel } from 'app/providers/StoreProvider';
 import { ArticleListView } from 'entities/Article';
-import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from './articlesPageSelectors';
+import {
+  getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView, getArticlesPageHasPage, getArticlesPageNumber,
+} from './articlesPageSelectors';
 
 describe('articlesPageSelectors', () => {
   test('should return articlesPage error state', () => {
@@ -39,5 +41,29 @@ describe('articlesPageSelectors', () => {
       articlesPage: { view: ArticleListView.TILE },
     };
     expect(getArticlesPageView(state as StateModel)).toEqual('tile');
+  });
+
+  test('should return articlesPage hasPage state', () => {
+    const state: DeepPartial<StateModel> = {
+      articlesPage: { hasPage: true },
+    };
+    expect(getArticlesPageHasPage(state as StateModel)).toEqual(true);
+  });
+
+  test('should work with empty articlesPage hasPage state', () => {
+    const state: DeepPartial<StateModel> = {};
+    expect(getArticlesPageHasPage(state as StateModel)).toEqual(undefined);
+  });
+
+  test('should return articlesPage page state', () => {
+    const state: DeepPartial<StateModel> = {
+      articlesPage: { page: 1 },
+    };
+    expect(getArticlesPageNumber(state as StateModel)).toEqual(1);
+  });
+
+  test('should work with empty articlesPage page state', () => {
+    const state: DeepPartial<StateModel> = {};
+    expect(getArticlesPageNumber(state as StateModel)).toEqual(1);
   });
 });

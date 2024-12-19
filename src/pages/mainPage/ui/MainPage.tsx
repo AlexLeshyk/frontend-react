@@ -2,7 +2,7 @@
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  Button, Input, MegaBoost, Title,
+  Button, Input, MegaBoost, Page, Title,
 } from 'shared/ui';
 import { ButtonTheme } from 'shared/ui/Button/Button.model';
 import { TitleSize } from 'shared/ui/Title/Title';
@@ -34,7 +34,7 @@ const MainPage = () => {
   }, []);
 
   return (
-    <div>
+    <Page>
       <Title size={TitleSize.H2} title={t('Main Page')} />
       <div>
         Count:
@@ -125,7 +125,7 @@ const MainPage = () => {
           handleClick={handleMegaBoost}
         />
       </div>
-    </div>
+    </Page>
   );
 };
 

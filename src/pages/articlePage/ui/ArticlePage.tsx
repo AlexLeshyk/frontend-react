@@ -3,7 +3,7 @@ import { CommentList } from 'entities/Comment';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Button, Title } from 'shared/ui';
+import { Button, Page, Title } from 'shared/ui';
 import { TitleSize } from 'shared/ui/Title/Title';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib';
 import { useSelector } from 'react-redux';
@@ -43,14 +43,16 @@ const ArticlePage = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <Button onClick={onBackToList}>{t('List back')}</Button>
-      <Article id={id as string} />
-      <Title title={t('Comments')} size={TitleSize.H3} className={classes.commentTitle} />
-      <AddCommentForm onAddComment={onAddComment} />
-      <CommentList
-        isLoading={isLoading}
-        comments={comments}
-      />
+      <Page>
+        <Button onClick={onBackToList}>{t('List back')}</Button>
+        <Article id={id as string} />
+        <Title title={t('Comments')} size={TitleSize.H3} className={classes.commentTitle} />
+        <AddCommentForm onAddComment={onAddComment} />
+        <CommentList
+          isLoading={isLoading}
+          comments={comments}
+        />
+      </Page>
     </DynamicModuleLoader>
   );
 };

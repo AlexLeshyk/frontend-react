@@ -1,10 +1,15 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Page } from 'shared/ui';
 
 const AboutPage = () => {
   const { t } = useTranslation('about');
 
-  return <div>{t('About')}</div>;
+  return (
+    <Page>
+      <div>{t('About')}</div>
+    </Page>
+  );
 };
 
 export default memo(AboutPage);

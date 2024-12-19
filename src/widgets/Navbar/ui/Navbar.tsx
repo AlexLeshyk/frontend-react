@@ -36,7 +36,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }, [dispatch, onCloseModal]);
 
   return (
-    <div
+    <header
       className={cx({
         [classes.wrapper]: true,
         [className as string]: className,
@@ -56,6 +56,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           )}
       </div>
       {!authData && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
-    </div>
+    </header>
   );
 });
