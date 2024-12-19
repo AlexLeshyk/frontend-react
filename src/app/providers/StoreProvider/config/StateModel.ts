@@ -9,7 +9,6 @@ import { AddCommentFormModel } from 'features/AddCommentForm';
 import { LoginModel } from 'features/AuthUserName/model/types/loginModel';
 import { ArticleCommentsModel } from 'pages/articlePage';
 import { ArticlePageModel } from 'pages/articlesListPage';
-import { NavigateOptions, To } from 'react-router-dom';
 
 export interface StateModel {
   user: UserModel,
@@ -38,7 +37,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateModel> {
 
 export interface ThunkExtraArg {
   api: AxiosInstance;
-  navigate?: (to: To, options?: NavigateOptions) => void;
 }
 
 export interface ThunkConfig<T> {

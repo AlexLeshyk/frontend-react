@@ -2,6 +2,7 @@ import { StateModel } from 'app/providers/StoreProvider';
 import { ArticleListView } from 'entities/Article';
 import {
   getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView, getArticlesPageHasPage, getArticlesPageNumber,
+  getArticlesPageInited,
 } from './articlesPageSelectors';
 
 describe('articlesPageSelectors', () => {
@@ -53,6 +54,18 @@ describe('articlesPageSelectors', () => {
   test('should work with empty articlesPage hasPage state', () => {
     const state: DeepPartial<StateModel> = {};
     expect(getArticlesPageHasPage(state as StateModel)).toEqual(undefined);
+  });
+
+  test('should return articlesPage inited state', () => {
+    const state: DeepPartial<StateModel> = {
+      articlesPage: { inited: false },
+    };
+    expect(getArticlesPageInited(state as StateModel)).toEqual(false);
+  });
+
+  test('should work with empty articlesPage inited state', () => {
+    const state: DeepPartial<StateModel> = {};
+    expect(getArticlesPageInited(state as StateModel)).toEqual(undefined);
   });
 
   test('should return articlesPage page state', () => {

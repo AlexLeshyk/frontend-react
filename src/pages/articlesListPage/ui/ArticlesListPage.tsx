@@ -8,10 +8,10 @@ import { useAppDispatch, useInitialEffect } from 'shared/hooks';
 import { useSelector } from 'react-redux';
 import { ArticleViewSelector } from 'features/ArticleViewSelector';
 import { articlesPageReducer, articlesPageActions, getArticles } from '../model/slice/articlesPageSlice';
-import { getArticlesList } from '../model/services/getArticlesList/getArticlesList';
 import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView }
   from '../model/selectors/articlesPageSelectors';
 import { getNextArticlePage } from '../model/services/getNextArticlePage/getNextArticlePage';
+import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage';
 
 const reducers: ReducersList = {
   articlesPage: articlesPageReducer,
@@ -27,8 +27,7 @@ const ArticlesListPage = () => {
   const view = useSelector(getArticlesPageView);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(getArticlesList({ page: 1 }));
+    dispatch(initArticlesPage());
   });
 
   const onChangeView = useCallback((view: ArticleListView) => {
@@ -40,7 +39,7 @@ const ArticlesListPage = () => {
   }, [dispatch]);
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={onLoadNextPart}>
         <Title title={t('ArticlesListPage')} size={TitleSize.H2} />
         <ArticleViewSelector view={view} onViewClick={onChangeView} />

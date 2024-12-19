@@ -79,7 +79,10 @@ describe('articlesPageSlice', () => {
 
   test('test initState', () => {
     const state: DeepPartial<ArticlePageModel> = { view: ArticleListView.LIST };
-    expect(articlesPageReducer(state as ArticlePageModel, articlesPageActions.initState())).toEqual({ view: 'tile', limit: 9 });
+    expect(articlesPageReducer(
+      state as ArticlePageModel,
+      articlesPageActions.initState(),
+    )).toEqual({ view: 'tile', limit: 9, inited: true });
   });
 
   test('test getArticlesList pending state', () => {
