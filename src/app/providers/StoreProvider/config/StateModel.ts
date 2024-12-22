@@ -6,12 +6,14 @@ import { ArticleDetailsModel } from 'entities/Article';
 import { ProfileModel } from 'entities/Profile';
 import { UserModel } from 'entities/User';
 import { AddCommentFormModel } from 'features/AddCommentForm';
-import { LoginModel } from 'features/AuthUserName/model/types/loginModel';
+import { LoginModel } from 'features/AuthUserName';
+import { ScrollSaveModel } from 'features/ScrollSave';
 import { ArticleCommentsModel } from 'pages/articlePage';
 import { ArticlePageModel } from 'pages/articlesListPage';
 
 export interface StateModel {
   user: UserModel,
+  scrollSave: ScrollSaveModel,
 
   // async reducers
   loginForm?: LoginModel,
