@@ -1,5 +1,7 @@
 import { ArticleListView } from 'entities/Article';
-import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import {
+  Article, ArticleBlockType, ArticleSortField, ArticleType,
+} from 'entities/Article/model/types/article';
 import { articlesPageActions, articlesPageReducer } from './articlesPageSlice';
 import { ArticlePageModel } from '../types/articlePageModel';
 import { getArticlesList } from '../services/getArticlesList/getArticlesList';
@@ -77,6 +79,21 @@ describe('articlesPageSlice', () => {
     expect(articlesPageReducer(state as ArticlePageModel, articlesPageActions.setPage(2))).toEqual({ page: 2 });
   });
 
+  test('test setSearch', () => {
+    const state: DeepPartial<ArticlePageModel> = { search: '' };
+    expect(articlesPageReducer(state as ArticlePageModel, articlesPageActions.setSerch('some'))).toEqual({ search: 'some' });
+  });
+
+  test('test setSort', () => {
+    const state: DeepPartial<ArticlePageModel> = { sort: ArticleSortField.CREATED };
+    expect(articlesPageReducer(state as ArticlePageModel, articlesPageActions.setSort(ArticleSortField.VIEWS))).toEqual({ sort: 'views' });
+  });
+
+  test('test setOrder', () => {
+    const state: DeepPartial<ArticlePageModel> = { order: 'asc' };
+    expect(articlesPageReducer(state as ArticlePageModel, articlesPageActions.setOrder('desc'))).toEqual({ order: 'desc' });
+  });
+
   test('test initState', () => {
     const state: DeepPartial<ArticlePageModel> = { view: ArticleListView.LIST };
     expect(articlesPageReducer(
@@ -92,7 +109,7 @@ describe('articlesPageSlice', () => {
     };
     expect(articlesPageReducer(
       state as ArticlePageModel,
-      getArticlesList.pending,
+      getArticlesList.pending('', { replace: false }, {}),
     )).toEqual({ isLoading: true, error: undefined });
   });
 
@@ -106,7 +123,7 @@ describe('articlesPageSlice', () => {
     };
     expect(articlesPageReducer(
       state as ArticlePageModel,
-      getArticlesList.fulfilled(articles, '', { page: 1 }),
+      getArticlesList.fulfilled(articles, '', {}),
     )).toEqual({
       hasPage: true,
       isLoading: false,

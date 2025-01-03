@@ -18,6 +18,12 @@ export enum ArticleListView {
   TILE = 'tile',
 }
 
+export enum ArticleSortField {
+  VIEWS = 'views',
+  TITLE = 'title',
+  CREATED = 'createdAt',
+}
+
 export interface ArticleBlockBase {
   id: string;
   type: ArticleBlockType;

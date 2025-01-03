@@ -43,7 +43,7 @@ export const Page = (props: PageProps) => {
       onScroll={(event: UIEvent<HTMLDivElement>) => throttledOnScroll(event.currentTarget.scrollTop)}
     >
       {children}
-      {onScrollEnd ? <div ref={triggerRef} /> : null}
+      {onScrollEnd ? <div ref={triggerRef} className={classes.trigger} /> : null}
     </section>
   );
 };

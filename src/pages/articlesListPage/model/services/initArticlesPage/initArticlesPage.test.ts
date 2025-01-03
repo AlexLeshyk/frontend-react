@@ -22,7 +22,7 @@ describe('initArticlesPage', () => {
 
     expect(thunk.dispatch).toBeCalledTimes(4);
     expect(getArticlesList).toHaveBeenCalled();
-    expect(getArticlesList).toHaveBeenCalledWith({ page: 1 });
+    expect(getArticlesList).toHaveBeenCalledWith({});
   });
 
   test('getArticlesList not called', async () => {

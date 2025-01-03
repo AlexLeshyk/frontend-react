@@ -1,4 +1,11 @@
 {
   "ArticlesListPage": "Articles List Page",
-  "Read more": "Read more..."
+  "Read more": "Read more...",
+  "Search": "Search",
+  "SortBy": "Sort by",
+  "Date": "date of creation",
+  "Name": "name",
+  "Views": "views",
+  "Increase": "increase",
+  "Descend": "descend"
 }
