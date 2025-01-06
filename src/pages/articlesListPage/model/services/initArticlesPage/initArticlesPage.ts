@@ -12,23 +12,22 @@ export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkCon
   async (searchParams, thunkAPI) => {
     const { getState, dispatch } = thunkAPI;
     const inited = getArticlesPageInited(getState());
-    const sortUrl = searchParams.get('sort') as ArticleSortField;
-    const orderUrl = searchParams.get('order') as SortOrder;
-    const searchUrl = searchParams.get('search');
-
-    if (sortUrl) {
-      dispatch(articlesPageActions.setSort(sortUrl));
-    }
-
-    if (orderUrl) {
-      dispatch(articlesPageActions.setOrder(orderUrl));
-    }
-
-    if (searchUrl) {
-      dispatch(articlesPageActions.setSerch(searchUrl));
-    }
 
     if (!inited) {
+      const sortUrl = searchParams.get('sort') as ArticleSortField;
+      const orderUrl = searchParams.get('order') as SortOrder;
+      const searchUrl = searchParams.get('search');
+
+      if (sortUrl) {
+        dispatch(articlesPageActions.setSort(sortUrl));
+      }
+      if (orderUrl) {
+        dispatch(articlesPageActions.setOrder(orderUrl));
+      }
+      if (searchUrl) {
+        dispatch(articlesPageActions.setSerch(searchUrl));
+      }
+
       dispatch(articlesPageActions.initState());
       dispatch(getArticlesList({}));
     }
