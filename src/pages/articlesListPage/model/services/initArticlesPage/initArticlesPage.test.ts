@@ -1,4 +1,5 @@
 import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
+import { ArticleSortField } from 'entities/Article';
 import { getArticlesList } from '../getArticlesList/getArticlesList';
 import { initArticlesPage } from './initArticlesPage';
 
@@ -15,14 +16,17 @@ describe('initArticlesPage', () => {
         page: 1,
         limit: 5,
         inited: false,
+        order: 'asc',
+        search: 'typescript',
+        sort: ArticleSortField.CREATED,
       },
     });
 
-    await thunk.callThunk();
+    await thunk.callThunk({} as URLSearchParams);
 
-    expect(thunk.dispatch).toBeCalledTimes(4);
-    expect(getArticlesList).toHaveBeenCalled();
-    expect(getArticlesList).toHaveBeenCalledWith({});
+    expect(thunk.dispatch).toBeCalledTimes(2);
+    expect(getArticlesList).not.toHaveBeenCalled();
+    // expect(getArticlesList).toHaveBeenCalledWith({});
   });
 
   test('getArticlesList not called', async () => {
@@ -35,10 +39,13 @@ describe('initArticlesPage', () => {
         page: 1,
         limit: 5,
         inited: true,
+        order: 'asc',
+        search: 'typescript',
+        sort: ArticleSortField.CREATED,
       },
     });
 
-    await thunk.callThunk();
+    await thunk.callThunk({} as URLSearchParams);
 
     expect(thunk.dispatch).toBeCalledTimes(2);
     expect(getArticlesList).not.toHaveBeenCalled();

@@ -118,6 +118,7 @@ describe('articlesPageSlice', () => {
       isLoading: true,
       view: ArticleListView.LIST,
       hasPage: false,
+      limit: 5,
       ids: [],
       entities: {},
     };
@@ -125,8 +126,9 @@ describe('articlesPageSlice', () => {
       state as ArticlePageModel,
       getArticlesList.fulfilled(articles, '', {}),
     )).toEqual({
-      hasPage: true,
+      hasPage: false,
       isLoading: false,
+      limit: 5,
       view: 'list',
       ids: ['1', '2'],
       entities: {

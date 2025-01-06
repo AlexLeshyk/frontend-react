@@ -69,7 +69,7 @@ const articlesPageSlice = createSlice({
         action,
       ) => {
         state.isLoading = false;
-        state.hasPage = action.payload.length > 0;
+        state.hasPage = action.payload.length >= state.limit;
 
         if (action.meta.arg.replace) {
           articlesAdapter.setAll(state, action.payload);
