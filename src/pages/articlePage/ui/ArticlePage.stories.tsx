@@ -7,7 +7,7 @@ import avatar from 'shared/images/tests/oduvanchik-na-solncze.jpg';
 import ArticlePage from './ArticlePage';
 
 export default {
-  title: 'pages/ArticlePage',
+  title: 'pages/article/ArticlePage',
   component: ArticlePage,
   argTypes: {
     backgroundColor: { control: 'color' },

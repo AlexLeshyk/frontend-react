@@ -3,23 +3,23 @@ import { ChangeEvent, memo, useMemo } from 'react';
 
 import classes from './Select.module.css';
 
-export interface SelectOptions {
-  value: string;
+export interface SelectOptions<T extends string> {
+  value: T;
   name: string;
 }
 
-interface SelectProps {
+interface SelectProps<T extends string> {
   label?: string;
-  options?: Array<SelectOptions>;
-  value?: string;
-  onChange?: (value: string) => void;
+  options?: Array<SelectOptions<T>>;
+  value?: T;
+  onChange?: (value: T) => void;
   className?: string;
   readonly?: boolean;
 }
 
-export const Select = memo(({
+const SelectComponent = <T extends string>({
   label, onChange, value, className, options, readonly,
-}: SelectProps) => {
+}: SelectProps<T>) => {
   const optionsList = useMemo(() => options?.map((item) => (
     <option
       key={item.value}
@@ -31,7 +31,7 @@ export const Select = memo(({
   )), [options]);
 
   const onChangeSelect = (e: ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(e.target.value);
+    onChange?.(e.target.value as T);
   };
 
   return (
@@ -51,4 +51,6 @@ export const Select = memo(({
       </select>
     </div>
   );
-});
+};
+
+export const Select = memo(SelectComponent) as typeof SelectComponent;

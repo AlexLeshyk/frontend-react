@@ -3,6 +3,7 @@ import {
 } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
+import { scrollSaveReducer } from 'features/ScrollSave';
 import { StateModel, ThunkExtraArg } from './StateModel';
 import { createReducerManager } from './reducerManager';
 
@@ -13,6 +14,7 @@ export function createReduxStore(
   const rootReducers: ReducersMapObject<StateModel> = {
     ...asyncReducers,
     user: userReducer,
+    scrollSave: scrollSaveReducer,
     // loginForm: loginReducer,
   };
 
