@@ -7,5 +7,9 @@
   "Name": "name",
   "Views": "views",
   "Increase": "increase",
-  "Descend": "descend"
+  "Descend": "descend",
+  "All": "All",
+  "IT": "IT",
+  "Science": "Science",
+  "Economics": "Economics"
 }

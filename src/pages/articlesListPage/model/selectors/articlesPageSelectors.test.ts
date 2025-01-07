@@ -1,8 +1,8 @@
 import { StateModel } from 'app/providers/StoreProvider';
-import { ArticleListView } from 'entities/Article';
+import { ArticleListView, ArticleSortField, ArticleType } from 'entities/Article';
 import {
   getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView, getArticlesPageHasPage, getArticlesPageNumber,
-  getArticlesPageInited,
+  getArticlesPageInited, getArticlesPageType, getArticlesPageSort, getArticlesPageOrder, getArticlesPageSearch,
 } from './articlesPageSelectors';
 
 describe('articlesPageSelectors', () => {
@@ -78,5 +78,53 @@ describe('articlesPageSelectors', () => {
   test('should work with empty articlesPage page state', () => {
     const state: DeepPartial<StateModel> = {};
     expect(getArticlesPageNumber(state as StateModel)).toEqual(1);
+  });
+
+  test('should return articlesPage type state', () => {
+    const state: DeepPartial<StateModel> = {
+      articlesPage: { type: ArticleType.IT },
+    };
+    expect(getArticlesPageType(state as StateModel)).toEqual('IT');
+  });
+
+  test('should work with empty articlesPage type state', () => {
+    const state: DeepPartial<StateModel> = {};
+    expect(getArticlesPageType(state as StateModel)).toEqual('ALL');
+  });
+
+  test('should return articlesPage sort state', () => {
+    const state: DeepPartial<StateModel> = {
+      articlesPage: { sort: ArticleSortField.TITLE },
+    };
+    expect(getArticlesPageSort(state as StateModel)).toEqual('title');
+  });
+
+  test('should work with empty articlesPage sort state', () => {
+    const state: DeepPartial<StateModel> = {};
+    expect(getArticlesPageSort(state as StateModel)).toEqual('createdAt');
+  });
+
+  test('should return articlesPage order state', () => {
+    const state: DeepPartial<StateModel> = {
+      articlesPage: { order: 'desc' },
+    };
+    expect(getArticlesPageOrder(state as StateModel)).toEqual('desc');
+  });
+
+  test('should work with empty articlesPage order state', () => {
+    const state: DeepPartial<StateModel> = {};
+    expect(getArticlesPageOrder(state as StateModel)).toEqual('asc');
+  });
+
+  test('should return articlesPage search state', () => {
+    const state: DeepPartial<StateModel> = {
+      articlesPage: { search: 'typescript' },
+    };
+    expect(getArticlesPageSearch(state as StateModel)).toEqual('typescript');
+  });
+
+  test('should work with empty articlesPage search state', () => {
+    const state: DeepPartial<StateModel> = {};
+    expect(getArticlesPageSearch(state as StateModel)).toEqual('');
   });
 });

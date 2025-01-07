@@ -1,5 +1,5 @@
 import { StateModel } from 'app/providers/StoreProvider';
-import { ArticleListView, ArticleSortField } from 'entities/Article';
+import { ArticleListView, ArticleSortField, ArticleType } from 'entities/Article';
 
 export const getArticlesPageIsLoading = (state: StateModel) => state.articlesPage?.isLoading;
 export const getArticlesPageError = (state: StateModel) => state.articlesPage?.error;
@@ -11,3 +11,4 @@ export const getArticlesPageInited = (state: StateModel) => state.articlesPage?.
 export const getArticlesPageSort = (state: StateModel) => state.articlesPage?.sort || ArticleSortField.CREATED;
 export const getArticlesPageOrder = (state: StateModel) => state.articlesPage?.order || 'asc';
 export const getArticlesPageSearch = (state: StateModel) => state.articlesPage?.search || '';
+export const getArticlesPageType = (state: StateModel) => state.articlesPage?.type || ArticleType.ALL;

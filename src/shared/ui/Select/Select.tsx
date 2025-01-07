@@ -1,5 +1,5 @@
 import cx from 'clsx';
-import { ChangeEvent, useMemo } from 'react';
+import { ChangeEvent, memo, useMemo } from 'react';
 
 import classes from './Select.module.css';
 
@@ -17,7 +17,7 @@ interface SelectProps<T extends string> {
   readonly?: boolean;
 }
 
-export const Select = <T extends string>({
+const SelectComponent = <T extends string>({
   label, onChange, value, className, options, readonly,
 }: SelectProps<T>) => {
   const optionsList = useMemo(() => options?.map((item) => (
@@ -52,3 +52,5 @@ export const Select = <T extends string>({
     </div>
   );
 };
+
+export const Select = memo(SelectComponent) as typeof SelectComponent;

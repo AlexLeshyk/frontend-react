@@ -94,6 +94,11 @@ describe('articlesPageSlice', () => {
     expect(articlesPageReducer(state as ArticlePageModel, articlesPageActions.setOrder('desc'))).toEqual({ order: 'desc' });
   });
 
+  test('test setType', () => {
+    const state: DeepPartial<ArticlePageModel> = { type: ArticleType.IT };
+    expect(articlesPageReducer(state as ArticlePageModel, articlesPageActions.setType(ArticleType.SCIENCE))).toEqual({ type: 'SCIENCE' });
+  });
+
   test('test initState', () => {
     const state: DeepPartial<ArticlePageModel> = { view: ArticleListView.LIST };
     expect(articlesPageReducer(
