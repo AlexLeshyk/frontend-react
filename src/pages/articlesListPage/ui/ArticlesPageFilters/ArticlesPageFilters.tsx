@@ -1,4 +1,4 @@
-import { ArticleListView, ArticleSortField } from 'entities/Article';
+import { ArticleListView, ArticleSortField, ArticleType } from 'entities/Article';
 import { ArticleViewSelector } from 'features/ArticleViewSelector';
 import { memo, useCallback } from 'react';
 import { useAppDispatch, useDebounce } from 'shared/hooks';
@@ -7,7 +7,6 @@ import { Card, Input } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { SortOrder } from 'shared/types';
 import { TabItem } from 'shared/ui/Tabs/Tabs';
-import { ArticleType } from 'entities/Article/model/types/article';
 import { ArticleTypeTabs } from 'features/ArticleTypeTabs';
 import { ArticleSortSelector } from 'features/ArticleSortSelector';
 import { articlesPageActions } from '../../model/slice/articlesPageSlice';

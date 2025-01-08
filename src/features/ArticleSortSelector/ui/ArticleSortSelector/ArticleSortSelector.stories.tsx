@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
+import { ArticleSortField } from 'entities/Article';
 import { ArticleSortSelector } from './ArticleSortSelector';
-import { ArticleSortField } from '../../../../entities/Article/model/types/article';
 
 export default {
   title: 'features/Article/ArticleSortSelector',

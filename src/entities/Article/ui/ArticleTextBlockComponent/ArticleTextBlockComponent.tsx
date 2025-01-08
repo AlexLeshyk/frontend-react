@@ -1,5 +1,5 @@
 import cx from 'clsx';
-import { ArticleTextBlock } from 'entities/Article/model/types/article';
+import { ArticleTextBlock } from 'entities/Article';
 import { memo } from 'react';
 import { Title, Text } from 'shared/ui';
 
