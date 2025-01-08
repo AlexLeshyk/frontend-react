@@ -1,7 +1,6 @@
-import { ArticleListView } from 'entities/Article';
 import {
-  Article, ArticleBlockType, ArticleSortField, ArticleType,
-} from 'entities/Article/model/types/article';
+  ArticleModel, ArticleListView, ArticleBlockType, ArticleSortField, ArticleType,
+} from 'entities/Article';
 import { articlesPageActions, articlesPageReducer } from './articlesPageSlice';
 import { ArticlePageModel } from '../types/articlePageModel';
 import { getArticlesList } from '../services/getArticlesList/getArticlesList';
@@ -66,7 +65,7 @@ const articles = [
       id: '2',
     },
   },
-] as Array<Article>;
+] as Array<ArticleModel>;
 
 describe('articlesPageSlice', () => {
   test('test setView', () => {

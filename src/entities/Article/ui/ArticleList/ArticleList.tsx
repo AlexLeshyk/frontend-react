@@ -1,6 +1,8 @@
 import cx from 'clsx';
 import { memo } from 'react';
 
+import { Text } from 'shared/ui';
+import { useTranslation } from 'react-i18next';
 import classes from './ArticleList.module.css';
 import { Article, ArticleListView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -15,6 +17,8 @@ interface ArticleListProps {
 export const ArticleList = memo((props: ArticleListProps) => {
   const { articles, isLoading, view = ArticleListView.TILE } = props;
 
+  const { t } = useTranslation('articleList');
+
   const renderArticle = (article: Article) => (
     <ArticleListItem key={article.id} article={article} view={view} />
   );
@@ -23,8 +27,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
     // eslint-disable-next-line react/no-array-index-key
     .fill(0).map((_, index) => (<ArticleListItemSkeleton view={view} key={index} />));
 
-  if (articles.length === 0) {
-    return null;
+  if (!isLoading && !articles.length) {
+    return (
+      <div className={cx({ [classes.wrapper]: true, [classes[view]]: view })}>
+        <Text title={t('NoArticles')} />
+      </div>
+    );
   }
 
   return (

@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
+import { ArticleSortField } from 'entities/Article';
 import { ArticleSortSelector } from './ArticleSortSelector';
-import { ArticleSortField } from '../../model/types/article';
 
 export default {
-  title: 'entities/Article/ArticleSortSelector',
+  title: 'features/Article/ArticleSortSelector',
   component: ArticleSortSelector,
   argTypes: {
     backgroundColor: { control: 'color' },

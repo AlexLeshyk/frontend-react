@@ -1,13 +1,14 @@
-import { ArticleListView, ArticleSortField, ArticleSortSelector } from 'entities/Article';
+import { ArticleListView, ArticleSortField, ArticleType } from 'entities/Article';
 import { ArticleViewSelector } from 'features/ArticleViewSelector';
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useCallback } from 'react';
 import { useAppDispatch, useDebounce } from 'shared/hooks';
 import { useSelector } from 'react-redux';
-import { Card, Input, Tabs } from 'shared/ui';
+import { Card, Input } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { SortOrder } from 'shared/types';
 import { TabItem } from 'shared/ui/Tabs/Tabs';
-import { ArticleType } from 'entities/Article/model/types/article';
+import { ArticleTypeTabs } from 'features/ArticleTypeTabs';
+import { ArticleSortSelector } from 'features/ArticleSortSelector';
 import { articlesPageActions } from '../../model/slice/articlesPageSlice';
 import {
   getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageType, getArticlesPageView,
@@ -26,25 +27,6 @@ export const ArticlesPageFilters = memo(() => {
   const sort = useSelector(getArticlesPageSort);
   const search = useSelector(getArticlesPageSearch);
   const type = useSelector(getArticlesPageType);
-
-  const typeTabs = useMemo<Array<TabItem<ArticleType>>>(() => [
-    {
-      value: ArticleType.ALL,
-      content: t('All'),
-    },
-    {
-      value: ArticleType.IT,
-      content: t('IT'),
-    },
-    {
-      value: ArticleType.SCIENCE,
-      content: t('Science'),
-    },
-    {
-      value: ArticleType.ECONOMICS,
-      content: t('Economics'),
-    },
-  ], [t]);
 
   const getData = useCallback(() => {
     dispatch(getArticlesList({ replace: true }));
@@ -76,8 +58,8 @@ export const ArticlesPageFilters = memo(() => {
   const onChangeType = useCallback((tab: TabItem<ArticleType>) => {
     dispatch(articlesPageActions.setType(tab.value));
     dispatch(articlesPageActions.setPage(1));
-    debouncedGetData();
-  }, [dispatch, debouncedGetData]);
+    getData();
+  }, [dispatch, getData]);
 
   return (
     <div>
@@ -97,10 +79,9 @@ export const ArticlesPageFilters = memo(() => {
           onChange={onChangeSearch}
         />
       </Card>
-      <Tabs
-        tabs={typeTabs}
+      <ArticleTypeTabs
         value={type}
-        onTabClick={onChangeType}
+        onChangeType={onChangeType}
         className={classes.tabs}
       />
     </div>
