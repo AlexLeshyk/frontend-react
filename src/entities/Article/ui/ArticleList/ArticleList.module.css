@@ -15,6 +15,18 @@
   row-gap: 24px;
 }
 
+.line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+@media screen and (max-width: 1199px) {
+  .line {
+    column-gap: 16px;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .tile {
     column-gap: 24px;

@@ -16,6 +16,7 @@ export enum ArticleBlockType {
 export enum ArticleListView {
   LIST = 'list',
   TILE = 'tile',
+  LINE = 'line',
 }
 
 export enum ArticleSortField {

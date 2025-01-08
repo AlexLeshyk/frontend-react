@@ -8,7 +8,7 @@ import { UserModel } from 'entities/User';
 import { AddCommentFormModel } from 'features/AddCommentForm';
 import { LoginModel } from 'features/AuthUserName';
 import { ScrollSaveModel } from 'features/ScrollSave';
-import { ArticleCommentsModel } from 'pages/articlePage';
+import { ArticleDetailsPageModel } from 'pages/articlePage';
 import { ArticlePageModel } from 'pages/articlesListPage';
 
 export interface StateModel {
@@ -19,9 +19,9 @@ export interface StateModel {
   loginForm?: LoginModel,
   profile?: ProfileModel,
   article?: ArticleDetailsModel,
-  articleComments?: ArticleCommentsModel,
   addCommentForm?: AddCommentFormModel,
   articlesPage?: ArticlePageModel,
+  articleDetailsPage?: ArticleDetailsPageModel
 }
 
 export type StateModelKey = keyof StateModel;

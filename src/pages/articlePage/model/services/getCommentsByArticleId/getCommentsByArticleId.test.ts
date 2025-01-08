@@ -25,7 +25,7 @@ const data = {
 describe('getCommentsByArticleId', () => {
   test('success get comments by articleId', async () => {
     const thunk = new TestAsyncThunk(getCommentsByArticleId, {
-      articleComments: { entities: data },
+      articleDetailsPage: { comments: { entities: data } },
     });
     thunk.api.get.mockReturnValue(Promise.resolve({ data }));
     const result = await thunk.callThunk('2');
@@ -37,7 +37,7 @@ describe('getCommentsByArticleId', () => {
 
   test('server error get comments by articleId', async () => {
     const thunk = new TestAsyncThunk(getCommentsByArticleId, {
-      articleComments: { entities: data },
+      articleDetailsPage: { comments: { entities: data } },
     });
     thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
     const result = await thunk.callThunk('2');
