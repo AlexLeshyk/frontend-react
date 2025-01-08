@@ -4,7 +4,7 @@ import { SelectOptions } from 'shared/ui/Select/Select';
 import { SortOrder } from 'shared/types';
 import { Select } from 'shared/ui';
 import cx from 'clsx';
-import { ArticleSortField } from '../../model/types/article';
+import { ArticleSortField } from '../../../../entities/Article/model/types/article';
 import classes from './ArticleSortSelector.module.css';
 
 interface ArticleSortSelectorProps {
@@ -59,6 +59,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
         label={t('SortBy')}
         value={sort}
         onChange={onChangeSort}
+        className={classes.sort}
       />
       <Select
         options={orderOptions}

@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.order {
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .order {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .sort {
+    width: 100%;
+  }
+}
