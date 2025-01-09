@@ -16,3 +16,9 @@
   margin-top: 15px;
   margin-left: auto;
 }
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    width: auto;
+  }
+}

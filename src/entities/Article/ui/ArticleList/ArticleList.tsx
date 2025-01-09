@@ -1,5 +1,5 @@
 import cx from 'clsx';
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 
 import { Text } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
@@ -12,15 +12,18 @@ interface ArticleListProps {
   articles: Array<Article>;
   isLoading?: boolean;
   view?: ArticleListView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleList = memo((props: ArticleListProps) => {
-  const { articles, isLoading, view = ArticleListView.TILE } = props;
+  const {
+    articles, isLoading, view = ArticleListView.TILE, target,
+  } = props;
 
   const { t } = useTranslation('articleList');
 
   const renderArticle = (article: Article) => (
-    <ArticleListItem key={article.id} article={article} view={view} />
+    <ArticleListItem key={article.id} article={article} view={view} target={target} />
   );
 
   const getSkeletons = (view: ArticleListView) => new Array(view === ArticleListView.TILE ? 8 : 3)

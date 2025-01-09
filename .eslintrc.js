@@ -33,7 +33,10 @@ module.exports = {
     "no-undef": "off",
     "i18next/no-literal-string": [
       "error",
-      { markupOnly: true, ignoreAttribute: ["data-testid", "to", "htmlFor"] },
+      {
+        markupOnly: true,
+        ignoreAttribute: ["data-testid", "to", "htmlFor", "target"],
+      },
     ],
     "max-len": ["error", { ignoreComments: true, code: 120 }],
     "jsx-a11y/label-has-associated-control": [

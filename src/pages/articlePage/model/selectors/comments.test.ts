@@ -5,7 +5,7 @@ import { getArticleCommentsError, getArticleCommentsIsLoading } from './comments
 describe('getArticleCommentsData', () => {
   test('should return articleComments error state', () => {
     const state: DeepPartial<StateModel> = {
-      articleComments: { error: 'error' },
+      articleDetailsPage: { comments: { error: 'error' } },
     };
     expect(getArticleCommentsError(state as StateModel)).toEqual('error');
   });
@@ -17,7 +17,7 @@ describe('getArticleCommentsData', () => {
 
   test('should return articleComments isLoading state', () => {
     const state: DeepPartial<StateModel> = {
-      articleComments: { isLoading: true },
+      articleDetailsPage: { comments: { isLoading: true } },
     };
     expect(getArticleCommentsIsLoading(state as StateModel)).toEqual(true);
   });

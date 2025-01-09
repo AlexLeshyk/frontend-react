@@ -132,6 +132,13 @@
   margin-top: 8px;
 }
 
+/* line */
+.line {
+  display: block;
+  width: calc(25% - 24px);
+  text-decoration: none;
+}
+
 /* media */
 @media screen and (max-width: 1199px) {
   .tile {
@@ -142,5 +149,17 @@
 @media screen and (max-width: 991px) {
   .tile {
     width: 230px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .line {
+    width: calc(50% - 8px);
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .line {
+    width: 100%;
   }
 }

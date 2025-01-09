@@ -39,7 +39,7 @@ const articleCommentsSlice = createSlice({
 });
 
 export const getArticleComments = commentsAdapter.getSelectors<StateModel>(
-  (state) => state.articleComments || commentsAdapter.getInitialState(),
+  (state) => state.articleDetailsPage?.comments || commentsAdapter.getInitialState(),
 );
 
 export const { reducer: articleCommentsReducer } = articleCommentsSlice;

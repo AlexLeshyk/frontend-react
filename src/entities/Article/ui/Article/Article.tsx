@@ -11,6 +11,7 @@ import { TextAlign, TextTheme } from 'shared/ui/Text/Text.model';
 import EyeIcon from 'shared/icons/eye.svg';
 import CalendarIcon from 'shared/icons/calendar.svg';
 import { TitleSize } from 'shared/ui/Title/Title';
+import { useMediaQuery } from '@mantine/hooks';
 import { getArticleById } from '../../model/services/getArticleById/getArticleById';
 import { articleReducer } from '../../model/slices/articleSlice';
 import { getArticleData, getArticleError, getArticleIsLoading } from '../../model/selectors/article';
@@ -36,7 +37,9 @@ export const Article = memo((props: ArticleProps) => {
   const { t } = useTranslation('article');
   const article = useSelector(getArticleData);
   const error = useSelector(getArticleError);
-  const isLoading = useSelector(getArticleIsLoading);
+  const isLoading = true;
+
+  const isMobile = useMediaQuery('(max-width: 600px)');
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
@@ -58,8 +61,8 @@ export const Article = memo((props: ArticleProps) => {
     content = (
       <>
         <Skeleton border="50%" width={200} height={200} className={classes.skeletonImage} />
-        <Skeleton width={300} height={32} className={classes.title} />
-        <Skeleton width={600} height={24} className={classes.skeleton} />
+        <Skeleton width={isMobile ? '100%' : 300} height={32} className={classes.title} />
+        <Skeleton width={isMobile ? '100%' : 600} height={24} className={classes.skeleton} />
         <Skeleton width="100%" height={200} className={classes.skeleton} />
         <Skeleton width="100%" height={200} className={classes.skeleton} />
       </>
