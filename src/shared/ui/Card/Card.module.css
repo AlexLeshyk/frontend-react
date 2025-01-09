@@ -9,6 +9,7 @@
 
 .normal {
   background: var(--card-bg);
+  border: 1px solid transparent;
 }
 
 .outlined {

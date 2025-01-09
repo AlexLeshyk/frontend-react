@@ -43,3 +43,9 @@
   transform: scale(0.2);
   transition: transform 0.25s ease-in-out;
 }
+
+@media screen and (max-width: 767px) {
+  .content {
+    max-width: 320px;
+  }
+}

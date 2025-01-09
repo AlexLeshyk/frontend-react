@@ -3,7 +3,7 @@ import { CommentList } from 'entities/Comment';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Button, Title } from 'shared/ui';
+import { Button, Skeleton, Title } from 'shared/ui';
 import { TitleSize } from 'shared/ui/Title/Title';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib';
 import { useSelector } from 'react-redux';
@@ -33,7 +33,7 @@ const ArticlePage = () => {
   const navigate = useNavigate();
 
   const comments = useSelector(getArticleComments.selectAll);
-  const isLoading = useSelector(getArticleCommentsIsLoading);
+  const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
   const recommendations = useSelector(getAllArticleRecommendations.selectAll);
   const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
 
@@ -53,7 +53,9 @@ const ArticlePage = () => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page>
-        <Button onClick={onBackToList}>{t('List back')}</Button>
+        {!commentsIsLoading
+          ? <Button onClick={onBackToList} className={classes.back}>{t('List back')}</Button>
+          : <Skeleton width={170} height={48} className={classes.back} />}
         <Article id={id as string} />
         <Title title={t('Recommend')} size={TitleSize.H3} className={classes.commentTitle} />
         <ArticleList
@@ -65,7 +67,7 @@ const ArticlePage = () => {
         <Title title={t('Comments')} size={TitleSize.H3} className={classes.commentTitle} />
         <AddCommentForm onAddComment={onAddComment} />
         <CommentList
-          isLoading={isLoading}
+          isLoading={commentsIsLoading}
           comments={comments}
         />
       </Page>
