@@ -6,3 +6,4 @@ export {
 export type { ArticleDetailsModel } from './model/types/articleDetailsModel';
 export { ArticleListView } from './model/types/article';
 export { ArticleList } from './ui/ArticleList/ArticleList';
+export { getArticleData } from './model/selectors/article';

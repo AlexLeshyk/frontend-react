@@ -1,7 +1,6 @@
 import cx from 'clsx';
-import { SwitcherTheme } from 'widgets/SwitcherTheme';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui';
+import { Button, LinkComponent, Text } from 'shared/ui';
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button.model';
 import { LoginModal } from 'features/AuthUserName';
 
@@ -9,6 +8,9 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/hooks';
 import { getUserAuthData, userActions } from 'entities/User';
 import { memo, useCallback, useState } from 'react';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { LinkTheme } from 'shared/ui/LinkComponent/LinkComponent.model';
+import { TextTheme } from 'shared/ui/Text/Text.model';
 import classes from './Navbar.module.css';
 
 interface NavbarProps {
@@ -42,7 +44,19 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         [className as string]: className,
       })}
     >
-      <SwitcherTheme />
+      <Text
+        className={classes.appName}
+        title={t('App')}
+        theme={TextTheme.INVERTED}
+      />
+      <LinkComponent
+        to={RoutePath.article_create}
+        className={classes.createLink}
+        theme={LinkTheme.SECONDARY}
+      >
+        {t('CreateArticle')}
+      </LinkComponent>
+      {/* <SwitcherTheme /> */}
       <div className={classes.links}>
         {authData
           ? (

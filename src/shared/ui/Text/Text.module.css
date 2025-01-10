@@ -30,3 +30,11 @@
 .right {
   text-align: right;
 }
+
+.inverted .title {
+  color: var(--inverted-primary-color);
+}
+
+.inverted .text {
+  color: var(--inverted-secondary-color);
+}

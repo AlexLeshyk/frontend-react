@@ -1,0 +1,12 @@
+.back {
+  margin-bottom: 16px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.edit {
+  margin-left: auto;
+}

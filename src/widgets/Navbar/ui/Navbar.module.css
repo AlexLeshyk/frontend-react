@@ -7,10 +7,19 @@
   align-items: center;
   gap: 16px;
   background-color: var(--bg-color-inverted);
-  justify-content: space-between;
 }
 
 .links {
   display: flex;
   gap: 16px;
+  margin-left: auto;
+}
+
+.appName {
+  width: calc(var(--sidebar-width) - 20px);
+  margin-left: 15px;
+}
+
+.createLink {
+  margin-left: 15px;
 }

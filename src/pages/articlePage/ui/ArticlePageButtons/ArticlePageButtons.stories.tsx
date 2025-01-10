@@ -3,17 +3,17 @@ import { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ArticlesPageFilters } from './ArticlesPageFilters';
+import { ArticlePageButtons } from './ArticlePageButtons';
 
 export default {
-  title: 'pages/ArticleList/Filters',
-  component: ArticlesPageFilters,
+  title: 'pages/Article/Buttons',
+  component: ArticlePageButtons,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as Meta<typeof ArticlesPageFilters>;
+} as Meta<typeof ArticlePageButtons>;
 
-type Story = StoryObj<typeof ArticlesPageFilters>;
+type Story = StoryObj<typeof ArticlePageButtons>;
 
 export const Primary: Story = {};
 Primary.args = {};

@@ -1,6 +1,7 @@
 export enum TextTheme {
   ERROR = 'error',
   PRIMARY = 'primary',
+  INVERTED = 'inverted'
 }
 
 export enum TextAlign {
