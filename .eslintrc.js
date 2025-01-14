@@ -13,7 +13,13 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
+  plugins: [
+    "react",
+    "@typescript-eslint",
+    "i18next",
+    "react-hooks",
+    "gashy-jet-plugin",
+  ],
   rules: {
     "react/jsx-filename-extension": [
       2,
@@ -50,6 +56,7 @@ module.exports = {
     "no-param-reassign": "off",
     "no-unused-vars": "off",
     "react/static-property-placement": ["warn", "static public field"],
+    "gashy-jet-plugin/path-checker": "error",
   },
   globals: {
     __IS_DEV__: true,

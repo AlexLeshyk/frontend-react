@@ -2,13 +2,12 @@
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
 import {
-  Avatar, Input, Loader, Skeleton, Text,
+  Avatar, Input, Skeleton, Text,
 } from 'shared/ui';
-
-import { Profile } from 'entities/Profile';
 import { TextAlign, TextTheme } from 'shared/ui/Text/Text.model';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
+import { Profile } from '../../model/types/profileType';
 import classes from './ProfileCard.module.css';
 
 interface ProfileCardProps {

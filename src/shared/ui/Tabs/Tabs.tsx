@@ -1,9 +1,8 @@
 import cx from 'clsx';
 import { memo, ReactNode, useCallback } from 'react';
 
-import { Card } from 'shared/ui';
+import { Card, CardTheme } from '../Card/Card';
 import classes from './Tabs.module.css';
-import { CardTheme } from '../Card/Card';
 
 export interface TabItem<T extends string> {
   value: T;

@@ -1,9 +1,9 @@
 import cx from 'clsx';
-import { ArticleTextBlock } from 'entities/Article';
 import { memo } from 'react';
 import { Title, Text } from 'shared/ui';
 
 import { TitleSize } from 'shared/ui/Title/Title';
+import { ArticleTextBlock } from '../../model/types/article';
 import classes from './ArticleTextBlockComponent.module.css';
 
 interface ArticleTextBlockComponentProps {

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { Text } from 'shared/ui';
+import { Text } from '../Text/Text';
 import { Card } from './Card';
 
 export default {

@@ -1,8 +1,8 @@
 import React, {
   FC, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
-import { Portal } from 'shared/ui';
 import cx from 'clsx';
+import { Portal } from '../Portal/Portal';
 
 import classes from './Modal.module.css';
 
