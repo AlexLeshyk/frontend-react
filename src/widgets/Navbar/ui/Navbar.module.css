@@ -23,3 +23,25 @@
 .createLink {
   margin-left: 15px;
 }
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    padding: 0 15px;
+    gap: 8px;
+  }
+
+  .appName {
+    width: auto;
+    margin: 0;
+  }
+
+  .createLink {
+    font-size: var(--font-size-s);
+    line-height: var(--font-lineheight-s);
+  }
+
+  .appName p {
+    font-size: var(--font-size-sm);
+    line-height: var(--font-lineheight-sm);
+  }
+}

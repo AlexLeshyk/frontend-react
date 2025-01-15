@@ -34,8 +34,6 @@
 
 .links {
   margin: 48px 0 0 30px;
-  display: flex;
-  flex-direction: column;
 }
 
 .collapsed .switchers {
@@ -46,6 +44,7 @@
 
 .collapsed .links {
   margin: 48px auto 0;
+  align-items: center;
 }
 
 .collapsed .collapsedBtn {

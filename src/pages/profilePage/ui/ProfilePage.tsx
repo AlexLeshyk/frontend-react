@@ -16,7 +16,7 @@ import { useAppDispatch, useInitialEffect } from 'shared/hooks';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import { Text } from 'shared/ui';
+import { Text, VStack } from 'shared/ui';
 import { TextTheme } from 'shared/ui/Text/Text.model';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
@@ -87,23 +87,25 @@ const ProfilePage = () => {
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
       <Page>
-        <ProfilePageHeader />
-        {validateErrors?.length && validateErrors.map((err) => (
-          <Text key={err} theme={TextTheme.ERROR} text={validateErrorsTranslates[err]} />))}
-        <ProfileCard
-          data={formData}
-          isLoading={isLoading}
-          error={error}
-          readonly={readonly}
-          onChangeLastName={onChangeLastName}
-          onChangeFirstName={onChangeFirstName}
-          onChangeAge={onChangeAge}
-          onChangeCity={onChangeCity}
-          onChangeAvatar={onChangeAvatar}
-          onChangeUsername={onChangeUsername}
-          onChangeCurrency={onChangeCurrency}
-          onChangeCountry={onChangeCountry}
-        />
+        <VStack gap="24" max>
+          <ProfilePageHeader />
+          {validateErrors?.length && validateErrors.map((err) => (
+            <Text key={err} theme={TextTheme.ERROR} text={validateErrorsTranslates[err]} />))}
+          <ProfileCard
+            data={formData}
+            isLoading={isLoading}
+            error={error}
+            readonly={readonly}
+            onChangeLastName={onChangeLastName}
+            onChangeFirstName={onChangeFirstName}
+            onChangeAge={onChangeAge}
+            onChangeCity={onChangeCity}
+            onChangeAvatar={onChangeAvatar}
+            onChangeUsername={onChangeUsername}
+            onChangeCurrency={onChangeCurrency}
+            onChangeCountry={onChangeCountry}
+          />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

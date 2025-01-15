@@ -2,7 +2,7 @@ import cx from 'clsx';
 import { LanguageSwitcher } from 'widgets/LanguageSwitcher';
 import { SwitcherTheme } from 'widgets/SwitcherTheme';
 import { useToggle } from 'shared/hooks';
-import { Button } from 'shared/ui';
+import { Button, VStack } from 'shared/ui';
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button.model';
 import { memo, useMemo } from 'react';
 import { useMediaQuery } from '@mantine/hooks';
@@ -49,9 +49,9 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         </Button>
       )}
 
-      <div className={classes.links}>
+      <VStack className={classes.links} gap="24">
         {itemsList}
-      </div>
+      </VStack>
       <div className={classes.switchers}>
         <SwitcherTheme />
         <LanguageSwitcher className="language-switcher" short={collapsedSidebar || isMobile} />

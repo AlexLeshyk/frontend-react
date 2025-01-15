@@ -8,10 +8,6 @@
   color: var(--inverted-secondary-color);
 }
 
-.link + .link {
-  margin-top: 24px;
-}
-
 .text {
   margin-left: 10px;
   opacity: 1;

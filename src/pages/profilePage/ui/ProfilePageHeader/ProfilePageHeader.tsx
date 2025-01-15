@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Button, Text } from 'shared/ui';
+import { Button, HStack, Text } from 'shared/ui';
 import { ButtonTheme } from 'shared/ui/Button/Button.model';
 import { useSelector } from 'react-redux';
 import {
@@ -33,7 +33,7 @@ export const ProfilePageHeader = () => {
   }, [dispatch]);
 
   return (
-    <div className={classes.header}>
+    <HStack justify="between" max className={classes.header}>
       <Text title={t('UserProfile')} className={classes.title} />
       {canEdit && (
         <div className={classes.btnsWrapper}>
@@ -67,7 +67,6 @@ export const ProfilePageHeader = () => {
             )}
         </div>
       )}
-
-    </div>
+    </HStack>
   );
 };
