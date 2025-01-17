@@ -3,6 +3,7 @@ import { memo } from 'react';
 import { Avatar, LinkComponent, Text } from 'shared/ui';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { TextSize } from 'shared/ui/Text/Text';
 import { Comment } from '../../model/types/comment';
 import classes from './CommentCard.module.css';
 
@@ -41,9 +42,9 @@ export const CommentCard = memo((props: CommentCardProps) => {
     >
       <LinkComponent className={classes.header} to={`${RoutePath.profile}${user.id}`}>
         {user.avatar && <Avatar size={30} src={user.avatar} />}
-        <Text title={user.username} className={classes.headerTitle} />
+        <Text title={user.username} size={TextSize.S} className={classes.headerTitle} />
       </LinkComponent>
-      <Text text={text} className={classes.commentText} />
+      <Text text={text} size={TextSize.S} className={classes.commentText} />
     </div>
   );
 });

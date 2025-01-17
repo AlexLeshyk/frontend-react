@@ -11,6 +11,7 @@ import { memo, useCallback, useState } from 'react';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { LinkTheme } from 'shared/ui/LinkComponent/LinkComponent.model';
 import { TextTheme } from 'shared/ui/Text/Text.model';
+import { TextSize } from 'shared/ui/Text/Text';
 import classes from './Navbar.module.css';
 
 interface NavbarProps {
@@ -48,6 +49,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         className={classes.appName}
         title={t('App')}
         theme={TextTheme.INVERTED}
+        size={TextSize.S}
       />
       <LinkComponent
         to={RoutePath.article_create}

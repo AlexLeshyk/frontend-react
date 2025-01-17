@@ -24,16 +24,15 @@
   --font-md: var(--font-size-md) / var(--font-lineheight-md)
     var(--font-family-main);
 
-  --font-size-sm: 16px;
-  --font-lineheight-sm: 24px;
+  --font-size-sm: 14px;
+  --font-lineheight-sm: 22px;
   --font-sm: var(--font-size-sm) / var(--font-lineheight-sm)
     var(--font-family-main);
 
-  --font-size-s: 14px;
-  --font-lineheight-s: 22px;
-
   --font-size-xs: 12px;
   --font-lineheight-xs: 20px;
+  --font-xs: var(--font-size-xs) / var(--font-lineheight-xs)
+    var(--font-family-main);
 
   /* sizes */
 

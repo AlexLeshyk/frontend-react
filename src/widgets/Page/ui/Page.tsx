@@ -34,7 +34,7 @@ export const Page = (props: PageProps) => {
   }, 800);
 
   return (
-    <section
+    <main
       className={cx({
         [classes.wrapper]: true,
         [className as string]: className,
@@ -44,6 +44,6 @@ export const Page = (props: PageProps) => {
     >
       {children}
       {onScrollEnd ? <div ref={triggerRef} className={classes.trigger} /> : null}
-    </section>
+    </main>
   );
 };

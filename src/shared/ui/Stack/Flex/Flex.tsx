@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
 import { classNames } from 'shared/lib';
 import { Mods } from 'shared/lib/classNames/classNames';
@@ -9,7 +9,9 @@ export type FlexAlign = 'start' | 'end' | 'center';
 export type FlexDirection = 'row' | 'column';
 export type FlexGap = '4' | '8' | '12' | '16' | '24' | '32';
 
-export interface FlexProps {
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+export interface FlexProps extends DivProps {
   className?: string;
   children?: ReactNode;
   justify?: FlexJustify;
@@ -55,6 +57,7 @@ export const Flex = (props: FlexProps) => {
     direction = 'row',
     gap,
     max,
+    ...otherProps
   } = props;
 
   const flexClasses = [
@@ -70,7 +73,7 @@ export const Flex = (props: FlexProps) => {
   };
 
   return (
-    <div className={classNames(classes.wrapper, mods, flexClasses)}>
+    <div className={classNames(classes.wrapper, mods, flexClasses)} {...otherProps}>
       {children}
     </div>
   );
