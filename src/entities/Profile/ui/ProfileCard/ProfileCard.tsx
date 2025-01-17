@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
 import {
@@ -168,8 +167,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChange={onChangeUsername}
         readonly={readonly}
       />
-      <CurrencySelect value={data?.currency} readonly={readonly} onChange={onChangeCurrency} />
-      <CountrySelect value={data?.country} readonly={readonly} onChange={onChangeCountry} />
+      <CurrencySelect value={data?.currency} readonly={readonly} onChange={onChangeCurrency} direction="top left" />
+      <CountrySelect value={data?.country} readonly={readonly} onChange={onChangeCountry} direction="top left" />
     </VStack>
   );
 };
