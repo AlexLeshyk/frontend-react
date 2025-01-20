@@ -16,3 +16,4 @@ export { Tabs } from './Tabs/Tabs';
 export { VStack } from './Stack/VStack/VStack';
 export { HStack } from './Stack/HStack/HStack';
 export { ListBox } from './ListBox/ListBox';
+export { Dropdown } from './Dropdown/Dropdown';

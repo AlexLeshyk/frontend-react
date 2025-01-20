@@ -7,6 +7,7 @@ import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button.model';
 import { memo, useMemo } from 'react';
 import { useMediaQuery } from '@mantine/hooks';
 import { useSelector } from 'react-redux';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/16/solid';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
@@ -45,7 +46,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
           square
           size={ButtonSize.MEDIUM}
         >
-          {collapsedSidebar ? '>' : '<'}
+          {collapsedSidebar ? <ChevronRightIcon width={24} height={24} /> : <ChevronLeftIcon height={24} width={24} />}
         </Button>
       )}
 

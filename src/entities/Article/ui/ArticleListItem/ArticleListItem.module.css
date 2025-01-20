@@ -128,7 +128,6 @@
 .line {
   display: block;
   width: calc(25% - 24px);
-  text-decoration: none;
 }
 
 /* media */

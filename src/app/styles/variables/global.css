@@ -24,6 +24,9 @@
   --font-md: var(--font-size-md) / var(--font-lineheight-md)
     var(--font-family-main);
 
+  --font-size-s: 16px;
+  --font-lineheights: 24px;
+
   --font-size-sm: 14px;
   --font-lineheight-sm: 22px;
   --font-sm: var(--font-size-sm) / var(--font-lineheight-sm)

@@ -15,11 +15,12 @@ type Story = StoryObj<typeof ListBox>;
 export const Primary: Story = {};
 
 Primary.args = {
-  label: 'Выберите значение',
+  label: 'Select value',
   items: [
-    { value: '1', name: 'Первый пункт' },
-    { value: '2', name: 'Второй пункт' },
+    { value: '1', name: 'First' },
+    { value: '2', name: 'Second' },
+    { value: '3', name: 'Third' },
   ],
-  defaultValue: 'Выберите значение',
+  defaultValue: 'Select value',
   direction: 'bottom right',
 };

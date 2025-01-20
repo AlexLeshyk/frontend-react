@@ -1,0 +1,51 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  background: var(--card-bg);
+  z-index: 100;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.button {
+  margin: 0;
+  padding: 2px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--secondary-color);
+  font-size: var(--font-size-s);
+  outline-color: transparent;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.item {
+  padding: 6px 20px 6px 12px;
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  color: var(--primary-color);
+  font-size: var(--font-size-s);
+  outline: none;
+  cursor: pointer;
+}
+
+.item:hover {
+  transition: all 0.3s ease-in-out;
+}
+
+.active {
+  background: var(--listbox-selected);
+  color: lightblue;
+}

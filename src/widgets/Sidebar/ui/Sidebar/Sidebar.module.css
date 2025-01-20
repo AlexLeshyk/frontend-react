@@ -27,6 +27,7 @@
 }
 
 .collapsedBtn {
+  padding: 0;
   position: absolute;
   left: 24px;
   top: 0;

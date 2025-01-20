@@ -52,6 +52,7 @@ module.exports = {
           "align",
           "as",
           "alt",
+          "anchor",
         ],
       },
     ],

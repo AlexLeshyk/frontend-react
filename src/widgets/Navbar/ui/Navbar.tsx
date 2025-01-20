@@ -1,8 +1,12 @@
+/* eslint-disable react/jsx-closing-tag-location */
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
-import { Button, LinkComponent, Text } from 'shared/ui';
+import {
+  Button, LinkComponent, Text, Dropdown, Avatar,
+} from 'shared/ui';
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button.model';
 import { LoginModal } from 'features/AuthUserName';
+import { ArrowLeftEndOnRectangleIcon, UserCircleIcon } from '@heroicons/react/16/solid';
 
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/hooks';
@@ -62,9 +66,30 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       <div className={classes.links}>
         {authData
           ? (
-            <Button theme={ButtonTheme.CLEAR} size={ButtonSize.SMALL} onClick={onLogout}>
-              {t('Logout')}
-            </Button>
+            <Dropdown
+              trigger={(
+                <>
+                  <span>{t('Menu')}</span>
+                  <Avatar size={30} src={authData.avatar} />
+                </>
+)}
+              items={[
+                {
+                  content: <>
+                    <ArrowLeftEndOnRectangleIcon width={20} height={20} />
+                    {t('Logout')}
+                  </>,
+                  onClick: onLogout,
+                },
+                {
+                  content: <>
+                    <UserCircleIcon width={20} height={20} />
+                    {t('UserProfile')}
+                  </>,
+                  href: RoutePath.profile + authData.id,
+                },
+              ]}
+            />
           ) : (
             <Button theme={ButtonTheme.CLEAR} size={ButtonSize.SMALL} onClick={onShowModal}>
               {t('Login')}
