@@ -50,7 +50,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         </Button>
       )}
 
-      <VStack role="navigation" className={classes.links} gap="24">
+      <VStack role="navigation" className={classes.links} gap="16">
         {itemsList}
       </VStack>
       <div className={classes.switchers}>

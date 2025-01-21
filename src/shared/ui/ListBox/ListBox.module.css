@@ -1,10 +1,9 @@
 .listbox {
   position: relative;
-  min-width: 160px;
+  display: flex;
 }
 
 .list {
-  width: 100%;
   background: var(--listbox);
   position: absolute;
   z-index: 100;
@@ -20,10 +19,40 @@
   box-shadow: 2px 2px 8px #eaeaff2e;
 }
 
+.buttonWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.button {
+  padding: 6px 6px 6px 12px;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.label {
+  font: var(--font-sm);
+}
+
+.chevron {
+  display: flex;
+  flex-direction: column;
+}
+
+.chevron svg:last-child {
+  margin-top: -8px;
+}
+
 .item {
   padding: 10px 18px 10px 24px;
   position: relative;
+  color: var(--primary-color);
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .item:first-child {
@@ -45,7 +74,8 @@
   color: var(--white-color);
 }
 
-.disabled {
+.disabled,
+.buttonWrapper[disabled] {
   opacity: 0.7;
 }
 
@@ -56,8 +86,9 @@
   position: absolute;
   left: 5px;
   top: 50%;
-  background: lightblue;
+  background: var(--primary-color);
   transform: translateY(-50%) rotate(45deg);
+  transition: background 0.3s ease-in-out;
 }
 
 .selected::before {
@@ -67,12 +98,18 @@
   position: absolute;
   left: 10px;
   top: 50%;
-  background: lightblue;
+  background: var(--primary-color);
   transform: translateY(-50%) rotate(-45deg);
+  transition: background 0.3s ease-in-out;
 }
 
-:global(.dark_theme) .selected::after,
-:global(.dark_theme) .selected::before {
+.selected.active::before,
+.selected.active::after {
+  background: lightblue;
+}
+
+:global(.dark_theme) .selected.active::after,
+:global(.dark_theme) .selected.active::before {
   background: var(--white-color);
 }
 
@@ -94,8 +131,4 @@
 .optionsTopLeft {
   left: 0;
   bottom: 100%;
-}
-
-.label {
-  font: var(--font-sm);
 }

@@ -1,4 +1,6 @@
 .link {
+  padding: 4px 8px;
+  height: 34px;
   display: flex;
   align-items: center;
 }
