@@ -2,16 +2,16 @@ import { useTranslation } from 'react-i18next';
 import { Button, HStack, Text } from 'shared/ui';
 import { ButtonTheme } from 'shared/ui/Button/Button.model';
 import { useSelector } from 'react-redux';
-import {
-  getProfileData, getProfileReadOnly, profileActions, updateProfileData,
-} from 'entities/Profile';
 import { useAppDispatch } from 'shared/hooks';
 import { useCallback } from 'react';
 import { getUserAuthData } from 'entities/User';
 
-import classes from './ProfilePageHeader.module.css';
+import { profileActions } from '../../model/slice/profileSlice';
+import { getProfileData, getProfileReadOnly } from '../../model/selectors/getProfileData';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import classes from './EditableProfileCardHeader.module.css';
 
-export const ProfilePageHeader = () => {
+export const EditableProfileCardHeader = () => {
   const { t } = useTranslation('profile');
   const dispatch = useAppDispatch();
 

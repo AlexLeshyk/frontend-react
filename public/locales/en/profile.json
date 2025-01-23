@@ -22,5 +22,6 @@
   "Incorrect City": "The city must be filled in",
   "Incorrect User": "User data must be filled in",
   "No Data": "No Data",
-  "Server error": "Server Error"
+  "Server error": "Server Error",
+  "NotProfile": "Profile not found"
 }

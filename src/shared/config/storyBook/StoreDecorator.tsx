@@ -1,15 +1,17 @@
 import { StoreProvider, StateModel } from 'app/providers/StoreProvider';
 import { articleReducer } from 'entities/Article/model/slices/articleSlice';
-import { profileReducer } from 'entities/Profile';
 import { addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentFormSlice';
 import { loginReducer } from 'features/AuthUserName/model/slice/loginSlice';
+import { profileReducer } from 'features/EditableProfileCard/model/slice/profileSlice';
 import { scrollSaveReducer } from 'features/ScrollSave';
 import { articleDetailsPageReducer } from 'pages/articlePage/model/slice';
 import { articlesPageReducer } from 'pages/articlesListPage/model/slice/articlesPageSlice';
 import { FC } from 'react';
+import { rtkApi } from 'shared/api/rtkApi';
 import { ReducersList } from 'shared/lib';
 
 const defaultAsyncReducers: ReducersList = {
+  [rtkApi.reducerPath]: rtkApi.reducer,
   loginForm: loginReducer,
   profile: profileReducer,
   article: articleReducer,

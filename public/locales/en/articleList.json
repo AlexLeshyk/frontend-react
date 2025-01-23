@@ -12,5 +12,6 @@
   "IT": "IT",
   "Science": "Science",
   "Economics": "Economics",
-  "NoArticles": "No articles found"
+  "NoArticles": "No articles found",
+  "ArticleListError": "Error loading articles"
 }

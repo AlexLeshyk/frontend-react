@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import {
   Menu, MenuButton, MenuItem, MenuItems,
 } from '@headlessui/react';
@@ -27,35 +28,35 @@ export const Dropdown = (props: DropdownProps) => {
     <Menu as="div" className={cx({ [classes.dropdown]: true, [className as string]: className })}>
       <MenuButton className={classes.button}>{trigger}</MenuButton>
       <MenuItems anchor="bottom end" className={classes.menu}>
-        {items.map((item) => {
+        {items.map((item, index) => {
           const {
             disabled, content, onClick, href,
           } = item;
-
-          const itemContent = ({ focus }: {focus: boolean}) => (
-            <button
-              className={cx({
-                [classes.item]: true,
-                [classes.active]: focus,
-              })}
-              onClick={onClick}
-              type="button"
-            >
-              {content}
-            </button>
-          );
-
           return href ? (
-            <MenuItem as={LinkComponent} to={href} disabled={disabled}>
-              {itemContent}
+            <MenuItem as={LinkComponent} to={href} disabled={disabled} key={index}>
+              {({ focus }) => (
+                <span
+                  className={cx({ [classes.item]: true, [classes.active]: focus })}
+                  onClick={onClick}
+                >
+                  {content}
+                </span>
+              )}
             </MenuItem>
           ) : (
-            <MenuItem as={Fragment} disabled={disabled}>
-              {itemContent}
+            <MenuItem as={Fragment} disabled={disabled} key={index}>
+              {({ focus }) => (
+                <button
+                  className={cx({ [classes.item]: true, [classes.active]: focus })}
+                  onClick={onClick}
+                  type="button"
+                >
+                  {content}
+                </button>
+              )}
             </MenuItem>
           );
         })}
-
       </MenuItems>
     </Menu>
   );
