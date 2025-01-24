@@ -11,5 +11,6 @@
   "Recommend": "We recommend",
   "Edit": "Edit",
   "CreateNewArticle": "Create new article",
-  "Edit article with id": "Edit article with id"
+  "Edit article with id": "Edit article with id",
+  "ArticleRecommendError": "Error loading recommendations"
 }

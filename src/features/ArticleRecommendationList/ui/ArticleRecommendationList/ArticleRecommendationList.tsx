@@ -20,8 +20,7 @@ export const ArticleRecommendationList = memo((props: ArticleRecommendationListP
   const { data: articles, isLoading, error } = useArticleRecommendationList(3);
 
   if (error) {
-    // eslint-disable-next-line i18next/no-literal-string
-    return <Text theme={TextTheme.ERROR} text="Error" />;
+    return <Text theme={TextTheme.ERROR} text={t('ArticleRecommendError')} />;
   }
 
   return (
