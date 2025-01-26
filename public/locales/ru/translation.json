@@ -28,5 +28,6 @@
   "CreateArticle": "Создать статью",
   "App": "Приложение Gashy",
   "Menu": "Меню",
-  "UserProfile": "Профиль пользователя"
+  "UserProfile": "Профиль пользователя",
+  "AdminPanel": "Админ панель"
 }

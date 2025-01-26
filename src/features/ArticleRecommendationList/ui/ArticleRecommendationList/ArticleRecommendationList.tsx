@@ -19,7 +19,7 @@ export const ArticleRecommendationList = memo((props: ArticleRecommendationListP
 
   const { data: articles, isLoading, error } = useArticleRecommendationList(3);
 
-  if (error) {
+  if (error || !articles) {
     return <Text theme={TextTheme.ERROR} text={t('ArticleRecommendError')} />;
   }
 

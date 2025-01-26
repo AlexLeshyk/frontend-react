@@ -9,6 +9,7 @@ import { useAppDispatch, useInitialEffect } from 'shared/hooks';
 import { TextTheme } from 'shared/ui/Text/Text.model';
 import { ProfileCard } from 'entities/Profile';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib';
+import { TextSize } from 'shared/ui/Text/Text';
 import {
   getProfileForm,
   getProfileError,
@@ -23,7 +24,7 @@ import { EditableProfileCardHeader } from '../EditableProfileCardHeader/Editable
 
 interface EditableProfileCardProps {
   className?: string;
-  id?: string;
+  id: string;
 }
 
 const reducers: ReducersList = {
@@ -92,13 +93,15 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-      <VStack max gap="16" className={cx({ [className as string]: className })}>
+      <VStack max gap="12" className={cx({ [className as string]: className })}>
         <EditableProfileCardHeader />
         {validateErrors?.length && validateErrors.map((err) => (
           <Text
             key={err}
             theme={TextTheme.ERROR}
             text={validateErrorsTranslates[err]}
+            size={TextSize.S}
+            data-testid="EditableProfileCard.Error"
           />
         ))}
         <ProfileCard

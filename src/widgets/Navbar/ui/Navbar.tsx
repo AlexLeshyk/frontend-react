@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-closing-tag-location */
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
 import {
@@ -6,11 +5,12 @@ import {
 } from 'shared/ui';
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button.model';
 import { LoginModal } from 'features/AuthUserName';
-import { ArrowLeftEndOnRectangleIcon, UserCircleIcon } from '@heroicons/react/16/solid';
-
+import { ArrowLeftEndOnRectangleIcon, UserCircleIcon, AdjustmentsHorizontalIcon } from '@heroicons/react/16/solid';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/hooks';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+  getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entities/User';
 import { memo, useCallback, useState } from 'react';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { LinkTheme } from 'shared/ui/LinkComponent/LinkComponent.model';
@@ -28,6 +28,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const dispatch = useAppDispatch();
 
   const authData = useSelector(getUserAuthData);
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
+
+  const isAdminAvaliable = isAdmin || isManager;
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -74,19 +78,29 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 </>
 )}
               items={[
-                {
-                  content: <>
-                    <ArrowLeftEndOnRectangleIcon width={20} height={20} />
-                    {t('Logout')}
+                ...isAdminAvaliable ? [{
+                  content:
+                  <>
+                    <AdjustmentsHorizontalIcon width={20} height={20} />
+                    {t('AdminPanel')}
                   </>,
-                  onClick: onLogout,
+                  href: RoutePath.admin_panel,
+                }] : [],
+                {
+                  content:
+              <>
+                <UserCircleIcon width={20} height={20} />
+                {t('UserProfile')}
+              </>,
+                  href: RoutePath.profile + authData.id,
                 },
                 {
-                  content: <>
-                    <UserCircleIcon width={20} height={20} />
-                    {t('UserProfile')}
-                  </>,
-                  href: RoutePath.profile + authData.id,
+                  content:
+              <>
+                <ArrowLeftEndOnRectangleIcon width={20} height={20} />
+                {t('Logout')}
+              </>,
+                  onClick: onLogout,
                 },
               ]}
             />

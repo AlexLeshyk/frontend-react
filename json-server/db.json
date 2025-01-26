@@ -186,15 +186,22 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
     },
     {
       "id": "2",
       "username": "man",
       "password": "456",
-      "role": "USER",
+      "roles": ["USER"],
       "avatar": "https://avatarzo.ru/wp-content/uploads/kolenok-na-plede.jpg"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": ["MANAGER"],
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "profile": [
@@ -202,7 +209,7 @@
       "id": "1",
       "first": "Александр",
       "lastname": "Лешик",
-      "age": 38,
+      "age": 45,
       "currency": "USD",
       "country": "Belarus",
       "city": "Копище",

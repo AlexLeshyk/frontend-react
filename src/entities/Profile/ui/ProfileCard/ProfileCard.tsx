@@ -1,8 +1,7 @@
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
 import {
-  Avatar, Input, Skeleton, Text,
-  VStack,
+  Avatar, Input, Skeleton, Text, VStack,
 } from 'shared/ui';
 import { TextAlign, TextTheme } from 'shared/ui/Text/Text.model';
 import { Currency, CurrencySelect } from 'entities/Currency';
@@ -126,6 +125,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         placeholder={t('Enter Name')}
         onChange={onChangeFirstName}
         readonly={readonly}
+        data-testid="ProfileCard.firstname"
       />
       <Input
         label={t('Surname')}
@@ -134,6 +134,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         placeholder={t('Enter LastName')}
         onChange={onChangeLastName}
         readonly={readonly}
+        data-testid="ProfileCard.lastname"
       />
       <Input
         label={t('City')}
@@ -142,6 +143,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         placeholder={t('Enter City')}
         onChange={onChangeCity}
         readonly={readonly}
+        data-testid="ProfileCard.city"
       />
       <Input
         label={t('Age')}
@@ -150,6 +152,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         placeholder={t('Enter Age')}
         onChange={onChangeAge}
         readonly={readonly}
+        data-testid="ProfileCard.age"
       />
       <Input
         label={t('Avatar')}
