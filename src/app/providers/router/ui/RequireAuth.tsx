@@ -25,8 +25,12 @@ export const RequireAuth = ({ children, roles }: RequireAuthProps) => {
     });
   }, [roles, userRoles]);
 
-  if (!auth || !hasRequireRoles) {
+  if (!auth) {
     return <Navigate to={RoutePath.main} state={{ from: location }} replace />;
+  }
+
+  if (!hasRequireRoles) {
+    return <Navigate to={RoutePath.forbidden} state={{ from: location }} replace />;
   }
 
   return children;
