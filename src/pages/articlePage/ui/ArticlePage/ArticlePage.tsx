@@ -19,7 +19,7 @@ const ArticlePage = () => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page>
         <ArticlePageButtons />
-        <Article id={id as string} />
+        <Article id={id} />
         <ArticleRecommendationList />
         <ArticlePageComments id={id} />
       </Page>

@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ArticleBlockType, ArticleType } from 'entities/Article';
-import { Article } from 'entities/Article/model/types/article';
+import { ArticleBlockType, ArticleType, ArticleModel } from 'entities/Article';
 import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
 import { ArticleRecommendationList } from './ArticleRecommendationList';
 
@@ -14,7 +13,7 @@ export default {
 
 type Story = StoryObj<typeof ArticleRecommendationList>;
 
-const data: Array<Article> = [
+const data: Array<ArticleModel> = [
   {
     user: {
       username: 'Alex',

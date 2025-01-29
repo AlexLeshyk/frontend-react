@@ -1,6 +1,6 @@
-import { memo, useCallback } from 'react';
+import { memo, Suspense, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Title } from 'shared/ui';
+import { Title, Loader } from 'shared/ui';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { CommentList } from 'entities/Comment';
 import { TitleSize } from 'shared/ui/Title/Title';
@@ -33,7 +33,9 @@ export const ArticlePageComments = memo((props: ArticlePageCommentsProps) => {
   return (
     <>
       <Title title={t('Comments')} size={TitleSize.H3} />
-      <AddCommentForm onAddComment={onAddComment} />
+      <Suspense fallback={<Loader />}>
+        <AddCommentForm onAddComment={onAddComment} />
+      </Suspense>
       <CommentList
         isLoading={commentsIsLoading}
         comments={comments}

@@ -1,4 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
+import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country';
+import { UserRole } from 'entities/User';
 import { EditableProfileCard } from './EditableProfileCard';
 
 export default {
@@ -13,3 +17,44 @@ type Story = StoryObj<typeof EditableProfileCard>;
 
 export const Primary: Story = {};
 Primary.args = {};
+
+Primary.args = {
+  id: '1',
+};
+
+Primary.decorators = [StoreDecorator({
+  profile: {
+    isLoading: false,
+    data: {
+      id: '1',
+      first: 'yes',
+      lastname: 'no',
+      age: 34,
+      currency: Currency.USD,
+      country: Country.Belarus,
+      city: 'Minsk',
+      username: 'gashy',
+      avatar: 'https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg',
+    },
+    form: {
+      id: '1',
+      first: 'yes',
+      lastname: 'no',
+      age: 34,
+      currency: Currency.USD,
+      country: Country.Belarus,
+      city: 'Minsk',
+      username: 'gashy',
+      avatar: 'https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg',
+    },
+    readonly: false,
+  },
+  user: {
+    authData: {
+      id: '1',
+      username: 'gashy',
+      avatar: 'https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg',
+      roles: [UserRole.ADMIN],
+    },
+  },
+})];

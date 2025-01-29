@@ -23,7 +23,7 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 import classes from './Article.module.css';
 
 interface ArticleProps {
-  id: string;
+  id?: string;
 }
 
 const reducers: ReducersList = {
