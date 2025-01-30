@@ -67,16 +67,8 @@
   overflow: hidden;
 }
 
-.types p {
-  font-size: var(--font-size-sm);
-}
-
 .views {
   margin-left: auto;
-}
-
-.views p {
-  font-size: 14px;
 }
 
 .tile:hover {
@@ -136,7 +128,6 @@
 .line {
   display: block;
   width: calc(25% - 24px);
-  text-decoration: none;
 }
 
 /* media */

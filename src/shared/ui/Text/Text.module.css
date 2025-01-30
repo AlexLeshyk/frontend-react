@@ -1,7 +1,3 @@
-.title {
-  font: var(--font-l);
-}
-
 .text {
   font: var(--font-md);
   color: var(--secondary-color);
@@ -29,4 +25,52 @@
 
 .right {
   text-align: right;
+}
+
+.inverted .title {
+  color: var(--inverted-primary-color);
+}
+
+.inverted .text {
+  color: var(--inverted-secondary-color);
+}
+
+.size_xs .title {
+  font: var(--font-sm);
+}
+
+.size_xs .text {
+  font: var(--font-xs);
+}
+
+.size_s .title {
+  font: var(--font-md);
+}
+
+.size_s .text {
+  font: var(--font-sm);
+}
+
+.size_m .title {
+  font: var(--font-l);
+}
+
+.size_m .text {
+  font: var(--font-md);
+}
+
+.size_l .title {
+  font: var(--font-xl);
+}
+
+.size_l .text {
+  font: var(--font-l);
+}
+
+.size_xl .title {
+  font: var(--font-2xl);
+}
+
+.size_xl .text {
+  font: var(--font-xl);
 }

@@ -1,6 +1,7 @@
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
@@ -25,7 +26,11 @@ export function buildPlugins({
       __API__: JSON.stringify(apiUrl),
       __PROJECT__: JSON.stringify(project),
     }),
-
+    new CopyPlugin({
+      patterns: [
+        { from: paths.locales, to: paths.buildLocales },
+      ],
+    }),
   ];
 
   if (isDev) {

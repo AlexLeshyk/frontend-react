@@ -8,5 +8,9 @@
   "Send": "Send",
   "Comment": "Comment:",
   "List back": "Back to list",
-  "Recommend": "We recommend"
+  "Recommend": "We recommend",
+  "Edit": "Edit",
+  "CreateNewArticle": "Create new article",
+  "Edit article with id": "Edit article with id",
+  "ArticleRecommendError": "Error loading recommendations"
 }

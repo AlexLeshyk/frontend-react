@@ -8,6 +8,10 @@
   margin-top: 16px;
 }
 
+.searchInput {
+  max-width: none;
+}
+
 .tabs {
   margin-top: 16px;
 }

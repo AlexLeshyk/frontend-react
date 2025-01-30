@@ -13,7 +13,13 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
+  plugins: [
+    "react",
+    "@typescript-eslint",
+    "i18next",
+    "react-hooks",
+    "gashy-jet-plugin",
+  ],
   rules: {
     "react/jsx-filename-extension": [
       2,
@@ -35,7 +41,19 @@ module.exports = {
       "error",
       {
         markupOnly: true,
-        ignoreAttribute: ["data-testid", "to", "htmlFor", "target"],
+        ignoreAttribute: [
+          "data-testid",
+          "to",
+          "htmlFor",
+          "target",
+          "direction",
+          "justify",
+          "role",
+          "align",
+          "as",
+          "alt",
+          "anchor",
+        ],
       },
     ],
     "max-len": ["error", { ignoreComments: true, code: 120 }],
@@ -50,6 +68,7 @@ module.exports = {
     "no-param-reassign": "off",
     "no-unused-vars": "off",
     "react/static-property-placement": ["warn", "static public field"],
+    "gashy-jet-plugin/path-checker": "error",
   },
   globals: {
     __IS_DEV__: true,

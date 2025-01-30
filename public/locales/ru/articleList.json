@@ -12,5 +12,6 @@
   "IT": "Айти",
   "Science": "Наука",
   "Economics": "Экономика",
-  "NoArticles": "Статьи не найдены"
+  "NoArticles": "Статьи не найдены",
+  "ArticleListError": "Ошибка при загрузке статей"
 }

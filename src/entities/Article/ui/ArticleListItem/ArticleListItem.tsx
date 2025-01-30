@@ -8,6 +8,7 @@ import EyeIcon from 'shared/icons/eye.svg';
 import { TitleSize } from 'shared/ui/Title/Title';
 import { ButtonTheme } from 'shared/ui/Button/Button.model';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { TextSize } from 'shared/ui/Text/Text';
 import {
   Article, ArticleBlockType, ArticleListView, ArticleTextBlock,
 } from '../../model/types/article';
@@ -25,10 +26,10 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const { article, view, target } = props;
   const { t } = useTranslation('articleList');
 
-  const types = <Text text={article.type.join(', ')} className={classes.types} />;
+  const types = <Text text={article.type.join(', ')} size={TextSize.S} className={classes.types} />;
   const views = (
     <>
-      <Text text={String(article.views)} className={classes.views} />
+      <Text text={String(article.views)} size={TextSize.S} className={classes.views} />
       <EyeIcon />
     </>
   );
@@ -45,7 +46,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           <div className={classes.header}>
             <Avatar size={30} src={article.user.avatar} />
             <Text text={article.user.username} className={classes.username} />
-            <Text text={article.createdAt} className={classes.date} />
+            <Text text={article.createdAt} size={TextSize.S} className={classes.date} />
           </div>
           <Text title={article.title} className={classes.title} />
           {types}
@@ -81,7 +82,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       <Card className={classes.card}>
         <div className={classes.imageWrapper}>
           <img src={article.img} className={classes.image} alt={article.title} />
-          <Text text={article.createdAt} className={classes.date} />
+          <Text text={article.createdAt} size={TextSize.XS} className={classes.date} />
         </div>
         <div className={classes.info}>
           {types}

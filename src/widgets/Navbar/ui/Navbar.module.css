@@ -7,10 +7,37 @@
   align-items: center;
   gap: 16px;
   background-color: var(--bg-color-inverted);
-  justify-content: space-between;
 }
 
-.links {
+.links,
+.dropdown {
   display: flex;
   gap: 16px;
+  margin-left: auto;
+}
+
+.appName {
+  width: calc(var(--sidebar-width) - 20px);
+  margin-left: 15px;
+}
+
+.createLink {
+  margin-left: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    padding: 0 15px;
+    gap: 8px;
+  }
+
+  .appName {
+    width: auto;
+    margin: 0;
+  }
+
+  .createLink {
+    font-size: var(--font-size-sm);
+    line-height: var(--font-lineheight-sm);
+  }
 }

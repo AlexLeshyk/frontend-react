@@ -1,9 +1,10 @@
 import cx from 'clsx';
-import { ArticleTextBlock } from 'entities/Article';
 import { memo } from 'react';
 import { Title, Text } from 'shared/ui';
 
 import { TitleSize } from 'shared/ui/Title/Title';
+import { TextSize } from 'shared/ui/Text/Text';
+import { ArticleTextBlock } from '../../model/types/article';
 import classes from './ArticleTextBlockComponent.module.css';
 
 interface ArticleTextBlockComponentProps {
@@ -18,7 +19,7 @@ export const ArticleTextBlockComponent = memo((props: ArticleTextBlockComponentP
     })}
     >
       {block.title && <Title size={TitleSize.H3} title={block.title} className={classes.title} />}
-      {block.paragraphs.map((item) => <Text key={item} text={item} className={classes.paragraph} />)}
+      {block.paragraphs.map((item) => <Text key={item} size={TextSize.S} text={item} className={classes.paragraph} />)}
     </div>
   );
 });

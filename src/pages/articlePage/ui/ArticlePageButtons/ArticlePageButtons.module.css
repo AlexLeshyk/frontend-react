@@ -1,0 +1,23 @@
+.back {
+  margin-bottom: 16px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.edit {
+  margin-left: auto;
+}
+
+@media screen and (max-width: 440px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .edit {
+    margin-left: 0;
+  }
+}

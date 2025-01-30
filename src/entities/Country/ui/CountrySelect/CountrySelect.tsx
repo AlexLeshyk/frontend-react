@@ -1,15 +1,19 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Select } from 'shared/ui';
+import { ListBox } from 'shared/ui';
+import { DropdownDirection } from 'shared/types';
 import { Country } from '../../model/types/country';
 
 interface CountrySelectPorps {
   value?: Country;
   onChange?: (value: Country) => void;
   readonly?: boolean;
+  direction?: DropdownDirection
 }
 
-export const CountrySelect = ({ value, onChange, readonly }: CountrySelectPorps) => {
+export const CountrySelect = ({
+  value, onChange, readonly, direction,
+}: CountrySelectPorps) => {
   const { t } = useTranslation();
 
   const onChangeCurrency = useCallback((value: string) => {
@@ -25,12 +29,14 @@ export const CountrySelect = ({ value, onChange, readonly }: CountrySelectPorps)
   ], [t]);
 
   return (
-    <Select
+    <ListBox
       label={t('Country')}
-      options={options}
+      items={options}
       value={value}
       onChange={onChangeCurrency}
       readonly={readonly}
+      defaultValue={t('Country')}
+      direction={direction}
     />
   );
 };

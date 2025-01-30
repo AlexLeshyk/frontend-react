@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: var(--font-size-s);
+  font-size: var(--font-size-sm);
 }
 
 .views {

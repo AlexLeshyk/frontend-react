@@ -1,15 +1,12 @@
 .link {
+  padding: 4px 8px;
+  height: 34px;
   display: flex;
   align-items: center;
-  text-decoration: none;
 }
 
 .link:hover .icon {
   color: var(--inverted-secondary-color);
-}
-
-.link + .link {
-  margin-top: 24px;
 }
 
 .text {

@@ -16,3 +16,6 @@
 #loki
 .loki/report.html
 .loki/report.json
+
+#reports
+/reports

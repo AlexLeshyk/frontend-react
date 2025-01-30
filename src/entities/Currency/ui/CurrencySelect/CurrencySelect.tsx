@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Select } from 'shared/ui';
+import { ListBox } from 'shared/ui';
+import { DropdownDirection } from 'shared/types';
 import { Currency } from '../../model/types/currency';
 
 const options = [
@@ -13,9 +14,12 @@ interface CurrencySelectPorps {
   value?: Currency;
   onChange?: (value: Currency) => void;
   readonly?: boolean;
+  direction?: DropdownDirection;
 }
 
-export const CurrencySelect = ({ value, onChange, readonly }: CurrencySelectPorps) => {
+export const CurrencySelect = ({
+  value, onChange, readonly, direction,
+}: CurrencySelectPorps) => {
   const { t } = useTranslation();
 
   const onChangeCurrency = useCallback((value: string) => {
@@ -23,12 +27,14 @@ export const CurrencySelect = ({ value, onChange, readonly }: CurrencySelectPorp
   }, [onChange]);
 
   return (
-    <Select
-      label={t('Currency')}
-      options={options}
+    <ListBox
       value={value}
+      items={options}
       onChange={onChangeCurrency}
       readonly={readonly}
+      label={t('Currency')}
+      defaultValue={t('Currency')}
+      direction={direction}
     />
   );
 };

@@ -2,11 +2,12 @@ import cx from 'clsx';
 import { LanguageSwitcher } from 'widgets/LanguageSwitcher';
 import { SwitcherTheme } from 'widgets/SwitcherTheme';
 import { useToggle } from 'shared/hooks';
-import { Button } from 'shared/ui';
+import { Button, VStack } from 'shared/ui';
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button.model';
 import { memo, useMemo } from 'react';
 import { useMediaQuery } from '@mantine/hooks';
 import { useSelector } from 'react-redux';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/16/solid';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
@@ -27,7 +28,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   )), [collapsedSidebar, sidebarItemList]);
 
   return (
-    <menu
+    <aside
       data-testid="sidebar"
       className={cx({
         [classes.sidebar]: true,
@@ -45,17 +46,17 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
           square
           size={ButtonSize.MEDIUM}
         >
-          {collapsedSidebar ? '>' : '<'}
+          {collapsedSidebar ? <ChevronRightIcon width={24} height={24} /> : <ChevronLeftIcon height={24} width={24} />}
         </Button>
       )}
 
-      <div className={classes.links}>
+      <VStack role="navigation" className={classes.links} gap="16">
         {itemsList}
-      </div>
+      </VStack>
       <div className={classes.switchers}>
         <SwitcherTheme />
         <LanguageSwitcher className="language-switcher" short={collapsedSidebar || isMobile} />
       </div>
-    </menu>
+    </aside>
   );
 });

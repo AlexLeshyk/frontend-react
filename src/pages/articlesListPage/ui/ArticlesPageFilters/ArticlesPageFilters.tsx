@@ -77,6 +77,7 @@ export const ArticlesPageFilters = memo(() => {
           placeholder={t('Search')}
           value={search}
           onChange={onChangeSearch}
+          className={classes.searchInput}
         />
       </Card>
       <ArticleTypeTabs

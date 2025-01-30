@@ -1,0 +1,52 @@
+.edit {
+  margin-left: auto;
+}
+
+.save {
+  margin-left: 16px;
+}
+
+.btnsWrapper {
+  margin-left: auto;
+}
+
+@media screen and (max-width: 991px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .btnsWrapper {
+    width: 100%;
+    display: flex;
+    margin: 0;
+  }
+
+  .title {
+    width: 100%;
+  }
+
+  .save {
+    margin-left: 0;
+    margin-top: 16px;
+  }
+
+  .edit {
+    margin: 16px 16px 0 0;
+  }
+
+  .save,
+  .edit {
+    width: calc(50% - 8px);
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .save,
+  .edit {
+    width: 100%;
+  }
+
+  .edit {
+    margin: 16px 0 0;
+  }
+}

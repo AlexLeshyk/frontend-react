@@ -24,5 +24,10 @@
   "Kazakhstan": "Казахстан",
   "Russia": "Россия",
   "Ukraine": "Украина",
-  "Arcicle List" : "Список статей"
+  "Arcicle List": "Список статей",
+  "CreateArticle": "Создать статью",
+  "App": "Приложение Gashy",
+  "Menu": "Меню",
+  "UserProfile": "Профиль пользователя",
+  "AdminPanel": "Админ панель"
 }
