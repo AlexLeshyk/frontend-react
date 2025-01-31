@@ -9,11 +9,9 @@ import { TitleSize } from 'shared/ui/Title/Title';
 import { ButtonTheme } from 'shared/ui/Button/Button.model';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { TextSize } from 'shared/ui/Text/Text';
-import {
-  Article, ArticleBlockType, ArticleListView, ArticleTextBlock,
-} from '../../model/types/article';
+import { Article, ArticleTextBlock } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-
+import { ArticleBlockType, ArticleListView } from '../../model/consts/consts';
 import classes from './ArticleListItem.module.css';
 
 interface ArticleListItemProps {

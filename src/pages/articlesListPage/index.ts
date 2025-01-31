@@ -1,2 +1,2 @@
 export { ArticlesListPageAsync as ArticlesListPage } from './ui/ArticlesListPage/ArticlesListPageAsync';
-export { ArticlePageModel } from './model/types/articlePageModel';
+export type { ArticlePageModel } from './model/types/articlePageModel';

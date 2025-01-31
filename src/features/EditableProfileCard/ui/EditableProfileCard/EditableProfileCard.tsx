@@ -18,7 +18,7 @@ import {
   getProfileValidateErrors,
 } from '../../model/selectors/getProfileData';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
-import { ValidateProfileError } from '../../model/types/EditableProfileCardModel';
+import { ValidateProfileError } from '../../model/consts/consts';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 
