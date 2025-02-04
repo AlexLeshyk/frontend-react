@@ -9,7 +9,10 @@
   background-color: var(--bg-color-inverted);
 }
 
-.links,
+.links {
+  margin-left: auto;
+}
+
 .dropdown {
   display: flex;
   gap: 16px;

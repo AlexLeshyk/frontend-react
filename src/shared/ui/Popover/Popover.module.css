@@ -1,0 +1,18 @@
+.panel {
+  background: var(--card-bg);
+  position: absolute;
+  z-index: 1000;
+  border-radius: 8px;
+  padding: 16px 10px;
+  box-shadow: 2px 2px 5px var(--skeleton-shadow);
+}
+
+.popup {
+  position: relative;
+}
+
+.trigger {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}

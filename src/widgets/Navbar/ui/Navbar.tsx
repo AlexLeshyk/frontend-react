@@ -1,21 +1,20 @@
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
 import {
-  Button, LinkComponent, Text, Dropdown, Avatar,
+  Button, LinkComponent, Text, HStack,
 } from 'shared/ui';
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button.model';
 import { LoginModal } from 'features/AuthUserName';
-import { ArrowLeftEndOnRectangleIcon, UserCircleIcon, AdjustmentsHorizontalIcon } from '@heroicons/react/16/solid';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/hooks';
-import {
-  getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from 'entities/User';
+import { getUserAuthData } from 'entities/User';
 import { memo, useCallback, useState } from 'react';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { LinkTheme } from 'shared/ui/LinkComponent/LinkComponent.model';
 import { TextTheme } from 'shared/ui/Text/Text.model';
 import { TextSize } from 'shared/ui/Text/Text';
+
+import { NotificationButton } from 'features/NotificationButton';
+import { DropdownMenu } from 'features/DropdownMenu';
 import classes from './Navbar.module.css';
 
 interface NavbarProps {
@@ -25,13 +24,8 @@ interface NavbarProps {
 export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
-  const dispatch = useAppDispatch();
 
   const authData = useSelector(getUserAuthData);
-  const isAdmin = useSelector(isUserAdmin);
-  const isManager = useSelector(isUserManager);
-
-  const isAdminAvaliable = isAdmin || isManager;
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -40,11 +34,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const onShowModal = useCallback(() => {
     setIsAuthModal(true);
   }, []);
-
-  const onLogout = useCallback(() => {
-    dispatch(userActions.logout());
-    onCloseModal();
-  }, [dispatch, onCloseModal]);
 
   return (
     <header
@@ -67,49 +56,17 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         {t('CreateArticle')}
       </LinkComponent>
       {/* <SwitcherTheme /> */}
-      <div className={classes.links}>
+      <HStack gap="16" className={classes.links}>
+        <NotificationButton />
         {authData
           ? (
-            <Dropdown
-              trigger={(
-                <>
-                  <span>{t('Menu')}</span>
-                  <Avatar size={30} src={authData.avatar} />
-                </>
-)}
-              items={[
-                ...isAdminAvaliable ? [{
-                  content:
-                  <>
-                    <AdjustmentsHorizontalIcon width={20} height={20} />
-                    {t('AdminPanel')}
-                  </>,
-                  href: RoutePath.admin_panel,
-                }] : [],
-                {
-                  content:
-              <>
-                <UserCircleIcon width={20} height={20} />
-                {t('UserProfile')}
-              </>,
-                  href: RoutePath.profile + authData.id,
-                },
-                {
-                  content:
-              <>
-                <ArrowLeftEndOnRectangleIcon width={20} height={20} />
-                {t('Logout')}
-              </>,
-                  onClick: onLogout,
-                },
-              ]}
-            />
+            <DropdownMenu />
           ) : (
             <Button theme={ButtonTheme.CLEAR} size={ButtonSize.SMALL} onClick={onShowModal}>
               {t('Login')}
             </Button>
           )}
-      </div>
+      </HStack>
       {!authData && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
     </header>
   );

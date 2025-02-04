@@ -1,24 +1,31 @@
 import { ArticleModel } from 'entities/Article';
 import { rtkApi } from 'shared/api/rtkApi';
 
-export type AddNewArticlePayload = {
-  id: string
-}
-export type AddNewArticleResponse = {
-  article: ArticleModel
+interface GetArticleByIdArg {
+  userId: string;
+  articleId: string;
 }
 
 const recommendationsApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
-    getArticlebyId: build.query<Array<ArticleModel>, string >({
-      query: (id) => ({
-        url: `/articles/${id}`,
+    getArticlebyId: build.query<ArticleModel, GetArticleByIdArg >({
+      query: ({ articleId, userId }) => ({
+        url: `/articles/${articleId}`,
         params: {
-          _expand: 'user',
+          userId,
+          articleId,
         },
+      }),
+    }),
+    updateArticle: build.mutation<void, ArticleModel>({
+      query: (arg) => ({
+        url: `/articles/${arg.id}`,
+        method: 'PUT',
+        body: arg,
       }),
     }),
   }),
 });
 
 export const useGetArticleById = recommendationsApi.useGetArticlebyIdQuery;
+export const useUpdateArticle = recommendationsApi.useUpdateArticleMutation;

@@ -53,6 +53,7 @@ module.exports = {
           "as",
           "alt",
           "anchor",
+          "border",
         ],
       },
     ],

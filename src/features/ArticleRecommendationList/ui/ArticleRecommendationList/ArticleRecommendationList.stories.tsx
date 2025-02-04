@@ -112,7 +112,7 @@ Light.decorators = [StoreDecorator({})];
 Light.parameters = {
   mockData: [
     {
-      url: `${__API__}/articles?_limit=3`,
+      url: 'http://localhost:8000/articles?_limit=3',
       method: 'GET',
       status: 200,
       response: data,

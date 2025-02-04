@@ -7,3 +7,4 @@ export {
 export type { ArticleDetailsModel } from './model/types/articleDetailsModel';
 export { ArticleList } from './ui/ArticleList/ArticleList';
 export { getArticleData } from './model/selectors/article';
+export { ArticleCard } from './ui/ArticleCard/ArticleCard';
