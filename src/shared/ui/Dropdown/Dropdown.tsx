@@ -32,17 +32,20 @@ export const Dropdown = (props: DropdownProps) => {
           const {
             disabled, content, onClick, href,
           } = item;
+
           return href ? (
-            <MenuItem as={LinkComponent} to={href} disabled={disabled} key={index}>
-              {({ focus }) => (
-                <span
-                  className={cx({ [classes.item]: true, [classes.active]: focus })}
-                  onClick={onClick}
-                >
-                  {content}
-                </span>
-              )}
-            </MenuItem>
+            <LinkComponent to={href} key={index}>
+              <MenuItem as={Fragment} disabled={disabled}>
+                {({ focus }) => (
+                  <span
+                    className={cx({ [classes.item]: true, [classes.active]: focus })}
+                    onClick={onClick}
+                  >
+                    {content}
+                  </span>
+                )}
+              </MenuItem>
+            </LinkComponent>
           ) : (
             <MenuItem as={Fragment} disabled={disabled} key={index}>
               {({ focus }) => (
