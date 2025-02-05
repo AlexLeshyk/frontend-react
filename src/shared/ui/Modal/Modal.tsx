@@ -1,9 +1,9 @@
-import React, {
+import {
   FC, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import cx from 'clsx';
 import { Portal } from '../Portal/Portal';
-
+import { Overlay } from '../Overlay/Overlay';
 import classes from './Modal.module.css';
 
 interface ModalProps {
@@ -42,10 +42,6 @@ export const Modal: FC<ModalProps> = (props) => {
     }
   }, [onCloseHandler]);
 
-  const onContentClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-  };
-
   useEffect(() => {
     if (isOpen) {
       timerRef.current = setTimeout(() => {
@@ -82,13 +78,11 @@ export const Modal: FC<ModalProps> = (props) => {
         })}
         data-testid="modal"
       >
-        <div className={classes.overlay} onClick={onCloseHandler}>
-          <div className={classes.content} onClick={onContentClick}>
-            {children}
-          </div>
+        <Overlay onClick={onCloseHandler} />
+        <div className={classes.content}>
+          {children}
         </div>
       </div>
     </Portal>
-
   );
 };
