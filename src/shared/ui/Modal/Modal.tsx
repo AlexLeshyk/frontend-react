@@ -1,7 +1,6 @@
-import {
-  FC, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
-} from 'react';
+import { FC, ReactNode } from 'react';
 import cx from 'clsx';
+import { useModal } from 'shared/hooks';
 import { Portal } from '../Portal/Portal';
 import { Overlay } from '../Overlay/Overlay';
 import classes from './Modal.module.css';
@@ -20,48 +19,11 @@ export const Modal: FC<ModalProps> = (props) => {
   } = props;
 
   const ANIMATION_DELAY = 250;
-  const [isClosing, setIsClosing] = useState<boolean>(false);
-  const [isOpening, setIsOpening] = useState<boolean>(false);
-  const [isMounted, setIsMounted] = useState<boolean>(false);
-  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
-
-  const onCloseHandler = useCallback(() => {
-    if (onClose) {
-      setIsClosing(true);
-      timerRef.current = setTimeout(() => {
-        onClose();
-        setIsClosing(false);
-        setIsMounted(false);
-      }, ANIMATION_DELAY);
-    }
-  }, [onClose]);
-
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      onCloseHandler();
-    }
-  }, [onCloseHandler]);
-
-  useEffect(() => {
-    if (isOpen) {
-      timerRef.current = setTimeout(() => {
-        setIsOpening(true);
-      }, 0);
-      window.addEventListener('keydown', onKeyDown);
-    } else {
-      setIsOpening(false);
-    }
-    return () => {
-      clearTimeout(timerRef.current);
-      window.removeEventListener('keydown', onKeyDown);
-    };
-  }, [isOpen, onKeyDown]);
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true);
-    }
-  }, [isOpen]);
+  const { isClosing, isMounted, close } = useModal({
+    isOpen,
+    onClose,
+    animationDelay: ANIMATION_DELAY,
+  });
 
   if (lazy && !isMounted) {
     return null;
@@ -73,15 +35,13 @@ export const Modal: FC<ModalProps> = (props) => {
         className={cx({
           [classes.wrapper]: true,
           [className]: className,
-          [classes.opened]: isOpening,
+          [classes.opened]: isOpen,
           [classes.closed]: isClosing,
         })}
         data-testid="modal"
       >
-        <Overlay onClick={onCloseHandler} />
-        <div className={classes.content}>
-          {children}
-        </div>
+        <Overlay onClick={close} />
+        <div className={classes.content}>{children}</div>
       </div>
     </Portal>
   );

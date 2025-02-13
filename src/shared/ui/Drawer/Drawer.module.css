@@ -49,3 +49,8 @@
 .opened .content {
   transform: translateY(0%);
 }
+
+.closed .content {
+  transform: translateY(100%);
+  transition: transform 0.25s ease-in-out;
+}
