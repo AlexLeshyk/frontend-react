@@ -1,7 +1,7 @@
 import { StateModel } from 'app/providers/StoreProvider';
 
 import { getArticleData, getArticleError, getArticleIsLoading } from './article';
-import { ArticleType } from '../types/article';
+import { ArticleType } from '../consts/consts';
 
 describe('getArticleData', () => {
   test('should return article data state', () => {

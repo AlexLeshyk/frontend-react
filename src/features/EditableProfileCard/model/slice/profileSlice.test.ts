@@ -1,8 +1,9 @@
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { profileReducer, profileActions } from './profileSlice';
-import { ProfileModel, ValidateProfileError } from '../types/EditableProfileCardModel';
+import { ProfileModel } from '../types/EditableProfileCardModel';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
+import { ValidateProfileError } from '../consts/consts';
 
 const data = {
   first: 'Александр',

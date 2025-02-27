@@ -1,7 +1,8 @@
 import { articleReducer } from './articleSlice';
 import { ArticleDetailsModel } from '../types/articleDetailsModel';
 import { getArticleById } from '../services/getArticleById/getArticleById';
-import { ArticleBlock, ArticleBlockType, ArticleType } from '../types/article';
+import { ArticleBlock } from '../types/article';
+import { ArticleBlockType, ArticleType } from '../consts/consts';
 
 const data = {
   id: '1',

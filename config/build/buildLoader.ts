@@ -23,13 +23,14 @@ export function buildLoaders(
   };
   const cssLoader = buildCssLoader(isDev);
 
-  const babelLoader = buildBabelLoader(options);
+  const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
+  const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
 
-  const typescript = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
-  };
+  // const typescript = {
+  //   test: /\.tsx?$/,
+  //   use: 'ts-loader',
+  //   exclude: /node_modules/,
+  // };
 
-  return [fileLoader, svgLoader, babelLoader, typescript, cssLoader];
+  return [fileLoader, svgLoader, codeBabelLoader, tsxCodeBabelLoader, cssLoader];
 }

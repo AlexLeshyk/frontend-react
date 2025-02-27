@@ -186,21 +186,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
     },
     {
       "id": "2",
       "username": "man",
       "password": "456",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://avatarzo.ru/wp-content/uploads/kolenok-na-plede.jpg"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
@@ -543,7 +549,7 @@
     },
     {
       "id": "12",
-      "title": "Python news",
+      "title": "Phyton good",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://banner2.cleanpng.com/lnd/20240918/ht/592b4ce7ba47475195af900272e808.webp",
       "views": 1026,
@@ -732,6 +738,33 @@
           ]
         }
       ]
+    }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Важное событие",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Запрос на дружбу",
+      "description": "Пользователь 'JaneDoe' отправил вам запрос на дружбу",
+      "userId": "2",
+      "href": "/admin"
+    },
+    {
+      "id": "3",
+      "title": "Новое событие",
+      "description": "В календаре появилось новое событие: 'Встреча в офисе'",
+      "userId": "3"
+    },
+    {
+      "id": "4",
+      "title": "Обновление профиля",
+      "description": "Пользователь 'BobSmith' обновил свой профиль, ознакомьтесь с изменениями",
+      "userId": "4"
     }
   ]
 }

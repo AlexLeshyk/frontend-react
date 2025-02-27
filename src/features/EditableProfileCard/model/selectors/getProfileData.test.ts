@@ -5,7 +5,7 @@ import {
   getProfileData, getProfileError, getProfileForm, getProfileIsLoading,
   getProfileReadOnly, getProfileValidateErrors,
 } from './getProfileData';
-import { ValidateProfileError } from '../types/EditableProfileCardModel';
+import { ValidateProfileError } from '../consts/consts';
 
 describe('getProfileData', () => {
   test('should return profile data state', () => {

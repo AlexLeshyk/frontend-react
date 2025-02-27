@@ -3,6 +3,7 @@ import { Page } from 'widgets/Page';
 import { memo } from 'react';
 
 import { useParams } from 'react-router-dom';
+import { EditArticleForm } from 'features/EditArticleForm';
 import classes from './ArticleEditPage.module.css';
 
 const ArticleEditPage = () => {
@@ -19,6 +20,7 @@ const ArticleEditPage = () => {
           {` = ${id}`}
         </p>
       ) : <p>{t('CreateNewArticle')}</p>}
+      <EditArticleForm id={id} />
     </Page>
   );
 };

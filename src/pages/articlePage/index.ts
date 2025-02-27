@@ -1,4 +1,4 @@
 export { ArticlePageAsync as ArticlePage } from './ui/ArticlePage/ArticlePageAsync';
-export { ArticleCommentsModel } from './model/types/articleCommentsModel';
-export { ArticleRecommendationsModel } from './model/types/articleRecommendationsModel';
-export { ArticleDetailsPageModel } from './model/types';
+export type { ArticleCommentsModel } from './model/types/articleCommentsModel';
+export type { ArticleRecommendationsModel } from './model/types/articleRecommendationsModel';
+export type { ArticleDetailsPageModel } from './model/types';

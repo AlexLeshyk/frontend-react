@@ -1,8 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import {
-  Article, ArticleBlockType, ArticleListView, ArticleType,
-} from '../../model/types/article';
+import { Article } from '../../model/types/article';
 import { ArticleListItem } from './ArticleListItem';
+import { ArticleBlockType, ArticleListView, ArticleType } from '../../model/consts/consts';
 
 export default {
   title: 'entities/Article/ArticleListItem',

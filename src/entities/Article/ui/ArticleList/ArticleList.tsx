@@ -4,7 +4,8 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { Text } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import classes from './ArticleList.module.css';
-import { Article, ArticleListView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
+import { ArticleListView } from '../../model/consts/consts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 

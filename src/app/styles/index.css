@@ -19,3 +19,18 @@ body {
   display: flex;
   height: calc(100vh - var(--navbar-height));
 }
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--bg-color-inverted);
+  min-height: 30px;
+  border-radius: 6px;
+}

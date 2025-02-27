@@ -11,6 +11,7 @@ import { ScrollSaveModel } from 'features/ScrollSave';
 import { ArticleDetailsPageModel } from 'pages/articlePage';
 import { ArticlePageModel } from 'pages/articlesListPage';
 import { rtkApi } from 'shared/api/rtkApi';
+import { createReduxStore } from './store';
 
 export interface StateModel {
   user: UserModel,
@@ -48,3 +49,5 @@ export interface ThunkConfig<T> {
   extra: ThunkExtraArg;
   state: StateModel;
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

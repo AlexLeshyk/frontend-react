@@ -17,3 +17,6 @@ export { VStack } from './Stack/VStack/VStack';
 export { HStack } from './Stack/HStack/HStack';
 export { ListBox } from './ListBox/ListBox';
 export { Dropdown } from './Dropdown/Dropdown';
+export { Popover } from './Popover/Popover';
+export { Overlay } from './Overlay/Overlay';
+export { Drawer } from './Drawer/Drawer';
