@@ -73,6 +73,7 @@ const LoginForm = memo((props: LoginFormProps) => {
           htmlFor={t('password')}
           onChange={onChangePassword}
           value={password}
+          type="password"
         />
         <Button
           className={classes.loginBtn}
