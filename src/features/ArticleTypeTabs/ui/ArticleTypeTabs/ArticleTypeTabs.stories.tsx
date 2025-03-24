@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ArticleType } from 'entities/Article';
 import { action } from '@storybook/addon-actions';
-import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
+import { ArticleType } from '@/entities/Article';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 export default {

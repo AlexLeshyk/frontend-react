@@ -1,13 +1,13 @@
 import cx from 'clsx';
-import { LanguageSwitcher } from 'widgets/LanguageSwitcher';
-import { SwitcherTheme } from 'widgets/SwitcherTheme';
-import { useToggle } from 'shared/hooks';
-import { Button, VStack } from 'shared/ui';
-import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button.model';
 import { memo, useMemo } from 'react';
 import { useMediaQuery } from '@mantine/hooks';
 import { useSelector } from 'react-redux';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/16/solid';
+import { SwitcherTheme } from '@/widgets/SwitcherTheme';
+import { LanguageSwitcher } from '@/widgets/LanguageSwitcher';
+import { ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button.model';
+import { useToggle } from '@/shared/hooks';
+import { Button, VStack } from '@/shared/ui';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 

@@ -1,13 +1,13 @@
 import { memo, useCallback } from 'react';
 import cx from 'clsx';
-import { Dropdown, Avatar } from 'shared/ui';
 import { ArrowLeftEndOnRectangleIcon, UserCircleIcon, AdjustmentsHorizontalIcon } from '@heroicons/react/16/solid';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import {
   getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from 'entities/User';
-import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+} from '@/entities/User';
+import { Dropdown, Avatar } from '@/shared/ui';
 
 export interface DropdownMenuProps {
   className?: string;

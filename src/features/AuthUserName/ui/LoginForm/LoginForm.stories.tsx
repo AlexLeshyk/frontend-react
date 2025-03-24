@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
 import LoginForm from './LoginForm';
 
 export default {

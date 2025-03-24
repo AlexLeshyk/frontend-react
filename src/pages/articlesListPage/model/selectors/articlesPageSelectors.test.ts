@@ -1,5 +1,5 @@
-import { StateModel } from 'app/providers/StoreProvider';
-import { ArticleListView, ArticleSortField, ArticleType } from 'entities/Article';
+import { StateModel } from '@/app/providers/StoreProvider';
+import { ArticleListView, ArticleSortField, ArticleType } from '@/entities/Article';
 import {
   getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView, getArticlesPageHasPage, getArticlesPageNumber,
   getArticlesPageInited, getArticlesPageType, getArticlesPageSort, getArticlesPageOrder, getArticlesPageSearch,

@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 import cx from 'clsx';
-import { useModal } from 'shared/hooks';
+import { useModal } from '@/shared/hooks';
 import { Portal } from '../Portal/Portal';
 import { Overlay } from '../Overlay/Overlay';
 import classes from './Modal.module.css';

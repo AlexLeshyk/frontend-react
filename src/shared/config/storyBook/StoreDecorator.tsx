@@ -1,14 +1,14 @@
-import { StoreProvider, StateModel } from 'app/providers/StoreProvider';
-import { articleReducer } from 'entities/Article/model/slices/articleSlice';
-import { addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentFormSlice';
-import { loginReducer } from 'features/AuthUserName/model/slice/loginSlice';
-import { profileReducer } from 'features/EditableProfileCard/model/slice/profileSlice';
-import { scrollSaveReducer } from 'features/ScrollSave';
-import { articleDetailsPageReducer } from 'pages/articlePage/model/slice';
-import { articlesPageReducer } from 'pages/articlesListPage/model/slice/articlesPageSlice';
 import { FC } from 'react';
-import { rtkApi } from 'shared/api/rtkApi';
-import { ReducersList } from 'shared/lib';
+import { addCommentFormReducer } from '@/features/AddCommentForm/model/slice/addCommentFormSlice';
+import { loginReducer } from '@/features/AuthUserName/model/slice/loginSlice';
+import { profileReducer } from '@/features/EditableProfileCard/model/slice/profileSlice';
+import { articleReducer } from '@/entities/Article/model/slices/articleSlice';
+import { scrollSaveReducer } from '@/features/ScrollSave';
+import { StoreProvider, StateModel } from '@/app/providers/StoreProvider';
+import { articleDetailsPageReducer } from '@/pages/articlePage/model/slice';
+import { articlesPageReducer } from '@/pages/articlesListPage/model/slice/articlesPageSlice';
+import { rtkApi } from '@/shared/api/rtkApi';
+import { ReducersList } from '@/shared/lib';
 
 const defaultAsyncReducers: ReducersList = {
   [rtkApi.reducerPath]: rtkApi.reducer,

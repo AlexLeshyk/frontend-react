@@ -2,7 +2,7 @@ import {
   memo, ReactNode, useCallback, useEffect,
 } from 'react';
 import cx from 'clsx';
-import { useAnimationLibs } from 'shared/lib/components';
+import { useAnimationLibs } from '@/shared/lib/components';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import classes from './Drawer.module.css';

@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import { Button, HStack, Text } from 'shared/ui';
-import { ButtonTheme } from 'shared/ui/Button/Button.model';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/hooks';
 import { useCallback } from 'react';
-import { getUserAuthData } from 'entities/User';
+import { ButtonTheme } from '@/shared/ui/Button/Button.model';
+import { useAppDispatch } from '@/shared/hooks';
+import { getUserAuthData } from '@/entities/User';
+import { Button, HStack, Text } from '@/shared/ui';
 
 import { profileActions } from '../../model/slice/profileSlice';
 import { getProfileData, getProfileReadOnly } from '../../model/selectors/getProfileData';

@@ -1,5 +1,5 @@
-import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
-import { ArticleSortField } from 'entities/Article';
+import { ArticleSortField } from '@/entities/Article';
+import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import { getArticlesList } from '../getArticlesList/getArticlesList';
 import { initArticlesPage } from './initArticlesPage';
 

@@ -1,9 +1,9 @@
 import cx from 'clsx';
 import { memo, useMemo } from 'react';
-import { ArticleType } from 'entities/Article';
-import { TabItem } from 'shared/ui/Tabs/Tabs';
-import { Tabs } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
+import { TabItem } from '@/shared/ui/Tabs/Tabs';
+import { ArticleType } from '@/entities/Article';
+import { Tabs } from '@/shared/ui';
 
 export interface ArticleTypeTabsProps {
   className?: string;

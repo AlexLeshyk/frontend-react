@@ -1,6 +1,6 @@
 import cx from 'clsx';
 import { memo } from 'react';
-import { Code } from 'shared/ui';
+import { Code } from '@/shared/ui';
 import { ArticleCodeBlock } from '../../model/types/article';
 
 import classes from './ArticleCodeBlockComponent.module.css';

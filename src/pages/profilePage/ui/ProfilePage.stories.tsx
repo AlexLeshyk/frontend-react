@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
-import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
-import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
+import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import ProfilePage from './ProfilePage';
 
 export default {

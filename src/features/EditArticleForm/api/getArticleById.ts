@@ -1,5 +1,5 @@
-import { ArticleModel } from 'entities/Article';
-import { rtkApi } from 'shared/api/rtkApi';
+import { ArticleModel } from '@/entities/Article';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 interface GetArticleByIdArg {
   userId: string;

@@ -1,20 +1,20 @@
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { memo, useCallback, useState } from 'react';
+import { ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button.model';
+import { getUserAuthData } from '@/entities/User';
+import { LoginModal } from '@/features/AuthUserName';
 import {
   Button, LinkComponent, Text, HStack,
-} from 'shared/ui';
-import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button.model';
-import { LoginModal } from 'features/AuthUserName';
-import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
-import { memo, useCallback, useState } from 'react';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { LinkTheme } from 'shared/ui/LinkComponent/LinkComponent.model';
-import { TextTheme } from 'shared/ui/Text/Text.model';
-import { TextSize } from 'shared/ui/Text/Text';
+} from '@/shared/ui';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { LinkTheme } from '@/shared/ui/LinkComponent/LinkComponent.model';
+import { TextTheme } from '@/shared/ui/Text/Text.model';
+import { TextSize } from '@/shared/ui/Text/Text';
 
-import { NotificationButton } from 'features/NotificationButton';
-import { DropdownMenu } from 'features/DropdownMenu';
+import { NotificationButton } from '@/features/NotificationButton';
+import { DropdownMenu } from '@/features/DropdownMenu';
 import classes from './Navbar.module.css';
 
 interface NavbarProps {

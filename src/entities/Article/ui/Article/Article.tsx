@@ -1,17 +1,17 @@
 import cx from 'clsx';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib';
 import { memo, useCallback } from 'react';
-import { useAppDispatch, useInitialEffect } from 'shared/hooks';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import {
-  Avatar, Text, Title, Skeleton,
-} from 'shared/ui';
-import { TextAlign, TextTheme } from 'shared/ui/Text/Text.model';
 import EyeIcon from 'shared/icons/eye.svg';
 import CalendarIcon from 'shared/icons/calendar.svg';
-import { TitleSize } from 'shared/ui/Title/Title';
 import { useMediaQuery } from '@mantine/hooks';
+import { TextAlign, TextTheme } from '@/shared/ui/Text/Text.model';
+import { TitleSize } from '@/shared/ui/Title/Title';
+import { useAppDispatch, useInitialEffect } from '@/shared/hooks';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
+import {
+  Avatar, Text, Title, Skeleton,
+} from '@/shared/ui';
 import { getArticleById } from '../../model/services/getArticleById/getArticleById';
 import { articleReducer } from '../../model/slices/articleSlice';
 import { getArticleData, getArticleError } from '../../model/selectors/article';

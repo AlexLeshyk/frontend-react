@@ -1,10 +1,10 @@
 import cx from 'clsx';
 import { Suspense, useEffect } from 'react';
-import { Navbar } from 'widgets/Navbar';
-import { Sidebar } from 'widgets/Sidebar';
-import { getUserMounted, userActions } from 'entities/User';
-import { useAppDispatch } from 'shared/hooks';
 import { useSelector } from 'react-redux';
+import { useAppDispatch } from '@/shared/hooks';
+import { Sidebar } from '@/widgets/Sidebar';
+import { Navbar } from '@/widgets/Navbar';
+import { getUserMounted, userActions } from '@/entities/User';
 import { AppRouter } from './providers/router';
 
 export const App = () => {

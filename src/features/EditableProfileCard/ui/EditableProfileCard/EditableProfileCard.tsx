@@ -1,15 +1,15 @@
 import cx from 'clsx';
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import { Text, VStack } from 'shared/ui';
 import { useSelector } from 'react-redux';
-import { useAppDispatch, useInitialEffect } from 'shared/hooks';
-import { TextTheme } from 'shared/ui/Text/Text.model';
-import { ProfileCard } from 'entities/Profile';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib';
-import { TextSize } from 'shared/ui/Text/Text';
+import { TextTheme } from '@/shared/ui/Text/Text.model';
+import { TextSize } from '@/shared/ui/Text/Text';
+import { ProfileCard } from '@/entities/Profile';
+import { useAppDispatch, useInitialEffect } from '@/shared/hooks';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
+import { Text, VStack } from '@/shared/ui';
 import {
   getProfileForm,
   getProfileError,

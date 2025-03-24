@@ -2,9 +2,9 @@ import cx from 'clsx';
 import { memo } from 'react';
 import ListIcon from 'shared/icons/list.svg';
 import TileIcon from 'shared/icons/tile.svg';
-import { ArticleListView } from 'entities/Article';
-import { Button } from 'shared/ui';
-import { ButtonTheme } from 'shared/ui/Button/Button.model';
+import { ButtonTheme } from '@/shared/ui/Button/Button.model';
+import { ArticleListView } from '@/entities/Article';
+import { Button } from '@/shared/ui';
 import classes from './ArticleViewSelector.module.css';
 
 export interface ArticleViewSelectorProps {

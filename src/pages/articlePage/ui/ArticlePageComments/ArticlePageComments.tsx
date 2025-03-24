@@ -1,11 +1,11 @@
 import { memo, Suspense, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Title, Loader } from 'shared/ui';
-import { AddCommentForm } from 'features/AddCommentForm';
-import { CommentList } from 'entities/Comment';
-import { TitleSize } from 'shared/ui/Title/Title';
 import { useSelector } from 'react-redux';
-import { useAppDispatch, useInitialEffect } from 'shared/hooks';
+import { AddCommentForm } from '@/features/AddCommentForm';
+import { TitleSize } from '@/shared/ui/Title/Title';
+import { CommentList } from '@/entities/Comment';
+import { useAppDispatch, useInitialEffect } from '@/shared/hooks';
+import { Title, Loader } from '@/shared/ui';
 import { getArticleComments } from '../../model/slice/articleCommentsSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';

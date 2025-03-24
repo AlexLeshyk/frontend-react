@@ -1,9 +1,9 @@
-import { Article } from 'entities/Article';
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib';
-import { Page } from 'widgets/Page';
-import { ArticleRecommendationList } from 'features/ArticleRecommendationList';
+import { ArticleRecommendationList } from '@/features/ArticleRecommendationList';
+import { Page } from '@/widgets/Page';
+import { Article } from '@/entities/Article';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
 import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticlePageButtons } from '../ArticlePageButtons/ArticlePageButtons';
 import { ArticlePageComments } from '../ArticlePageComments/ArticlePageComments';

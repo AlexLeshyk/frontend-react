@@ -1,5 +1,5 @@
 import { StoryObj, Meta } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
 import { Notification } from '../../model/types/notification';
 import { NotificationList } from './NotificationList';
 

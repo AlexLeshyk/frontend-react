@@ -1,11 +1,11 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Button } from 'shared/ui';
 import cx from 'clsx';
 import { useSelector } from 'react-redux';
-import { getArticleData } from 'entities/Article';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { getArticleData } from '@/entities/Article';
+import { Button } from '@/shared/ui';
 import { getArticleCanEdit } from '../../model/selectors/article';
 
 import classes from './ArticlePageButtons.module.css';

@@ -1,4 +1,4 @@
-import { StateModel } from 'app/providers/StoreProvider';
+import { StateModel } from '@/app/providers/StoreProvider';
 
 export const getProfileData = (state: StateModel) => state.profile?.data;
 export const getProfileError = (state: StateModel) => state.profile?.error;

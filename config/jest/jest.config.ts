@@ -46,6 +46,7 @@ export default {
     '\\.(css|scss)$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     axios: 'axios/dist/node/axios.cjs',
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
   globals: {
     __IS_DEV__: true,

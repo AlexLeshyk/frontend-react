@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from 'shared/ui';
-import { DropdownDirection } from 'shared/types';
+import { DropdownDirection } from '@/shared/types';
+import { ListBox } from '@/shared/ui';
 import { Currency } from '../../model/types/currency';
 
 const options = [

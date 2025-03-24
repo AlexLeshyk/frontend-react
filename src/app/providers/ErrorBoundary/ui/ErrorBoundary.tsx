@@ -1,8 +1,8 @@
 import {
   Component, ErrorInfo, ReactNode, Suspense,
 } from 'react';
-import { ErrorStub } from 'widgets/ErrorStub';
 import PropTypes from 'prop-types';
+import { ErrorStub } from '@/widgets/ErrorStub';
 
 interface ErrorBoundaryProps {
   children: ReactNode

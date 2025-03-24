@@ -1,6 +1,6 @@
 import {
   ArticleModel, ArticleListView, ArticleBlockType, ArticleSortField, ArticleType,
-} from 'entities/Article';
+} from '@/entities/Article';
 import { articlesPageActions, articlesPageReducer } from './articlesPageSlice';
 import { ArticlePageModel } from '../types/articlePageModel';
 import { getArticlesList } from '../services/getArticlesList/getArticlesList';
