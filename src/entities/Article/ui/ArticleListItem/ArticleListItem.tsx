@@ -1,7 +1,7 @@
 import cx from 'clsx';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import EyeIcon from 'shared/icons/eye.svg';
+import EyeIcon from '@/shared/icons/eye.svg';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { TextSize } from '@/shared/ui/Text/Text';
 import { TitleSize } from '@/shared/ui/Title/Title';

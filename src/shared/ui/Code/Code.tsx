@@ -1,6 +1,6 @@
 import cx from 'clsx';
 import { memo, useCallback } from 'react';
-import CopyIcon from 'shared/icons/copy.svg';
+import CopyIcon from '@/shared/icons/copy.svg';
 import classes from './Code.module.css';
 import { ButtonTheme } from '../Button/Button.model';
 import { Button } from '../Button/Button';

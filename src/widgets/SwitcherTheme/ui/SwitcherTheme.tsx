@@ -1,6 +1,6 @@
-import DarkIcon from 'shared/icons/theme-dark.svg';
-import LightIcon from 'shared/icons/theme-light.svg';
 import { memo } from 'react';
+import DarkIcon from '@/shared/icons/theme-dark.svg';
+import LightIcon from '@/shared/icons/theme-light.svg';
 import { Theme, useTheme } from '@/app/providers/ThemeProvider';
 import { ButtonTheme } from '@/shared/ui/Button/Button.model';
 import { Button } from '@/shared/ui';
