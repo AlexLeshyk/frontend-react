@@ -1,10 +1,11 @@
 import { memo, useCallback, useState } from 'react';
 import cx from 'clsx';
 import NotificationIcon from 'shared/icons/notification.svg';
-import { NotificationList } from 'entities/Notification';
-import { Button, Drawer, Popover } from 'shared/ui';
-import { ButtonTheme } from 'shared/ui/Button/Button.model';
 import { useMediaQuery } from '@mantine/hooks';
+import { NotificationList } from '@/entities/Notification';
+import { ButtonTheme } from '@/shared/ui/Button/Button.model';
+import { AnimationProvider } from '@/shared/lib/components';
+import { Button, Drawer, Popover } from '@/shared/ui';
 import classes from './NotificationButton.module.css';
 
 export interface NotificationItemProps {
@@ -36,9 +37,11 @@ export const NotificationButton = memo((props: NotificationItemProps) => {
       {isMobile && (
         <>
           {trigger}
-          <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-            <NotificationList />
-          </Drawer>
+          <AnimationProvider>
+            <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+              <NotificationList />
+            </Drawer>
+          </AnimationProvider>
         </>
       )}
       {!isMobile && (

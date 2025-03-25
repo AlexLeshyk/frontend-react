@@ -1,9 +1,9 @@
 import { Reducer } from '@reduxjs/toolkit';
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
-import { StateModel, StateModelKey } from 'app/providers/StoreProvider/config/StateModel';
 import { ReactNode, useEffect } from 'react';
 import { useStore } from 'react-redux';
-import { useAppDispatch } from 'shared/hooks';
+import { StateModel, StateModelKey } from '@/app/providers/StoreProvider/config/StateModel';
+import { ReduxStoreWithManager } from '@/app/providers/StoreProvider';
+import { useAppDispatch } from '@/shared/hooks';
 
 export type ReducersList = {
   [name in StateModelKey]?: Reducer<NonNullable<StateModel[name]>>

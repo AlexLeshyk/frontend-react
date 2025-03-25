@@ -1,8 +1,8 @@
 import cx from 'clsx';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 
-import { Text } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
+import { Text } from '@/shared/ui';
 import classes from './ArticleList.module.css';
 import { Article } from '../../model/types/article';
 import { ArticleListView } from '../../model/consts/consts';

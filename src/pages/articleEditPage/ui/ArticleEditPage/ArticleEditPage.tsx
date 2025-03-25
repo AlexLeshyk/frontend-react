@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { Page } from 'widgets/Page';
 import { memo } from 'react';
 
 import { useParams } from 'react-router-dom';
-import { EditArticleForm } from 'features/EditArticleForm';
+import { EditArticleForm } from '@/features/EditArticleForm';
+import { Page } from '@/widgets/Page';
 import classes from './ArticleEditPage.module.css';
 
 const ArticleEditPage = () => {

@@ -1,9 +1,9 @@
 /* eslint-disable i18next/no-literal-string */
 import { memo } from 'react';
 import cx from 'clsx';
-import { Card, LinkComponent, Text } from 'shared/ui';
-import { CardTheme } from 'shared/ui/Card/Card';
-import { TextSize } from 'shared/ui/Text/Text';
+import { CardTheme } from '@/shared/ui/Card/Card';
+import { TextSize } from '@/shared/ui/Text/Text';
+import { Card, LinkComponent, Text } from '@/shared/ui';
 import classes from './NotificationItem.module.css';
 import { Notification } from '../../model/types/notification';
 

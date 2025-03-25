@@ -1,7 +1,7 @@
 import cx from 'clsx';
 
-import { Loader, Modal } from 'shared/ui';
 import { Suspense } from 'react';
+import { Loader, Modal } from '@/shared/ui';
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 
 interface LoginModalProps {

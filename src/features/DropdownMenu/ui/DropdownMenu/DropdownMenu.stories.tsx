@@ -1,8 +1,8 @@
 import { StoryObj, Meta } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
-import { UserRole } from 'entities/User';
-import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
+import { UserRole } from '@/entities/User';
 import { DropdownMenu } from './DropdownMenu';
 
 export default {

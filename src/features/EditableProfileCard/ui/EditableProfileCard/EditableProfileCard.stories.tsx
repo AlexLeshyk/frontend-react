@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
-import { UserRole } from 'entities/User';
+import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
+import { UserRole } from '@/entities/User';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 import { EditableProfileCard } from './EditableProfileCard';
 
 export default {

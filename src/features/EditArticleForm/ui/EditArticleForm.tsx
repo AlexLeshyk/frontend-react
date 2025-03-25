@@ -1,12 +1,12 @@
 import cx from 'clsx';
 import { memo, useCallback } from 'react';
-import { Button, Title, VStack } from 'shared/ui';
-import { TitleSize } from 'shared/ui/Title/Title';
 import { useTranslation } from 'react-i18next';
 
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
-import { ArticleCard, ArticleModel } from 'entities/Article';
+import { TitleSize } from '@/shared/ui/Title/Title';
+import { getUserAuthData } from '@/entities/User';
+import { ArticleCard, ArticleModel } from '@/entities/Article';
+import { Button, Title, VStack } from '@/shared/ui';
 import { useGetArticleById, useUpdateArticle } from '../api/getArticleById';
 import classes from './EditArticleForm.module.css';
 

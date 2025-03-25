@@ -50,7 +50,19 @@
   transform: translateY(0%);
 }
 
-.closed .content {
+/* .closed .content {
   transform: translateY(100%);
   transition: transform 0.25s ease-in-out;
+} */
+
+.sheet {
+  z-index: 100;
+  position: fixed;
+  left: 3vw;
+  height: calc(100vh + 80px);
+  width: 94vw;
+  border-radius: 12px 12px 0;
+  background: var(--bg-color);
+  touch-action: none;
+  padding: 15px;
 }

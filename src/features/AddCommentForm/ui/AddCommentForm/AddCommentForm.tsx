@@ -1,10 +1,10 @@
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { Button, Input } from 'shared/ui';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/hooks';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib';
+import { useAppDispatch } from '@/shared/hooks';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
+import { Button, Input } from '@/shared/ui';
 import { getAddCommentFormMessage } from '../../model/selectors/addCommentForm';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice';
 

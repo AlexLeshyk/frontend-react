@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import avatar from 'shared/images/tests/oduvanchik-na-solncze.jpg';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 import { ProfileCard } from './ProfileCard';
 
 export default {

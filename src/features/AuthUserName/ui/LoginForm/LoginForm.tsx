@@ -1,11 +1,11 @@
 import cx from 'clsx';
-import { Button, Input, Text } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { TextTheme } from 'shared/ui/Text/Text.model';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib';
-import { useAppDispatch } from 'shared/hooks';
+import { TextTheme } from '@/shared/ui/Text/Text.model';
+import { useAppDispatch } from '@/shared/hooks';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
+import { Button, Input, Text } from '@/shared/ui';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import {
   getLoginError, getLoginIsLoading, getLoginPassword, getLoginUserName,
@@ -73,6 +73,7 @@ const LoginForm = memo((props: LoginFormProps) => {
           htmlFor={t('password')}
           onChange={onChangePassword}
           value={password}
+          type="password"
         />
         <Button
           className={classes.loginBtn}

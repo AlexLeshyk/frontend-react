@@ -1,5 +1,5 @@
-import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
-import { ArticleBlockType, ArticleType } from 'entities/Article';
+import { ArticleBlockType, ArticleType } from '@/entities/Article';
+import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import { getArticleRecommendations } from './getArticleRecommendations';
 
 const data = {

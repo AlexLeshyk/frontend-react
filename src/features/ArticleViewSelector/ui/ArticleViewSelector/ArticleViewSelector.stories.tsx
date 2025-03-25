@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ArticleListView } from 'entities/Article';
+import { ArticleListView } from '@/entities/Article';
 import { ArticleViewSelector } from './ArticleViewSelector';
 
 export default {

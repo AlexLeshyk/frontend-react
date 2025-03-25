@@ -2,9 +2,9 @@ import { Fragment, memo, ReactNode } from 'react';
 import {
   Listbox as HListBox, ListboxButton, ListboxOption, ListboxOptions,
 } from '@headlessui/react';
-import { DropdownDirection } from 'shared/types';
 import cx from 'clsx';
 import { ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/16/solid';
+import { DropdownDirection } from '@/shared/types';
 import classes from './ListBox.module.css';
 import { Button } from '../Button/Button';
 

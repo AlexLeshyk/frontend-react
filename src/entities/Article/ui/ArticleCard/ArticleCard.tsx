@@ -1,9 +1,9 @@
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
+import { TextAlign, TextTheme } from '@/shared/ui/Text/Text.model';
 import {
   Input, Skeleton, Text, VStack,
-} from 'shared/ui';
-import { TextAlign, TextTheme } from 'shared/ui/Text/Text.model';
+} from '@/shared/ui';
 import { Article } from '../../model/types/article';
 import classes from './ArticleCard.module.css';
 

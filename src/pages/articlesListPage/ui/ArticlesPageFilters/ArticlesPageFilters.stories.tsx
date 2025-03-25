@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
-import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
 import { ArticlesPageFilters } from './ArticlesPageFilters';
 
 export default {

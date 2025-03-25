@@ -1,5 +1,5 @@
-import { StateModel } from 'app/providers/StoreProvider';
-import { ArticleListView, ArticleSortField, ArticleType } from 'entities/Article';
+import { StateModel } from '@/app/providers/StoreProvider';
+import { ArticleListView, ArticleSortField, ArticleType } from '@/entities/Article';
 
 export const getArticlesPageIsLoading = (state: StateModel) => state.articlesPage?.isLoading;
 export const getArticlesPageError = (state: StateModel) => state.articlesPage?.error;

@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import cx from 'clsx';
-import { VStack, Skeleton } from 'shared/ui';
+import { VStack, Skeleton } from '@/shared/ui';
 import { useGetNotifications } from '../../api/notificationApi';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 import classes from './NotificationList.module.css';

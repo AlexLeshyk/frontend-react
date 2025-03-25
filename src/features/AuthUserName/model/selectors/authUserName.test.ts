@@ -1,4 +1,4 @@
-import { StateModel } from 'app/providers/StoreProvider';
+import { StateModel } from '@/app/providers/StoreProvider';
 import {
   getLoginError, getLoginIsLoading, getLoginPassword, getLoginUserName,
 } from './authUserName';

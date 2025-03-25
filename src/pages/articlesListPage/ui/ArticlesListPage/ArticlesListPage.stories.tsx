@@ -1,9 +1,9 @@
 import { StoryObj, Meta } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
-import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
-import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
-import { ArticleBlockType, ArticleListView, ArticleType } from 'entities/Article';
 import avatar from 'shared/images/tests/oduvanchik-na-solncze.jpg';
+import { ArticleBlockType, ArticleListView, ArticleType } from '@/entities/Article';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
+import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
 import ArticlesListPage from './ArticlesListPage';
 
 export default {

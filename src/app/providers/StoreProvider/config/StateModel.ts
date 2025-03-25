@@ -2,15 +2,15 @@ import {
   AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { ArticleDetailsModel } from 'entities/Article';
-import { UserModel } from 'entities/User';
-import { AddCommentFormModel } from 'features/AddCommentForm';
-import { LoginModel } from 'features/AuthUserName';
-import { ProfileModel } from 'features/EditableProfileCard';
-import { ScrollSaveModel } from 'features/ScrollSave';
-import { ArticleDetailsPageModel } from 'pages/articlePage';
-import { ArticlePageModel } from 'pages/articlesListPage';
-import { rtkApi } from 'shared/api/rtkApi';
+import { ArticleDetailsModel } from '@/entities/Article';
+import { UserModel } from '@/entities/User';
+import { AddCommentFormModel } from '@/features/AddCommentForm';
+import { LoginModel } from '@/features/AuthUserName';
+import { ProfileModel } from '@/features/EditableProfileCard';
+import { ScrollSaveModel } from '@/features/ScrollSave';
+import { ArticleDetailsPageModel } from '@/pages/articlePage';
+import { ArticlePageModel } from '@/pages/articlesListPage';
+import { rtkApi } from '@/shared/api/rtkApi';
 import { createReduxStore } from './store';
 
 export interface StateModel {

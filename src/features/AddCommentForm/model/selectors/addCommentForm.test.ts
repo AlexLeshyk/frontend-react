@@ -1,4 +1,4 @@
-import { StateModel } from 'app/providers/StoreProvider';
+import { StateModel } from '@/app/providers/StoreProvider';
 
 import { getAddCommentFormError, getAddCommentFormMessage } from './addCommentForm';
 

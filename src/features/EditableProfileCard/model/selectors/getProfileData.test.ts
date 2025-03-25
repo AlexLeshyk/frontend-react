@@ -1,6 +1,6 @@
-import { StateModel } from 'app/providers/StoreProvider';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import { StateModel } from '@/app/providers/StoreProvider';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 import {
   getProfileData, getProfileError, getProfileForm, getProfileIsLoading,
   getProfileReadOnly, getProfileValidateErrors,

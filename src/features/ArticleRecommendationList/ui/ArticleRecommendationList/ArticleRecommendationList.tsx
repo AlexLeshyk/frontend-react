@@ -1,12 +1,12 @@
 import cx from 'clsx';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { TextTheme } from '@/shared/ui/Text/Text.model';
+import { TitleSize } from '@/shared/ui/Title/Title';
+import { ArticleList, ArticleListView, ArticleModel } from '@/entities/Article';
 import {
   Skeleton, Text, Title, VStack,
-} from 'shared/ui';
-import { TitleSize } from 'shared/ui/Title/Title';
-import { ArticleList, ArticleListView, ArticleModel } from 'entities/Article';
-import { useTranslation } from 'react-i18next';
-import { TextTheme } from 'shared/ui/Text/Text.model';
+} from '@/shared/ui';
 import { useArticleRecommendationList } from '../../api/aritcleRecommendationsApi';
 import classes from './ArticleRecommendationList.module.css';
 

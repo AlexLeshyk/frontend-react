@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { Page } from 'widgets/Page';
+import { Page } from '@/widgets/Page';
 import classes from './NotFoundPage.module.css';
 
 export const NotFoundPage = () => {

@@ -1,13 +1,13 @@
 /* eslint-disable i18next/no-literal-string */
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { TitleSize } from '@/shared/ui/Title/Title';
+import { Page } from '@/widgets/Page';
+import { ButtonTheme } from '@/shared/ui/Button/Button.model';
 import {
   Button, Input, MegaBoost, Title,
-} from 'shared/ui';
-
-import { ButtonTheme } from 'shared/ui/Button/Button.model';
-import { TitleSize } from 'shared/ui/Title/Title';
-import { Page } from 'widgets/Page';
+} from '@/shared/ui';
 
 const MainPage = () => {
   const { t } = useTranslation();

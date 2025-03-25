@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import cx from 'clsx';
 
-import { Button } from 'shared/ui';
-import { ButtonTheme } from 'shared/ui/Button/Button.model';
 import { memo } from 'react';
+import { ButtonTheme } from '@/shared/ui/Button/Button.model';
+import { Button } from '@/shared/ui';
 import classes from './LanguageSwitcher.module.css';
 
 interface LanguageSwitcherProps {

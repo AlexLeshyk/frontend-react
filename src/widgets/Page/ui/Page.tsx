@@ -1,11 +1,11 @@
 import cx from 'clsx';
 import { ReactNode, useLayoutEffect, UIEvent } from 'react';
-import { useAppDispatch, useScrollIntersection, useThrottle } from 'shared/hooks';
-import { getScrollSaveByPath, setScrollPosition } from 'features/ScrollSave';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { StateModel } from 'app/providers/StoreProvider';
 import { useThrottledCallback } from '@mantine/hooks';
+import { getScrollSaveByPath, setScrollPosition } from '@/features/ScrollSave';
+import { StateModel } from '@/app/providers/StoreProvider';
+import { useAppDispatch, useScrollIntersection, useThrottle } from '@/shared/hooks';
 
 import classes from './Page.module.css';
 

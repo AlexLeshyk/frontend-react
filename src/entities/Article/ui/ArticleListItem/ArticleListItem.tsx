@@ -1,14 +1,14 @@
 import cx from 'clsx';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import EyeIcon from 'shared/icons/eye.svg';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { TextSize } from '@/shared/ui/Text/Text';
+import { TitleSize } from '@/shared/ui/Title/Title';
+import { ButtonTheme } from '@/shared/ui/Button/Button.model';
 import {
   Avatar, Button, Card, LinkComponent, Text, Title,
-} from 'shared/ui';
-import EyeIcon from 'shared/icons/eye.svg';
-import { TitleSize } from 'shared/ui/Title/Title';
-import { ButtonTheme } from 'shared/ui/Button/Button.model';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { TextSize } from 'shared/ui/Text/Text';
+} from '@/shared/ui';
 import { Article, ArticleTextBlock } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleBlockType, ArticleListView } from '../../model/consts/consts';

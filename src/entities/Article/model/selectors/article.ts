@@ -1,4 +1,4 @@
-import { StateModel } from 'app/providers/StoreProvider';
+import { StateModel } from '@/app/providers/StoreProvider';
 
 export const getArticleData = (state: StateModel) => state.article?.data;
 export const getArticleIsLoading = (state: StateModel) => state.article?.isLoading;

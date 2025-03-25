@@ -1,4 +1,4 @@
-import { StateModel } from 'app/providers/StoreProvider';
+import { StateModel } from '@/app/providers/StoreProvider';
 
 export const getLoginError = (state: StateModel) => state?.loginForm?.error;
 export const getLoginPassword = (state: StateModel) => state?.loginForm?.password || '';

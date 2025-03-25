@@ -1,4 +1,4 @@
-import { ArticleBlockType, ArticleModel, ArticleType } from 'entities/Article';
+import { ArticleBlockType, ArticleModel, ArticleType } from '@/entities/Article';
 import { articleRecommendationsReducer } from './articleRecommendationsSlice';
 import { getArticleRecommendations } from '../services/getArticleRecommendations/getArticleRecommendations';
 import { ArticleRecommendationsModel } from '../types/articleRecommendationsModel';

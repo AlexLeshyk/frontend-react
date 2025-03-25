@@ -1,11 +1,11 @@
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
+import { TextAlign, TextTheme } from '@/shared/ui/Text/Text.model';
+import { Country, CountrySelect } from '@/entities/Country';
+import { Currency, CurrencySelect } from '@/entities/Currency';
 import {
   Avatar, Input, Skeleton, Text, VStack,
-} from 'shared/ui';
-import { TextAlign, TextTheme } from 'shared/ui/Text/Text.model';
-import { Currency, CurrencySelect } from 'entities/Currency';
-import { Country, CountrySelect } from 'entities/Country';
+} from '@/shared/ui';
 import { Profile } from '../../model/types/profileType';
 import classes from './ProfileCard.module.css';
 
