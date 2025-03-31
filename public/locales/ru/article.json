@@ -11,6 +11,8 @@
   "Recommend": "Рекомендуем",
   "Edit": "Редактировать",
   "CreateNewArticle": "Создание новой статьи",
-  "Edit article with id": "Редактирование статьи с id",
-  "ArticleRecommendError": "Ошибка загрузки рекомендаций"
+  "Edit article with id": "Статья с id",
+  "ArticleRecommendError": "Ошибка загрузки рекомендаций",
+  "Submit": "Редактировать статью",
+  "FormTitle": "Форма редактирования статьи"
 }

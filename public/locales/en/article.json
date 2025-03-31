@@ -11,6 +11,8 @@
   "Recommend": "We recommend",
   "Edit": "Edit",
   "CreateNewArticle": "Create new article",
-  "Edit article with id": "Edit article with id",
-  "ArticleRecommendError": "Error loading recommendations"
+  "Edit article with id": "Article with id",
+  "ArticleRecommendError": "Error loading recommendations",
+  "Submit": "Edit article",
+  "FormTitle": "Edit Article Form"
 }

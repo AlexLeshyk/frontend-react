@@ -13,6 +13,11 @@ export const articleSlice = createSlice({
   name: 'article',
   initialState,
   reducers: {
+    updateArticle: (state, action: PayloadAction<Article>) => {
+      state.form = {
+        ...state.form, ...action.payload,
+      };
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -26,6 +31,7 @@ export const articleSlice = createSlice({
       ) => {
         state.isLoading = false;
         state.data = action.payload;
+        state.form = action.payload;
       })
       .addCase(getArticleById.rejected, (state, action) => {
         state.isLoading = false;

@@ -4,4 +4,5 @@ export interface ArticleDetailsModel {
   isLoading: boolean;
   error?: string;
   data?: ArticleModel;
+  form?: ArticleModel;
 }
