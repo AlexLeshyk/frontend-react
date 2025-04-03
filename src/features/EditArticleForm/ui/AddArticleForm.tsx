@@ -1,16 +1,14 @@
 import cx from 'clsx';
 import {
-  memo, useCallback, useMemo, useState,
+  memo, useCallback, useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { TitleSize } from '@/shared/ui/Title/Title';
-import { ArticleType } from '@/entities/Article';
-import {
-  Button, Input, Select, Title, VStack,
-} from '@/shared/ui';
+import { ArticleCard, ArticleType } from '@/entities/Article';
+import { Button, Title, VStack } from '@/shared/ui';
 import classes from './EditArticleForm.module.css';
 import { articleReducer } from '@/entities/Article/model/slices/articleSlice';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
@@ -19,7 +17,7 @@ import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { useAddNewArticle } from '../api/articleForm';
 import { articlesPageReducer, getArticles } from '@/pages/articlesListPage/model/slice/articlesPageSlice';
 import { getUserAuthData } from '@/entities/User';
-import { SelectOptions } from '@/shared/ui/Select/Select';
+import { Article } from '@/entities/Article/model/types/article';
 
 interface AddArticleFormProps {
   className?: string;
@@ -40,30 +38,11 @@ export const AddArticleForm = memo((props: AddArticleFormProps) => {
   const isLoading = useSelector(getArticleIsLoading);
   const [title, setTitle] = useState<string>('');
   const [subtitle, setSubtitle] = useState<string>('');
-  const [type, setType] = useState<ArticleType>();
+  const [type, setType] = useState<Array<ArticleType>>();
   const [image, setImage] = useState<string>('');
   const userData = useSelector(getUserAuthData);
 
   const articles = useSelector(getArticles.selectAll);
-
-  const typeOptions = useMemo<Array<SelectOptions<ArticleType>>>(() => [
-    {
-      value: ArticleType.ALL,
-      name: t('All'),
-    },
-    {
-      value: ArticleType.ECONOMICS,
-      name: t('Economics'),
-    },
-    {
-      value: ArticleType.IT,
-      name: t('IT'),
-    },
-    {
-      value: ArticleType.SCIENCE,
-      name: t('Science'),
-    },
-  ], [t]);
 
   const [addNewArticleMutation] = useAddNewArticle();
 
@@ -79,8 +58,9 @@ export const AddArticleForm = memo((props: AddArticleFormProps) => {
     setImage(value ?? '');
   }, []);
 
-  const onChangeType = useCallback((value?: ArticleType) => {
-    setType(value);
+  const onChangeType = useCallback((checkedItems: { [key: string]: boolean }) => {
+    const checkedValues = Object.keys(checkedItems).filter((key) => checkedItems[key]);
+    setType(checkedValues as Array<ArticleType>);
   }, []);
 
   const onAddArticle = useCallback((e: React.MouseEvent) => {
@@ -88,9 +68,10 @@ export const AddArticleForm = memo((props: AddArticleFormProps) => {
       addNewArticleMutation({
         title,
         subtitle,
-        type: [type],
+        type,
         img: image,
         userId: userData?.id ?? '',
+        id: '',
       });
       navigate(`${RoutePath.article_list}`);
     } catch (e) {
@@ -116,35 +97,14 @@ export const AddArticleForm = memo((props: AddArticleFormProps) => {
             [className as string]: className,
           })}
         >
-          <Input
-            label={t('Title')}
-            htmlFor="title"
-            value={title}
-            placeholder={t('Enter title')}
-            onChange={onChangeTitle}
-            // readonly={readonly}
-          />
-          <Input
-            label={t('Subtitle')}
-            htmlFor="subtitle"
-            value={subtitle}
-            placeholder={t('Enter subtitle')}
-            onChange={onChangeSubtitle}
-            // readonly={readonly}
-          />
-          <Select
-            options={typeOptions}
-            label={t('Type')}
-            value={type}
-            onChange={onChangeType}
-          />
-          <Input
-            label={t('Image')}
-            htmlFor="articleImage"
-            value={image}
-            placeholder={t('Enter image src')}
-            onChange={onChangeImage}
-            // readonly={readonly}
+          <ArticleCard
+            data={{} as Article}
+            isLoading={isLoading}
+            error={error}
+            onChangeSubtitle={onChangeSubtitle}
+            onChangeTitle={onChangeTitle}
+            onChangeImage={onChangeImage}
+            onChangeType={onChangeType}
           />
         </VStack>
         <Button type="submit" onClick={onAddArticle} className={classes.button}>{t('Добавить')}</Button>

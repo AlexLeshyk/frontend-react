@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { TitleSize } from '@/shared/ui/Title/Title';
-import { ArticleCard } from '@/entities/Article';
+import { ArticleCard, ArticleType } from '@/entities/Article';
 import { Button, Title, VStack } from '@/shared/ui';
 import classes from './EditArticleForm.module.css';
 import { useAppDispatch, useInitialEffect } from '@/shared/hooks';
@@ -48,24 +48,40 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
   const [updateArticleMutation] = useUpdateArticle();
 
   const onChangeSubtitle = useCallback((value?: string) => {
-    dispatch(articleActions.updateArticle({ ...article, subtitle: value }));
-  }, [article, dispatch]);
+    dispatch(articleActions.updateArticle({
+      subtitle: value,
+      id: article?.id as string,
+    }));
+  }, [article?.id, dispatch]);
 
   const onChangeTitle = useCallback((value?: string) => {
-    dispatch(articleActions.updateArticle({ ...article, title: value }));
-  }, [article, dispatch]);
+    dispatch(articleActions.updateArticle({
+      title: value,
+      id: article?.id as string,
+    }));
+  }, [article?.id, dispatch]);
 
   const onChangeImage = useCallback((value?: string) => {
-    dispatch(articleActions.updateArticle({ ...article, img: value }));
-  }, [article, dispatch]);
+    dispatch(articleActions.updateArticle({
+      img: value,
+      id: article?.id as string,
+    }));
+  }, [article?.id, dispatch]);
+
+  const onChangeType = useCallback((checkedItems: { [key: string]: boolean }) => {
+    const checkedValues = Object.keys(checkedItems).filter((key) => checkedItems[key]);
+    dispatch(articleActions.updateArticle({
+      type: checkedValues as Array<ArticleType>,
+      id: article?.id as string,
+    }));
+  }, [article?.id, dispatch]);
 
   const onEditArticle = useCallback((e: React.MouseEvent) => {
     try {
       updateArticleMutation({
         ...article,
-        title: formData?.title,
-        subtitle: formData?.subtitle,
-        img: formData?.img,
+        ...formData,
+        id: article?.id as string,
       });
       navigate(`${RoutePath.article}${article?.id}`);
     } catch (e) {
@@ -73,10 +89,6 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
       console.log(e);
     }
   }, [article, formData, navigate, updateArticleMutation]);
-
-  // const onAddArticle = useCallback(() => {
-  //   console.log('add article');
-  // }, []);
 
   if (error) {
     return null;
@@ -93,6 +105,7 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
           onChangeSubtitle={onChangeSubtitle}
           onChangeTitle={onChangeTitle}
           onChangeImage={onChangeImage}
+          onChangeType={onChangeType}
         />
         <Button type="submit" onClick={onEditArticle} className={classes.button}>{t('Submit')}</Button>
       </VStack>

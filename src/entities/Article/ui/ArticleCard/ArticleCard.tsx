@@ -1,11 +1,14 @@
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
+import { useMemo } from 'react';
 import { TextAlign, TextTheme } from '@/shared/ui/Text/Text.model';
 import {
+  CheckboxGroup,
   Input, Skeleton, Text, VStack,
 } from '@/shared/ui';
 import { Article } from '../../model/types/article';
 import classes from './ArticleCard.module.css';
+import { ArticleType } from '../../model/consts/consts';
 
 interface ArticleCardProps {
   className?: string;
@@ -16,6 +19,7 @@ interface ArticleCardProps {
   onChangeTitle?: (value?: string) => void;
   onChangeSubtitle?: (value?: string) => void;
   onChangeImage?: (value?: string) => void;
+  onChangeType?: (checkedItems: { [key in string]: boolean }) => void;
 }
 
 export const ArticleCard = (props: ArticleCardProps) => {
@@ -27,10 +31,15 @@ export const ArticleCard = (props: ArticleCardProps) => {
     onChangeSubtitle,
     onChangeTitle,
     onChangeImage,
+    onChangeType,
     readonly,
   } = props;
 
   const { t } = useTranslation('article');
+
+  const checkboxOptions = useMemo<Array<ArticleType>>(() => [
+    ArticleType.IT, ArticleType.SCIENCE, ArticleType.ECONOMICS, ArticleType.ALL,
+  ], []);
 
   if (isLoading) {
     return (
@@ -96,6 +105,9 @@ export const ArticleCard = (props: ArticleCardProps) => {
         onChange={onChangeImage}
         readonly={readonly}
       />
+      {data?.type
+        ? <CheckboxGroup options={data.type} onChangeCheckbox={onChangeType} />
+        : <CheckboxGroup options={checkboxOptions} onChangeCheckbox={onChangeType} />}
     </VStack>
   );
 };

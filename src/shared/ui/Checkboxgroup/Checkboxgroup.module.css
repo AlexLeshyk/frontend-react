@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+}
+
+.label + .label {
+  margin-left: 10px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.option {
+  text-transform: capitalize;
+  font-size: var(--font-size-sm);
+}
