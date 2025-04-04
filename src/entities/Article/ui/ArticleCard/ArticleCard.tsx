@@ -1,6 +1,7 @@
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
+import { useParams } from 'react-router-dom';
 import { TextAlign, TextTheme } from '@/shared/ui/Text/Text.model';
 import {
   CheckboxGroup,
@@ -16,9 +17,9 @@ interface ArticleCardProps {
   error?: string;
   readonly?: boolean;
   isLoading?: boolean;
-  onChangeTitle?: (value?: string) => void;
-  onChangeSubtitle?: (value?: string) => void;
-  onChangeImage?: (value?: string) => void;
+  onChangeTitle?: (value: string) => void;
+  onChangeSubtitle?: (value: string) => void;
+  onChangeImage?: (value: string) => void;
   onChangeType?: (checkedItems: { [key in string]: boolean }) => void;
 }
 
@@ -40,6 +41,9 @@ export const ArticleCard = (props: ArticleCardProps) => {
   const checkboxOptions = useMemo<Array<ArticleType>>(() => [
     ArticleType.IT, ArticleType.SCIENCE, ArticleType.ECONOMICS, ArticleType.ALL,
   ], []);
+
+  const { id } = useParams<{ id: string }>();
+  const isEdit = Boolean(id);
 
   if (isLoading) {
     return (
@@ -105,9 +109,18 @@ export const ArticleCard = (props: ArticleCardProps) => {
         onChange={onChangeImage}
         readonly={readonly}
       />
-      {data?.type
-        ? <CheckboxGroup options={data.type} onChangeCheckbox={onChangeType} />
-        : <CheckboxGroup options={checkboxOptions} onChangeCheckbox={onChangeType} />}
+      <div>
+        {isEdit
+          && (data?.type && data.type.length > 0
+            ? (
+              <>
+                <Text text={t('Current type')} />
+                {data.type.map((item) => <span className={classes.type} key={item}>{item}</span>)}
+              </>
+            ) : (<Text text={t('No type selected')} />)
+          )}
+      </div>
+      <CheckboxGroup options={checkboxOptions} onChangeCheckbox={onChangeType} readonly={readonly} />
     </VStack>
   );
 };

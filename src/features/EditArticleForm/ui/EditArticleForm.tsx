@@ -1,22 +1,19 @@
 import cx from 'clsx';
 import { memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { TitleSize } from '@/shared/ui/Title/Title';
 import { ArticleCard, ArticleType } from '@/entities/Article';
-import { Button, Title, VStack } from '@/shared/ui';
+import { VStack } from '@/shared/ui';
 import classes from './EditArticleForm.module.css';
 import { useAppDispatch, useInitialEffect } from '@/shared/hooks';
 import { articleActions, articleReducer } from '@/entities/Article/model/slices/articleSlice';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
 import {
   getArticleData, getArticleError, getArticleForm, getArticleIsLoading,
+  getArticleReadonly,
 } from '@/entities/Article/model/selectors/article';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { getArticleById } from '@/entities/Article/model/services/getArticleById/getArticleById';
-import { useUpdateArticle } from '../api/articleForm';
+import EditableArticleCardHeader from './EditableArticleCardHeader/EditableArticleCardHeader';
+import { EditArticleErrors } from './Edit/EditArticleErrors';
 
 interface EditArticleFormProps {
   className?: string;
@@ -30,22 +27,18 @@ const reducers: ReducersList = {
 export const EditArticleForm = memo((props: EditArticleFormProps) => {
   const { className, id: articleId } = props;
 
-  const navigate = useNavigate();
-
-  const { t } = useTranslation('article');
   const dispatch = useAppDispatch();
   const formData = useSelector(getArticleForm);
   const article = useSelector(getArticleData);
   const error = useSelector(getArticleError);
   const isLoading = useSelector(getArticleIsLoading);
+  const readonly = useSelector(getArticleReadonly);
 
   useInitialEffect(() => {
     if (articleId) {
       dispatch(getArticleById(articleId));
     }
   });
-
-  const [updateArticleMutation] = useUpdateArticle();
 
   const onChangeSubtitle = useCallback((value?: string) => {
     dispatch(articleActions.updateArticle({
@@ -76,28 +69,15 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
     }));
   }, [article?.id, dispatch]);
 
-  const onEditArticle = useCallback((e: React.MouseEvent) => {
-    try {
-      updateArticleMutation({
-        ...article,
-        ...formData,
-        id: article?.id as string,
-      });
-      navigate(`${RoutePath.article}${article?.id}`);
-    } catch (e) {
-      // handle error
-      console.log(e);
-    }
-  }, [article, formData, navigate, updateArticleMutation]);
-
   if (error) {
     return null;
   }
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-      <VStack gap="8" className={cx({ [className as string]: className, [classes.wrapper]: true })}>
-        <Title title={t('FormTitle')} size={TitleSize.H3} />
+      <VStack gap="4" className={cx({ [className as string]: className, [classes.wrapper]: true })}>
+        <EditableArticleCardHeader />
+        <EditArticleErrors />
         <ArticleCard
           data={formData}
           isLoading={isLoading}
@@ -106,8 +86,8 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
           onChangeTitle={onChangeTitle}
           onChangeImage={onChangeImage}
           onChangeType={onChangeType}
+          readonly={readonly}
         />
-        <Button type="submit" onClick={onEditArticle} className={classes.button}>{t('Submit')}</Button>
       </VStack>
     </DynamicModuleLoader>
   );

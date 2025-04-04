@@ -1,12 +1,14 @@
 import { memo, useState } from 'react';
+import cx from 'clsx';
 import classes from './Checkboxgroup.module.css';
 
 interface CheckboxGroupProps<T extends string> {
   options: T[];
   onChangeCheckbox?: (checkedItems: { [key in T]: boolean }) => void;
+  readonly?: boolean;
 }
 
-const CheckboxGroupComponent = <T extends string>({ options, onChangeCheckbox }: CheckboxGroupProps<T>) => {
+const CheckboxGroupComponent = <T extends string>({ options, onChangeCheckbox, readonly }: CheckboxGroupProps<T>) => {
   const initialCheckedItems = options.reduce<{ [key in T]: boolean }>((acc, option) => {
     acc[option] = false;
     return acc;
@@ -36,7 +38,10 @@ const CheckboxGroupComponent = <T extends string>({ options, onChangeCheckbox }:
             name={option}
             checked={checkedItems[option]}
             onChange={handleCheckboxChange}
-            className={classes.input}
+            className={cx({
+              [classes.readonly]: readonly,
+            })}
+            disabled={readonly}
           />
           <span className={classes.option}>{option}</span>
         </label>
