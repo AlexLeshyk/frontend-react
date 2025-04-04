@@ -1,0 +1,15 @@
+.button {
+  margin-left: auto;
+}
+
+.btnsWrapper {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btnsWrapper .title {
+  margin: 0;
+}

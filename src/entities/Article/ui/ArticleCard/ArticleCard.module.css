@@ -1,3 +1,7 @@
 .card {
   width: 100%;
 }
+
+.type + .type {
+  margin-left: 8px;
+}

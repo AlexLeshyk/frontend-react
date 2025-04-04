@@ -13,6 +13,17 @@
   "CreateNewArticle": "Create new article",
   "Edit article with id": "Article with id",
   "ArticleRecommendError": "Error loading recommendations",
-  "Submit": "Edit article",
-  "FormTitle": "Edit Article Form"
+  "Submit": "Save article",
+  "FormTitle": "Edit Article Form",
+  "Cancel": "Cancel",
+  "No_Data": "No Data",
+  "Server_Error": "Server Error",
+  "EmptySubtitle": "Subtitle is required",
+  "EmptyTitle": "Title is required",
+  "TitleLength": "Title must be at least 5 characters long",
+  "SubtitleLength": "Subtitle must be at least 10 characters long",
+  "ImageSrc": "Image URL is invalid or required",
+  "ShouldBeType": "One of the article types must be selected",
+  "Current type": "Current article type:",
+  "No type selected": "Article type not selected"
 }

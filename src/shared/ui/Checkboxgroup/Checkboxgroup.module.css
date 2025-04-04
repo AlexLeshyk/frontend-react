@@ -16,3 +16,7 @@
   text-transform: capitalize;
   font-size: var(--font-size-sm);
 }
+
+.readonly {
+  opacity: 0.7;
+}

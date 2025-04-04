@@ -549,8 +549,8 @@
     },
     {
       "id": "12",
-      "title": "Phyton good",
-      "subtitle": "Что нового!!!!",
+      "title": "",
+      "subtitle": "Что нового в JS за 2025 год?",
       "img": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg",
       "views": 1026,
       "createdAt": "12.09.2024",
@@ -749,46 +749,16 @@
       ]
     },
     {
-      "title": "FSAF",
-      "subtitle": "fsdfsd",
+      "title": "USA news",
+      "subtitle": "Что нового в US за 2025 год?",
       "type": [
-        "IT"
+        "IT",
+        "SCIENCE"
       ],
-      "user": {
-        "id": "1",
-        "username": "admin"
-      },
-      "id": "77atE4o"
-    },
-    {
-      "title": "New article",
-      "subtitle": "Что нового в JS за 2025 год?",
-      "type": [
-        "IT"
-      ],
+      "img": "https://avatarzo.ru/wp-content/uploads/devochka-s-czvetami-chb.jpg",
       "userId": "1",
-      "id": "kwnXgNl"
-    },
-    {
-      "title": "Заголовище",
-      "subtitle": "Что нового в JS за 2025 год?!!!",
-      "type": [
-        "SCIENCE",
-        "ECONOMICS",
-        "ALL"
-      ],
-      "img": "https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg",
-      "userId": "1",
-      "id": "YShlCG7",
-      "user": {
-        "id": "1",
-        "username": "admin",
-        "password": "123",
-        "roles": [
-          "ADMIN"
-        ],
-        "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
-      }
+      "id": "j_nOL6N",
+      "createdAt": "07.04.2025"
     }
   ],
   "notifications": [
