@@ -94,7 +94,7 @@ export const Article = memo((props: ArticleProps) => {
           <CalendarIcon className={classes.icon} />
           <time>{article.createdAt}</time>
         </div>
-        {article.blocks.map((renderBlock))}
+        {article.blocks?.map((renderBlock))}
       </>
     );
   }

@@ -549,9 +549,9 @@
     },
     {
       "id": "12",
-      "title": "Phyton good",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://banner2.cleanpng.com/lnd/20240918/ht/592b4ce7ba47475195af900272e808.webp",
+      "title": "",
+      "subtitle": "Что нового в JS за 2025 год?",
+      "img": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg",
       "views": 1026,
       "createdAt": "12.09.2024",
       "userId": "1",
@@ -569,7 +569,16 @@
             "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
           ]
         }
-      ]
+      ],
+      "user": {
+        "id": "1",
+        "username": "admin",
+        "password": "123",
+        "roles": [
+          "ADMIN"
+        ],
+        "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
+      }
     },
     {
       "id": "13",
@@ -719,7 +728,7 @@
       "id": "19",
       "title": "Научная статья - Биология",
       "subtitle": "БиологиЯ",
-      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "img": "https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg",
       "views": 1000,
       "createdAt": "26.11.2024",
       "userId": "1",
@@ -738,6 +747,18 @@
           ]
         }
       ]
+    },
+    {
+      "title": "USA news",
+      "subtitle": "Что нового в US за 2025 год?",
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
+      "img": "https://avatarzo.ru/wp-content/uploads/devochka-s-czvetami-chb.jpg",
+      "userId": "1",
+      "id": "j_nOL6N",
+      "createdAt": "07.04.2025"
     }
   ],
   "notifications": [

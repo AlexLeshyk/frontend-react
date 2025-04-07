@@ -24,7 +24,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const { article, view, target } = props;
   const { t } = useTranslation('articleList');
 
-  const types = <Text text={article.type.join(', ')} size={TextSize.S} className={classes.types} />;
+  const types = <Text text={article.type?.join(', ')} size={TextSize.S} className={classes.types} />;
   const views = (
     <>
       <Text text={String(article.views)} size={TextSize.S} className={classes.views} />
@@ -33,7 +33,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   );
 
   if (view === ArticleListView.LIST) {
-    const textBlock = article.blocks.find((item) => item.type === ArticleBlockType.TEXT) as ArticleTextBlock;
+    const textBlock = article.blocks?.find((item) => item.type === ArticleBlockType.TEXT) as ArticleTextBlock;
     return (
       <div className={cx({
         [classes.item]: true,
@@ -42,8 +42,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       >
         <Card className={classes.card}>
           <div className={classes.header}>
-            <Avatar size={30} src={article.user.avatar} />
-            <Text text={article.user.username} className={classes.username} />
+            <Avatar size={30} src={article.user?.avatar} />
+            <Text text={article.user?.username} className={classes.username} />
             <Text text={article.createdAt} size={TextSize.S} className={classes.date} />
           </div>
           <Text title={article.title} className={classes.title} />

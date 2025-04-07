@@ -6,7 +6,7 @@ interface GetArticleByIdArg {
   articleId: string;
 }
 
-const recommendationsApi = rtkApi.injectEndpoints({
+const articlesApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
     getArticlebyId: build.query<ArticleModel, GetArticleByIdArg >({
       query: ({ articleId, userId }) => ({
@@ -24,8 +24,16 @@ const recommendationsApi = rtkApi.injectEndpoints({
         body: arg,
       }),
     }),
+    addNewArticle: build.mutation<void, ArticleModel>({
+      query: (arg) => ({
+        url: '/articles',
+        method: 'POST',
+        body: arg,
+      }),
+    }),
   }),
 });
 
-export const useGetArticleById = recommendationsApi.useGetArticlebyIdQuery;
-export const useUpdateArticle = recommendationsApi.useUpdateArticleMutation;
+export const useGetArticleById = articlesApi.useGetArticlebyIdQuery;
+export const useUpdateArticle = articlesApi.useUpdateArticleMutation;
+export const useAddNewArticle = articlesApi.useAddNewArticleMutation;
