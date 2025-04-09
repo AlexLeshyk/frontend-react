@@ -4,11 +4,13 @@ import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { TextAlign, TextTheme } from '@/shared/ui/Text/Text.model';
 import {
-  CheckboxGroup, Input, Skeleton, Text, VStack,
+  CheckboxGroup, Input, Select, Skeleton, Text, VStack,
 } from '@/shared/ui';
 import { Article } from '../../model/types/article';
 import classes from './ArticleCard.module.css';
-import { ArticleType } from '../../model/consts/consts';
+import { ArticleBlockType, ArticleType } from '../../model/consts/consts';
+import { SelectOptions } from '@/shared/ui/Select/Select';
+import { ArticleEditTypeBlock } from '../ArticleEditTypeBlock/ArticleEditTypeBlock';
 
 interface ArticleCardProps {
   className?: string;
@@ -20,6 +22,10 @@ interface ArticleCardProps {
   onChangeSubtitle?: (value: string) => void;
   onChangeImage?: (value: string) => void;
   onChangeType?: (checkedItems: { [key in string]: boolean }) => void;
+  onChangeTextBlock? : (id: string, value: string, pNumber: number) => void;
+  onChangeImageBlockTitle?: (id: string, value: string) => void;
+  onChangeImageBlockSrc?: (id: string, value: string) => void;
+  onChangeCodeBlock?: (id: string, value: string) => void;
 }
 
 export const ArticleCard = (props: ArticleCardProps) => {
@@ -32,10 +38,29 @@ export const ArticleCard = (props: ArticleCardProps) => {
     onChangeTitle,
     onChangeImage,
     onChangeType,
+    onChangeTextBlock,
+    onChangeImageBlockTitle,
+    onChangeImageBlockSrc,
+    onChangeCodeBlock,
     readonly,
   } = props;
 
   const { t } = useTranslation('article');
+
+  const blockOptions = useMemo<Array<SelectOptions<ArticleBlockType>>>(() => [
+    {
+      value: ArticleBlockType.CODE,
+      name: t('Code'),
+    },
+    {
+      value: ArticleBlockType.IMAGE,
+      name: t('Image'),
+    },
+    {
+      value: ArticleBlockType.TEXT,
+      name: t('Text'),
+    },
+  ], [t]);
 
   const checkboxOptions = useMemo<Array<ArticleType>>(() => [
     ArticleType.IT, ArticleType.SCIENCE, ArticleType.ECONOMICS, ArticleType.ALL,
@@ -88,7 +113,7 @@ export const ArticleCard = (props: ArticleCardProps) => {
         label={t('Title')}
         htmlFor="title"
         value={data?.title}
-        placeholder={t('Enter title')}
+        placeholder={t('EnterTitle')}
         onChange={onChangeTitle}
         readonly={readonly}
       />
@@ -96,12 +121,12 @@ export const ArticleCard = (props: ArticleCardProps) => {
         label={t('Subtitle')}
         htmlFor="subtitle"
         value={data?.subtitle}
-        placeholder={t('Enter subtitle')}
+        placeholder={t('EnterSubtitle')}
         onChange={onChangeSubtitle}
         readonly={readonly}
       />
       <Input
-        label={t('Image')}
+        label={t('ArticleImage')}
         htmlFor="articleImage"
         value={data?.img}
         placeholder={t('Enter image src')}
@@ -120,6 +145,18 @@ export const ArticleCard = (props: ArticleCardProps) => {
           )}
       </div>
       <CheckboxGroup options={checkboxOptions} onChangeCheckbox={onChangeType} readonly={readonly} />
+      {!isEdit && <Select options={blockOptions} label={t('Article type')} />}
+      {isEdit && data?.blocks?.map((block) => (
+        <ArticleEditTypeBlock
+          key={block.id}
+          block={block}
+          readonly={readonly}
+          onChangeTextBlock={onChangeTextBlock}
+          onChangeImageBlockSrc={onChangeImageBlockSrc}
+          onChangeImageBlockTitle={onChangeImageBlockTitle}
+          onChangeCodeBlock={onChangeCodeBlock}
+        />
+      ))}
     </VStack>
   );
 };
