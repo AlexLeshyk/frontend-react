@@ -25,5 +25,18 @@
   "ImageSrc": "Image URL is invalid or required",
   "ShouldBeType": "One of the article types must be selected",
   "Current type": "Current article type:",
-  "No type selected": "Article type not selected"
+  "No type selected": "Article type not selected",
+  "Code block": "Code block",
+  "Image title": "Title of image block",
+  "Image src": "Src of image block",
+  "Text": "Text block",
+  "Enter text": "Enter text",
+  "Enter image block title": "Enter image title",
+  "Enter image src": "Enter image src",
+  "Enter code block": "Enter code block",
+  "ArticleImage": "Article Image",
+  "EnterSubtitle": "Enter subtitle",
+  "Subtitle": "Subtitle",
+  "Title": "Ttitle",
+  "EnterTitle": "Enter title"
 }

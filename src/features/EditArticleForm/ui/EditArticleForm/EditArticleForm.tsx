@@ -1,7 +1,9 @@
 import cx from 'clsx';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { ArticleCard, ArticleType } from '@/entities/Article';
+import {
+  ArticleBlockType, ArticleCard, ArticleTextBlock, ArticleType,
+} from '@/entities/Article';
 import { VStack } from '@/shared/ui';
 import classes from './EditArticleForm.module.css';
 import { useAppDispatch, useInitialEffect } from '@/shared/hooks';
@@ -69,6 +71,69 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
     }));
   }, [article?.id, dispatch]);
 
+  const onChangeTextBlock = (id: string, value: string, pNumber: number) => {
+    dispatch(articleActions.updateArticle({
+      id: article?.id as string,
+      blocks: formData?.blocks?.map((block) => {
+        if (block.id === id) {
+          if (block.type === ArticleBlockType.TEXT) {
+            return {
+              ...block,
+              paragraphs: block.paragraphs.map((item: string, index: number) => ((index === pNumber) ? value : item)),
+            };
+          }
+          return block;
+        }
+        return block;
+      }),
+    }));
+  };
+
+  const onChangeCodeBlock = useCallback((id: string, value: string) => {
+    dispatch(articleActions.updateArticle({
+      blocks: formData?.blocks?.map((block) => {
+        if (block.id === id) {
+          return {
+            ...block,
+            code: value,
+          };
+        }
+        return block;
+      }),
+      id: article?.id as string,
+    }));
+  }, [article?.id, dispatch, formData?.blocks]);
+
+  const onChangeImageBlockTitle = useCallback((id: string, value: string) => {
+    dispatch(articleActions.updateArticle({
+      blocks: formData?.blocks?.map((block) => {
+        if (block.id === id) {
+          return {
+            ...block,
+            title: value,
+          };
+        }
+        return block;
+      }),
+      id: article?.id as string,
+    }));
+  }, [article?.id, dispatch, formData?.blocks]);
+
+  const onChangeImageBlockSrc = useCallback((id: string, value: string) => {
+    dispatch(articleActions.updateArticle({
+      blocks: formData?.blocks?.map((block) => {
+        if (block.id === id) {
+          return {
+            ...block,
+            src: value,
+          };
+        }
+        return block;
+      }),
+      id: article?.id as string,
+    }));
+  }, [article?.id, dispatch, formData?.blocks]);
+
   if (error) {
     return null;
   }
@@ -86,6 +151,10 @@ export const EditArticleForm = memo((props: EditArticleFormProps) => {
           onChangeTitle={onChangeTitle}
           onChangeImage={onChangeImage}
           onChangeType={onChangeType}
+          onChangeTextBlock={onChangeTextBlock}
+          onChangeImageBlockTitle={onChangeImageBlockTitle}
+          onChangeImageBlockSrc={onChangeImageBlockSrc}
+          onChangeCodeBlock={onChangeCodeBlock}
           readonly={readonly}
         />
       </VStack>
