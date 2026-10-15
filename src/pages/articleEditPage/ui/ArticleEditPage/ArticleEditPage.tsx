@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 
 import { useParams } from 'react-router-dom';
-import { EditArticleForm } from '@/features/EditArticleForm';
+import { AddArticleForm, EditArticleForm } from '@/features/EditArticleForm';
 import { Page } from '@/widgets/Page';
 import classes from './ArticleEditPage.module.css';
 
@@ -15,12 +15,20 @@ const ArticleEditPage = () => {
   return (
     <Page className={classes.wrapper}>
       {isEdit ? (
-        <p>
-          {t('Edit article with id')}
-          {` = ${id}`}
-        </p>
-      ) : <p>{t('CreateNewArticle')}</p>}
-      <EditArticleForm id={id} />
+        <>
+          <p>
+            {t('Edit article with id')}
+            {` = ${id}`}
+          </p>
+          <EditArticleForm id={id} />
+        </>
+
+      ) : (
+        <>
+          <p>{t('CreateNewArticle')}</p>
+          <AddArticleForm />
+        </>
+      )}
     </Page>
   );
 };

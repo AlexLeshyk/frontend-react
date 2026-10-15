@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import NotificationIcon from 'shared/icons/notification.svg';
+import NotificationIcon from '@/shared/icons/notification.svg';
 import { Popover } from './Popover';
 import { Button } from '../Button/Button';
 import { ButtonTheme } from '../Button/Button.model';

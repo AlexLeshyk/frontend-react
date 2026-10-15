@@ -27,13 +27,13 @@ export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlo
 
 export interface Article {
   id: string;
-  title: string;
-  subtitle: string;
-  img: string;
-  views: number;
-  createdAt: string;
-  userId: string;
-  type: Array<ArticleType>;
-  blocks: Array<ArticleBlock>;
-  user: User;
+  title?: string;
+  subtitle?: string;
+  img?: string;
+  views?: number;
+  createdAt?: string;
+  userId?: string;
+  type?: Array<ArticleType>;
+  blocks?: Array<ArticleBlock>;
+  user?: User;
 }

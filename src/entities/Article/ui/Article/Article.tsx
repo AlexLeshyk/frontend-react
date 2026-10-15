@@ -2,9 +2,9 @@ import cx from 'clsx';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import EyeIcon from 'shared/icons/eye.svg';
-import CalendarIcon from 'shared/icons/calendar.svg';
 import { useMediaQuery } from '@mantine/hooks';
+import EyeIcon from '@/shared/icons/eye.svg';
+import CalendarIcon from '@/shared/icons/calendar.svg';
 import { TextAlign, TextTheme } from '@/shared/ui/Text/Text.model';
 import { TitleSize } from '@/shared/ui/Title/Title';
 import { useAppDispatch, useInitialEffect } from '@/shared/hooks';
@@ -94,7 +94,7 @@ export const Article = memo((props: ArticleProps) => {
           <CalendarIcon className={classes.icon} />
           <time>{article.createdAt}</time>
         </div>
-        {article.blocks.map((renderBlock))}
+        {article.blocks?.map((renderBlock))}
       </>
     );
   }

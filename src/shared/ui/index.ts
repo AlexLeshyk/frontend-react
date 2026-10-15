@@ -20,3 +20,6 @@ export { Dropdown } from './Dropdown/Dropdown';
 export { Popover } from './Popover/Popover';
 export { Overlay } from './Overlay/Overlay';
 export { Drawer } from './Drawer/Drawer';
+export { CheckboxGroup } from './Checkboxgroup/Checkboxgroup';
+export { StarRating } from './StarRating/StarRating';
+export { Textarea } from './Textarea/Textarea';
