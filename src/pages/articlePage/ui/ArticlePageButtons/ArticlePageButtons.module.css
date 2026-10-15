@@ -1,14 +1,10 @@
-.back {
-  margin-bottom: 16px;
-}
-
 .wrapper {
   display: flex;
   align-items: center;
 }
 
 .edit {
-  margin-left: auto;
+  margin-left: 16px;
 }
 
 @media screen and (max-width: 440px) {
@@ -19,5 +15,6 @@
 
   .edit {
     margin-left: 0;
+    margin-top: 16px;
   }
 }
