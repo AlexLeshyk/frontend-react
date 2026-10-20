@@ -192,27 +192,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
     },
     {
       "id": "2",
       "username": "man",
       "password": "456",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "avatar": "https://avatarzo.ru/wp-content/uploads/kolenok-na-plede.jpg"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": [
-        "MANAGER"
-      ],
+      "roles": ["MANAGER"],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
@@ -221,7 +215,7 @@
       "id": "1",
       "first": "Александр",
       "lastname": "Лешик",
-      "age": 44,
+      "age": 42,
       "currency": "USD",
       "country": "Belarus",
       "city": "Копище",
@@ -249,9 +243,7 @@
       "views": 1021,
       "createdAt": "26.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -316,9 +308,7 @@
         "id": "1",
         "username": "admin",
         "password": "123",
-        "roles": [
-          "ADMIN"
-        ],
+        "roles": ["ADMIN"],
         "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
       }
     },
@@ -330,9 +320,7 @@
       "views": 5204,
       "createdAt": "26.09.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -349,9 +337,7 @@
         "id": "1",
         "username": "admin",
         "password": "123",
-        "roles": [
-          "ADMIN"
-        ],
+        "roles": ["ADMIN"],
         "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
       }
     },
@@ -363,9 +349,7 @@
       "views": 9402,
       "createdAt": "26.11.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -387,9 +371,7 @@
       "views": 10112,
       "createdAt": "24.01.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -411,9 +393,7 @@
       "views": 9222,
       "createdAt": "26.09.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -435,9 +415,7 @@
       "views": 1023,
       "createdAt": "30.10.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -459,9 +437,7 @@
       "views": 100,
       "createdAt": "21.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -483,9 +459,7 @@
       "views": 1222,
       "createdAt": "25.10.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -507,9 +481,7 @@
       "views": 1024,
       "createdAt": "24.05.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -531,9 +503,7 @@
       "views": 1025,
       "createdAt": "27.10.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -555,9 +525,7 @@
       "views": 1026,
       "createdAt": "21.10.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -579,9 +547,7 @@
       "views": 1026,
       "createdAt": "12.09.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -598,9 +564,7 @@
         "id": "1",
         "username": "admin",
         "password": "123",
-        "roles": [
-          "ADMIN"
-        ],
+        "roles": ["ADMIN"],
         "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
       }
     },
@@ -612,9 +576,7 @@
       "views": 1027,
       "createdAt": "13.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -636,9 +598,7 @@
       "views": 1028,
       "createdAt": "14.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -660,9 +620,7 @@
       "views": 1022,
       "createdAt": "21.11.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -684,9 +642,7 @@
       "views": 1022,
       "createdAt": "23.11.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -708,9 +664,7 @@
       "views": 1045,
       "createdAt": "23.10.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -732,9 +686,7 @@
       "views": 899,
       "createdAt": "26.11.2024",
       "userId": "1",
-      "type": [
-        "ECONOMICS"
-      ],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -756,9 +708,7 @@
       "views": 1000,
       "createdAt": "26.11.2024",
       "userId": "1",
-      "type": [
-        "SCIENCE"
-      ],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -775,10 +725,7 @@
     {
       "title": "USA news!",
       "subtitle": "Что нового в US за 2025 год?",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "img": "https://avatarzo.ru/wp-content/uploads/devochka-s-czvetami-chb.jpg",
       "userId": "1",
       "id": "j_nOL6N",
@@ -787,9 +734,7 @@
         "id": "1",
         "username": "admin",
         "password": "123",
-        "roles": [
-          "ADMIN"
-        ],
+        "roles": ["ADMIN"],
         "avatar": "https://avatarzo.ru/wp-content/uploads/oduvanchik-na-solncze.jpg"
       }
     }
@@ -874,18 +819,18 @@
   ],
   "profile-ratings": [
     {
-      "id": "1",
-      "rate": 4,
-      "feedback": "Хорошая статья",
       "userId": "1",
-      "profileId": "1"
+      "profileId": "1",
+      "rate": 3,
+      "feedback": "так себе профиль",
+      "id": "NzwWS5M"
     },
     {
-      "id": "2",
-      "rate": 4,
-      "feedback": "Хорошая статья",
       "userId": "1",
-      "profileId": "2"
+      "profileId": "2",
+      "rate": 5,
+      "feedback": "отличный профиль!",
+      "id": "d30RtXd"
     }
   ]
 }

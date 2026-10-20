@@ -21,7 +21,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
   const userData = useSelector(getUserAuthData);
 
   const { data, isLoading } = useGetArticleRating({
-    userId: userData?.id ?? 'currentUserId',
+    userId: userData?.id ?? '',
     articleId,
   });
 
@@ -51,13 +51,6 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     [handleRateArticle],
   );
 
-  const onCancel = useCallback(
-    (starsCount: number) => {
-      handleRateArticle(starsCount);
-    },
-    [handleRateArticle],
-  );
-
   if (isLoading) {
     return <Skeleton height={120} width="100%" />;
   }
@@ -68,13 +61,10 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     <RatingCard
       className={className}
       title={t('Оцените статью')}
-      feedbackTitle={t(
-        'Оставьте свой отзыв о статье, это поможет улучшить качество',
-      )}
+      feedbackTitle={t('Оставьте свой отзыв о статье, это поможет улучшить качество')}
       hasFeedback
       rate={rating?.rate}
       onAccept={onAccept}
-      onCancel={onCancel}
     />
   );
 });

@@ -8,7 +8,6 @@ import { ButtonTheme } from '@/shared/ui/Button/Button.model';
 import {
   Button, Input, MegaBoost, StarRating, Title,
 } from '@/shared/ui';
-import { RatingCard } from '@/entities/Rating/ui/RatingCard/RatingCard';
 
 const MainPage = () => {
   const { t } = useTranslation();
