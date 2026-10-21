@@ -1,4 +1,4 @@
-import { ValidateArticleError } from '@/features/EditArticleForm/consts/consts';
+import { ValidateArticleError } from '@/features/EditArticleForm';
 import { Article as ArticleModel } from '../types/article';
 
 export interface ArticleDetailsModel {

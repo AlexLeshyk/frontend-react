@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getArticleValidateErrors } from '@/entities/Article/model/selectors/article';
+import { getArticleValidateErrors } from '@/entities/Article';
 import { TextSize } from '@/shared/ui/Text/Text';
 import { TextTheme } from '@/shared/ui/Text/Text.model';
 import { ValidateArticleError } from '../../consts/consts';

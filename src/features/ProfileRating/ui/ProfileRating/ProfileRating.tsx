@@ -6,7 +6,7 @@ import {
   useGetProfileRating,
   useRateProfile,
 } from '../../api/profileRatingApi';
-import { getUserAuthData } from '@/entities/User/model/selectors/user';
+import { getUserAuthData } from '@/entities/User';
 import { Skeleton } from '@/shared/ui';
 
 export interface ProfileRatingProps {

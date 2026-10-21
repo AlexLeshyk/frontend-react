@@ -7,17 +7,16 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { TitleSize } from '@/shared/ui/Title/Title';
-import { ArticleCard, ArticleModel, ArticleType } from '@/entities/Article';
+import {
+  ArticleCard, ArticleModel, ArticleType, getArticleError, getArticleIsLoading, articleActions, articleReducer,
+} from '@/entities/Article';
 import { Button, Title, VStack } from '@/shared/ui';
 import classes from '../EditArticleForm/EditArticleForm.module.css';
-import { articleActions, articleReducer } from '@/entities/Article/model/slices/articleSlice';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
-import { getArticleError, getArticleIsLoading } from '@/entities/Article/model/selectors/article';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { useAddNewArticle } from '../../api/articleForm';
-import { articlesPageReducer } from '@/pages/articlesListPage/model/slice/articlesPageSlice';
+import { articlesPageReducer } from '@/pages/articlesListPage';
 import { getUserAuthData } from '@/entities/User';
-import { Article } from '@/entities/Article/model/types/article';
 import { EditArticleErrors } from '../Edit/EditArticleErrors';
 import { validateArticleData } from '../../services/validateArticleData';
 import { useAppDispatch } from '@/shared/hooks';
@@ -110,7 +109,7 @@ export const AddArticleForm = memo((props: AddArticleFormProps) => {
         >
           <EditArticleErrors />
           <ArticleCard
-            data={{} as Article}
+            data={{} as ArticleModel}
             isLoading={isLoading}
             error={error}
             onChangeSubtitle={onChangeSubtitle}

@@ -5,13 +5,12 @@ import { useTranslation } from 'react-i18next';
 import { ButtonTheme } from '@/shared/ui/Button/Button.model';
 import { Button, HStack, Title } from '@/shared/ui';
 import { TitleSize } from '@/shared/ui/Title/Title';
-import { articleActions } from '@/entities/Article/model/slices/articleSlice';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { useAppDispatch } from '@/shared/hooks';
 import { useUpdateArticle } from '../../api/articleForm';
 import {
-  getArticleData, getArticleForm, getArticleReadonly,
-} from '@/entities/Article/model/selectors/article';
+  getArticleData, getArticleForm, getArticleReadonly, articleActions,
+} from '@/entities/Article';
 import classes from './EditableArticleCardHeader.module.css';
 import { getUserAuthData } from '@/entities/User';
 import { validateArticleData } from '../../services/validateArticleData';

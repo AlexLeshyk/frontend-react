@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ArticleDetailsModel } from '../types/articleDetailsModel';
 import { getArticleById } from '../services/getArticleById/getArticleById';
 import { Article } from '../types/article';
-import { ValidateArticleError } from '@/features/EditArticleForm/consts/consts';
+import { ValidateArticleError } from '@/features/EditArticleForm';
 
 const initialState: ArticleDetailsModel = {
   readonly: true,

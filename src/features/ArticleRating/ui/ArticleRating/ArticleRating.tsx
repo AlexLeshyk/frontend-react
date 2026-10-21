@@ -6,7 +6,7 @@ import {
   useGetArticleRating,
   useRateArticle,
 } from '../../api/aritcleRatingApi';
-import { getUserAuthData } from '@/entities/User/model/selectors/user';
+import { getUserAuthData } from '@/entities/User';
 import { Skeleton } from '@/shared/ui';
 
 export interface ArticleRatingProps {

@@ -2,18 +2,13 @@ import cx from 'clsx';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import {
-  ArticleBlockType, ArticleCard, ArticleTextBlock, ArticleType,
+  ArticleBlockType, ArticleCard, ArticleType, getArticleById, getArticleData, getArticleError, getArticleForm,
+  getArticleIsLoading, getArticleReadonly, articleActions, articleReducer,
 } from '@/entities/Article';
 import { VStack } from '@/shared/ui';
 import classes from './EditArticleForm.module.css';
 import { useAppDispatch, useInitialEffect } from '@/shared/hooks';
-import { articleActions, articleReducer } from '@/entities/Article/model/slices/articleSlice';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
-import {
-  getArticleData, getArticleError, getArticleForm, getArticleIsLoading,
-  getArticleReadonly,
-} from '@/entities/Article/model/selectors/article';
-import { getArticleById } from '@/entities/Article/model/services/getArticleById/getArticleById';
 import EditableArticleCardHeader from '../EditableArticleCardHeader/EditableArticleCardHeader';
 import { EditArticleErrors } from '../Edit/EditArticleErrors';
 
