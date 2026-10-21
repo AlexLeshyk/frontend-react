@@ -18,7 +18,7 @@ module.exports = {
     "@typescript-eslint",
     "i18next",
     "react-hooks",
-    "gashy-jet-plugin",
+    "ulbi-tv-plugin",
   ],
   rules: {
     "react/jsx-filename-extension": [
@@ -30,8 +30,9 @@ module.exports = {
     "react/require-default-props": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-react": "off",
-    "react/jsx-props-no-spreading": "warn",
+    "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": "off",
+    "react/no-array-index-key": "off",
     "no-shadow": "off",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
@@ -69,7 +70,8 @@ module.exports = {
     "no-param-reassign": "off",
     "no-unused-vars": "off",
     "react/static-property-placement": ["warn", "static public field"],
-    "gashy-jet-plugin/path-checker": "error",
+    "ulbi-tv-plugin/path-checker": ["error", { alias: "@" }],
+    "ulbi-tv-plugin/public-api-imports": ["error", { alias: "@" }],
   },
   globals: {
     __IS_DEV__: true,

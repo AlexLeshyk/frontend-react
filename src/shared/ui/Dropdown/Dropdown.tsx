@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import {
   Menu, MenuButton, MenuItem, MenuItems,
 } from '@headlessui/react';
@@ -34,7 +33,7 @@ export const Dropdown = (props: DropdownProps) => {
           } = item;
 
           return href ? (
-            <LinkComponent to={href} key={index}>
+            <LinkComponent to={href} key={`dropdown-key-${index}`}>
               <MenuItem as={Fragment} disabled={disabled}>
                 {({ focus }) => (
                   <span
@@ -47,7 +46,7 @@ export const Dropdown = (props: DropdownProps) => {
               </MenuItem>
             </LinkComponent>
           ) : (
-            <MenuItem as={Fragment} disabled={disabled} key={index}>
+            <MenuItem as={Fragment} disabled={disabled} key={`dropdown-key-${index}`}>
               {({ focus }) => (
                 <button
                   className={cx({ [classes.item]: true, [classes.active]: focus })}

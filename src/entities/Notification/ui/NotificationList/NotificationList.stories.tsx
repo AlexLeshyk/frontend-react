@@ -24,13 +24,18 @@ const data: Array<Notification> = [
     title: 'Неважное проишествие',
     description: 'Произошло что-то не существенное',
   },
+  {
+    id: '3',
+    title: 'Уведомление',
+    description: 'Текст уведомления',
+  },
 ];
 
-export const Light: Story = {};
-Light.args = {};
-Light.decorators = [StoreDecorator({})];
+export const Normal: Story = {};
+Normal.args = {};
+Normal.decorators = [StoreDecorator({})];
 
-Light.parameters = {
+Normal.parameters = {
   mockData: [
     {
       url: 'http://localhost:8000/notifications',

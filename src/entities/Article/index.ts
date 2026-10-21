@@ -6,5 +6,10 @@ export {
 } from './model/consts/consts';
 export type { ArticleDetailsModel } from './model/types/articleDetailsModel';
 export { ArticleList } from './ui/ArticleList/ArticleList';
-export { getArticleData } from './model/selectors/article';
+export {
+  getArticleData, getArticleForm, getArticleReadonly, getArticleError, getArticleValidateErrors, getArticleIsLoading,
+} from './model/selectors/article';
 export { ArticleCard } from './ui/ArticleCard/ArticleCard';
+
+export { getArticleById } from './model/services/getArticleById/getArticleById';
+export { articleActions, articleReducer } from './model/slices/articleSlice';

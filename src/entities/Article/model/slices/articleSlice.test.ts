@@ -51,7 +51,7 @@ describe('articleSlice', () => {
       state as ArticleDetailsModel,
       getArticleById.fulfilled(data, '1', ''),
     )).toEqual({
-      isLoading: false, error: undefined, data,
+      isLoading: false, error: undefined, data, form: data,
     });
   });
 });

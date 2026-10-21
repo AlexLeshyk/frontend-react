@@ -7,6 +7,8 @@ import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
 import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticlePageButtons } from '../ArticlePageButtons/ArticlePageButtons';
 import { ArticlePageComments } from '../ArticlePageComments/ArticlePageComments';
+import { ArticleRating } from '@/features/ArticleRating';
+import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 
 const reducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer,
@@ -15,13 +17,20 @@ const reducers: ReducersList = {
 const ArticlePage = () => {
   const { id } = useParams<{ id: string }>();
 
+  if (!id) {
+    return null;
+  }
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page>
-        <ArticlePageButtons />
-        <Article id={id} />
-        <ArticleRecommendationList />
-        <ArticlePageComments id={id} />
+        <VStack gap="16" max>
+          <ArticlePageButtons />
+          <Article id={id} />
+          <ArticleRating articleId={id} />
+          <ArticleRecommendationList />
+          <ArticlePageComments id={id} />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

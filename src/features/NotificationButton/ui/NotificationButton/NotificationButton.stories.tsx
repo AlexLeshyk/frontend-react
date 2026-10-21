@@ -2,7 +2,6 @@ import { StoryObj, Meta } from '@storybook/react';
 import { Theme } from '@/app/providers/ThemeProvider';
 import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
-import { Notification } from '@/entities/Notification/model/types/notification';
 import { NotificationButton } from './NotificationButton';
 
 export default {
@@ -15,7 +14,7 @@ export default {
 
 type Story = StoryObj<typeof NotificationButton>;
 
-const data: Array<Notification> = [
+const data = [
   {
     id: '1',
     title: 'Важное событие',

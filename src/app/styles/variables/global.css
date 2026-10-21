@@ -45,7 +45,7 @@
 
   /* colors */
   --white-color: #fff;
-  --overlay-color: rgba(0, 0, 0, 0.5);
+  --overlay-color: rgb(0, 0, 0, 0.5);
   --red-dark: #ce0505;
   --red-light: #f00;
   --light-gray: #a1a1a12b;

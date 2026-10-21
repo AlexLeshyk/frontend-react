@@ -6,7 +6,7 @@ import { TitleSize } from '@/shared/ui/Title/Title';
 import { Page } from '@/widgets/Page';
 import { ButtonTheme } from '@/shared/ui/Button/Button.model';
 import {
-  Button, Input, MegaBoost, Title,
+  Button, Input, MegaBoost, StarRating, Title,
 } from '@/shared/ui';
 
 const MainPage = () => {

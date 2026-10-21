@@ -1,7 +1,7 @@
 import cx from 'clsx';
 import { memo } from 'react';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { TextSize } from '@/shared/ui/Text/Text';
 import { Avatar, LinkComponent, Text } from '@/shared/ui';
 import { Comment } from '../../model/types/comment';
