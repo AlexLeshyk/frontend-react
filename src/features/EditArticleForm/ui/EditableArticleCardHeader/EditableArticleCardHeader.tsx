@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { ButtonTheme } from '@/shared/ui/Button/Button.model';
 import { Button, HStack, Title } from '@/shared/ui';
 import { TitleSize } from '@/shared/ui/Title/Title';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { useAppDispatch } from '@/shared/hooks';
 import { useUpdateArticle } from '../../api/articleForm';
 import {

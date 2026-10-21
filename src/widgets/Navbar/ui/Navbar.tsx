@@ -8,7 +8,7 @@ import { LoginModal } from '@/features/AuthUserName';
 import {
   Button, LinkComponent, Text, HStack,
 } from '@/shared/ui';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { LinkTheme } from '@/shared/ui/LinkComponent/LinkComponent.model';
 import { TextTheme } from '@/shared/ui/Text/Text.model';
 import { TextSize } from '@/shared/ui/Text/Text';

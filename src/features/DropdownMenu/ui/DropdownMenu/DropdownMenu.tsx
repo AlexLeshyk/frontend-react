@@ -3,7 +3,7 @@ import cx from 'clsx';
 import { ArrowLeftEndOnRectangleIcon, UserCircleIcon, AdjustmentsHorizontalIcon } from '@heroicons/react/16/solid';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import {
   getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
