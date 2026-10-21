@@ -71,7 +71,17 @@ module.exports = {
     "no-unused-vars": "off",
     "react/static-property-placement": ["warn", "static public field"],
     "ulbi-tv-plugin/path-checker": ["error", { alias: "@" }],
-    "ulbi-tv-plugin/public-api-imports": ["error", { alias: "@" }],
+    "ulbi-tv-plugin/public-api-imports": [
+      "error",
+      {
+        alias: "@",
+        testFilesPatterns: [
+          "**/*.test.*",
+          "**/*.story.*",
+          "**/StoreDecorator.tsx",
+        ],
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,
