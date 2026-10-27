@@ -1,7 +1,7 @@
 import { StoryObj, Meta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
 import { ErrorStub } from './ErrorStub';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'widget/ErrorStub',

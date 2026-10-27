@@ -1,5 +1,4 @@
-import { ArticleModel, ArticleType } from '@/entities/Article';
-import { ValidateArticleError } from '../consts/consts';
+import { ArticleModel, ArticleType, ValidateArticleError } from '@/entities/Article';
 
 const isValidImageUrl = (url: string) => /\.(jpeg|jpg|gif|png|svg|webp)$/.test(url);
 

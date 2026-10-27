@@ -1,8 +1,8 @@
 import { StoryObj, Meta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
 import { Sidebar } from './Sidebar';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'widget/Sidebar',

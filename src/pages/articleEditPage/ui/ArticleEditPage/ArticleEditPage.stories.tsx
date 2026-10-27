@@ -1,8 +1,7 @@
 import { StoryObj, Meta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
-
+import { Theme } from '@/shared/const/theme';
 import ArticleEditPage from './ArticleEditPage';
 
 export default {

@@ -3,7 +3,7 @@ import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 import ProfilePage from './ProfilePage';
 
 export default {

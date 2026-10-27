@@ -15,6 +15,7 @@ import classes from '../EditArticleForm/EditArticleForm.module.css';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
 import { RoutePath } from '@/shared/const/router';
 import { useAddNewArticle } from '../../api/articleForm';
+// eslint-disable-next-line
 import { articlesPageReducer } from '@/pages/articlesListPage';
 import { getUserAuthData } from '@/entities/User';
 import { EditArticleErrors } from '../Edit/EditArticleErrors';

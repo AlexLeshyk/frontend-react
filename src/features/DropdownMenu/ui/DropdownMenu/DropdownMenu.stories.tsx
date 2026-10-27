@@ -1,9 +1,9 @@
 import { StoryObj, Meta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
 import { UserRole } from '@/entities/User';
 import { DropdownMenu } from './DropdownMenu';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'features/DropdownMenu',

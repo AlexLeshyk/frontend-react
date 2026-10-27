@@ -1,8 +1,8 @@
 import { StoryObj, Meta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
 import MainPage from './MainPage';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'pages/MainPage',

@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
 import { ArticleType } from '@/entities/Article';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'features/Article/ArticleTypeTabs',

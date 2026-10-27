@@ -2,7 +2,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ArticleDetailsModel } from '../types/articleDetailsModel';
 import { getArticleById } from '../services/getArticleById/getArticleById';
 import { Article } from '../types/article';
-import { ValidateArticleError } from '@/features/EditArticleForm';
 
 const initialState: ArticleDetailsModel = {
   readonly: true,
@@ -26,7 +25,7 @@ export const articleSlice = createSlice({
         ...state.form, ...action.payload,
       };
     },
-    setErrors: (state, action: PayloadAction<ValidateArticleError[]>) => { state.validateErrors = action.payload; },
+    setErrors: (state, action) => { state.validateErrors = action.payload; },
   },
   extraReducers: (builder) => {
     builder

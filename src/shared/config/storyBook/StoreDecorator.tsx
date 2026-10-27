@@ -2,9 +2,9 @@ import { FC } from 'react';
 import { addCommentFormReducer } from '@/features/AddCommentForm/testing';
 import { loginReducer } from '@/features/AuthUserName/testing';
 import { profileReducer } from '@/features/EditableProfileCard/testing';
-// eslint-disable-next-line
-import { articleReducer } from '@/entities/Article/model/slices/articleSlice';
-import { scrollSaveReducer } from '@/features/ScrollSave';
+
+import { articleReducer } from '@/entities/Article/testing';
+import { scrollSaveReducer } from '@/features/ScrollSave/testing';
 import { StoreProvider, StateModel } from '@/app/providers/StoreProvider';
 import { articleDetailsPageReducer } from '@/pages/articlePage/testing';
 import { articlesPageReducer } from '@/pages/articlesListPage/testing';

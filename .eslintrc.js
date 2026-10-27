@@ -82,6 +82,13 @@ module.exports = {
         ],
       },
     ],
+    "ulbi-tv-plugin/layer-imports": [
+      "error",
+      {
+        alias: "@",
+        ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,

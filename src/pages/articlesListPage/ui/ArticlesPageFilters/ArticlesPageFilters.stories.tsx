@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from '@/app/providers/ThemeProvider';
 import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
 import { ArticlesPageFilters } from './ArticlesPageFilters';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'pages/ArticleList/Filters',

@@ -9,3 +9,4 @@ export { useDebounce } from './useDebounce/useDebounce';
 export { useWindowSize } from './useWindowSize/useWindowSize';
 export { useTimer } from './useTimer/useTimer';
 export { useModal } from './useModal/useModal';
+export { useTheme } from './useTheme/useTheme';
