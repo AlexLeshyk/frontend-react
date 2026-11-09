@@ -5,7 +5,7 @@ import {
   ArticleBlockType, ArticleCard, ArticleType, getArticleById, getArticleData, getArticleError, getArticleForm,
   getArticleIsLoading, getArticleReadonly, articleActions, articleReducer,
 } from '@/entities/Article';
-import { VStack } from '@/shared/ui';
+import { VStack } from '@/shared/ui/Stack';
 import classes from './EditArticleForm.module.css';
 import { useAppDispatch, useInitialEffect } from '@/shared/hooks';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib';

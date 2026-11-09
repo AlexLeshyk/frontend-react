@@ -2,9 +2,7 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getArticleValidateErrors, ValidateArticleError } from '@/entities/Article';
-import { TextSize } from '@/shared/ui/Text/Text';
-import { TextTheme } from '@/shared/ui/Text/Text.model';
-import { Text } from '@/shared/ui';
+import { Text, TextSize, TextTheme } from '@/shared/ui/Text';
 
 export const EditArticleErrors = () => {
   const { t } = useTranslation('article');

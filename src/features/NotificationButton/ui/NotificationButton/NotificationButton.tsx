@@ -3,8 +3,9 @@ import cx from 'clsx';
 import { useMediaQuery } from '@mantine/hooks';
 import NotificationIcon from '@/shared/icons/notification.svg';
 import { NotificationList } from '@/entities/Notification';
-import { ButtonTheme } from '@/shared/ui/Button/Button.model';
-import { Button, Drawer, Popover } from '@/shared/ui';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Drawer } from '@/shared/ui/Drawer';
+import { Popover } from '@/shared/ui/Popover';
 import classes from './NotificationButton.module.css';
 
 export interface NotificationItemProps {

@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { DropdownDirection } from '@/shared/types';
-import { ListBox } from '@/shared/ui';
+import { ListBox } from '@/shared/ui/ListBox';
 import { Country } from '../../model/types/country';
 
 interface CountrySelectPorps {

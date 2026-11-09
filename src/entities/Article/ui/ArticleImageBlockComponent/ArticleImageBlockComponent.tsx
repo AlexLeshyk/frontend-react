@@ -1,7 +1,6 @@
 import cx from 'clsx';
 import { memo } from 'react';
-import { TextAlign } from '@/shared/ui/Text/Text.model';
-import { Text } from '@/shared/ui';
+import { Text, TextAlign } from '@/shared/ui/Text';
 import { ArticleImageBlock } from '../../model/types/article';
 
 import classes from './ArticleImageBlockComponent.module.css';

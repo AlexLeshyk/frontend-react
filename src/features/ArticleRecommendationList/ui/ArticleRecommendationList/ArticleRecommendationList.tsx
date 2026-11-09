@@ -1,14 +1,13 @@
 import cx from 'clsx';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { TextTheme } from '@/shared/ui/Text/Text.model';
-import { TitleSize } from '@/shared/ui/Title/Title';
+import { Text, TextTheme } from '@/shared/ui/Text';
+import { Title, TitleSize } from '@/shared/ui/Title';
 import { ArticleList, ArticleListView, ArticleModel } from '@/entities/Article';
-import {
-  Skeleton, Text, Title, VStack,
-} from '@/shared/ui';
+import { VStack } from '@/shared/ui/Stack';
 import { useArticleRecommendationList } from '../../api/aritcleRecommendationsApi';
 import classes from './ArticleRecommendationList.module.css';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleRecommendationListProps {
   className?: string;

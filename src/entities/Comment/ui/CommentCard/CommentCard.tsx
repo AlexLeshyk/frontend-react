@@ -1,9 +1,10 @@
 import cx from 'clsx';
 import { memo } from 'react';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { RoutePath } from '@/shared/const/router';
-import { TextSize } from '@/shared/ui/Text/Text';
-import { Avatar, LinkComponent, Text } from '@/shared/ui';
+import { Text, TextSize } from '@/shared/ui/Text';
+import { Avatar } from '@/shared/ui/Avatar';
+import { LinkComponent } from '@/shared/ui/LinkComponent';
 import { Comment } from '../../model/types/comment';
 import classes from './CommentCard.module.css';
 

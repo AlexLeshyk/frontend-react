@@ -1,7 +1,8 @@
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { Skeleton, Text } from '@/shared/ui';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Text } from '@/shared/ui/Text';
 import { CommentCard } from '../CommentCard/CommentCard';
 import { Comment } from '../../model/types/comment';
 import classes from './CommentList.module.css';

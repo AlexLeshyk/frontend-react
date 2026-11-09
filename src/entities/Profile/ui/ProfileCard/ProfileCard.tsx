@@ -1,13 +1,14 @@
 import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
-import { TextAlign, TextTheme } from '@/shared/ui/Text/Text.model';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
-import {
-  Avatar, Input, Skeleton, Text, VStack,
-} from '@/shared/ui';
+import { Avatar } from '@/shared/ui/Avatar';
 import { Profile } from '../../model/types/profileType';
 import classes from './ProfileCard.module.css';
+import { VStack } from '@/shared/ui/Stack';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Input } from '@/shared/ui/Input';
 
 interface ProfileCardProps {
   className?: string;

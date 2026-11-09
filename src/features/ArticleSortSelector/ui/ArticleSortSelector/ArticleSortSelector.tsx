@@ -1,10 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useMemo } from 'react';
 import cx from 'clsx';
-import { SelectOptions } from '@/shared/ui/Select/Select';
+import { Select, SelectOptions } from '@/shared/ui/Select';
 import { ArticleSortField } from '@/entities/Article';
 import { SortOrder } from '@/shared/types';
-import { Select } from '@/shared/ui';
 import classes from './ArticleSortSelector.module.css';
 
 interface ArticleSortSelectorProps {

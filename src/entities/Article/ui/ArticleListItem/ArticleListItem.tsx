@@ -3,12 +3,12 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import EyeIcon from '@/shared/icons/eye.svg';
 import { RoutePath } from '@/shared/const/router';
-import { TextSize } from '@/shared/ui/Text/Text';
-import { TitleSize } from '@/shared/ui/Title/Title';
-import { ButtonTheme } from '@/shared/ui/Button/Button.model';
-import {
-  Avatar, Button, Card, LinkComponent, Text, Title,
-} from '@/shared/ui';
+import { Text, TextSize } from '@/shared/ui/Text';
+import { Title, TitleSize } from '@/shared/ui/Title';
+import { ButtonTheme, Button } from '@/shared/ui/Button';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Card } from '@/shared/ui/Card';
+import { LinkComponent } from '@/shared/ui/LinkComponent';
 import { Article, ArticleTextBlock } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleBlockType, ArticleListView } from '../../model/consts/consts';

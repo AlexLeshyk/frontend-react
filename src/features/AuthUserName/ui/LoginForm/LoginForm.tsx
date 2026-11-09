@@ -2,10 +2,11 @@ import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { TextTheme } from '@/shared/ui/Text/Text.model';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import { useAppDispatch } from '@/shared/hooks';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
-import { Button, Input, Text } from '@/shared/ui';
+import { Input } from '@/shared/ui/Input';
+import { Button } from '@/shared/ui/Button';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import {
   getLoginError, getLoginIsLoading, getLoginPassword, getLoginUserName,

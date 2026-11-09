@@ -7,7 +7,8 @@ import { RoutePath } from '@/shared/const/router';
 import {
   getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
-import { Dropdown, Avatar } from '@/shared/ui';
+import { Dropdown } from '@/shared/ui/Dropdown';
+import { Avatar } from '@/shared/ui/Avatar';
 
 export interface DropdownMenuProps {
   className?: string;

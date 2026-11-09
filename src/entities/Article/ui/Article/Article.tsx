@@ -5,13 +5,12 @@ import { useSelector } from 'react-redux';
 import { useMediaQuery } from '@mantine/hooks';
 import EyeIcon from '@/shared/icons/eye.svg';
 import CalendarIcon from '@/shared/icons/calendar.svg';
-import { TextAlign, TextTheme } from '@/shared/ui/Text/Text.model';
-import { TitleSize } from '@/shared/ui/Title/Title';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
+import { Title, TitleSize } from '@/shared/ui/Title';
 import { useAppDispatch, useInitialEffect } from '@/shared/hooks';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
-import {
-  Avatar, Text, Title, Skeleton,
-} from '@/shared/ui';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { getArticleById } from '../../model/services/getArticleById/getArticleById';
 import { articleReducer } from '../../model/slices/articleSlice';
 import { getArticleData, getArticleError } from '../../model/selectors/article';

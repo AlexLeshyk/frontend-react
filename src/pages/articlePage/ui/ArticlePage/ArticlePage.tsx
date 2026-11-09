@@ -8,7 +8,7 @@ import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticlePageButtons } from '../ArticlePageButtons/ArticlePageButtons';
 import { ArticlePageComments } from '../ArticlePageComments/ArticlePageComments';
 import { ArticleRating } from '@/features/ArticleRating';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/Stack';
 
 const reducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer,

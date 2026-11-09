@@ -5,13 +5,13 @@ import { useSelector } from 'react-redux';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/16/solid';
 import { SwitcherTheme } from '@/features/SwitcherTheme';
 import { LanguageSwitcher } from '@/features/LanguageSwitcher';
-import { ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button.model';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
 import { useToggle } from '@/shared/hooks';
-import { Button, VStack } from '@/shared/ui';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 import classes from './Sidebar.module.css';
+import { VStack } from '@/shared/ui/Stack';
 
 interface SidebarProps {
   className?: string;

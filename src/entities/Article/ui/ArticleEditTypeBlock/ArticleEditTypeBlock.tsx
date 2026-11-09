@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import { Input, VStack } from '@/shared/ui';
+import { Input } from '@/shared/ui/Input';
+import { VStack } from '@/shared/ui/Stack';
 import { ArticleBlockType } from '../../model/consts/consts';
 import classes from './ArticleEditTypeBlock.module.css';
 import { ArticleBlock } from '../../model/types/article';
-import { Textarea } from '@/shared/ui/Textarea/Textarea';
+import { Textarea } from '@/shared/ui/Textarea';
 
 interface ArticleEditTypeBlockProps {
   block: ArticleBlock;

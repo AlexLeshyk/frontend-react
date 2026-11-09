@@ -6,11 +6,12 @@ import { useTranslation } from 'react-i18next';
 
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { TitleSize } from '@/shared/ui/Title/Title';
+import { Button } from '@/shared/ui/Button';
+import { Title, TitleSize } from '@/shared/ui/Title';
 import {
   ArticleCard, ArticleModel, ArticleType, getArticleError, getArticleIsLoading, articleActions, articleReducer,
 } from '@/entities/Article';
-import { Button, Title, VStack } from '@/shared/ui';
+import { VStack } from '@/shared/ui/Stack';
 import classes from '../EditArticleForm/EditArticleForm.module.css';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
 import { RoutePath } from '@/shared/const/router';

@@ -1,10 +1,9 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
-import { TitleSize } from '@/shared/ui/Title/Title';
+import { Title, TitleSize } from '@/shared/ui/Title';
 import { Page } from '@/widgets/Page';
 import { useAppDispatch, useInitialEffect } from '@/shared/hooks';
-import { Title } from '@/shared/ui';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { getNextArticlePage } from '../../model/services/getNextArticlePage/getNextArticlePage';

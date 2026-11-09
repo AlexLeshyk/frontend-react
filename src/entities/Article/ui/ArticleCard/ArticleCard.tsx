@@ -2,15 +2,17 @@ import cx from 'clsx';
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
-import { TextAlign, TextTheme } from '@/shared/ui/Text/Text.model';
-import {
-  CheckboxGroup, Input, Select, Skeleton, Text, VStack,
-} from '@/shared/ui';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
+import { VStack } from '@/shared/ui/Stack';
+import { Input } from '@/shared/ui/Input';
+
 import { Article } from '../../model/types/article';
 import classes from './ArticleCard.module.css';
 import { ArticleBlockType, ArticleType } from '../../model/consts/consts';
-import { SelectOptions } from '@/shared/ui/Select/Select';
+import { Select, SelectOptions } from '@/shared/ui/Select';
 import { ArticleEditTypeBlock } from '../ArticleEditTypeBlock/ArticleEditTypeBlock';
+import { CheckboxGroup } from '@/shared/ui/Checkboxgroup';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleCardProps {
   className?: string;

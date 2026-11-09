@@ -4,7 +4,8 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/hooks';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib';
-import { Button, Input } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
 import { getAddCommentFormMessage } from '../../model/selectors/addCommentForm';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice';
 

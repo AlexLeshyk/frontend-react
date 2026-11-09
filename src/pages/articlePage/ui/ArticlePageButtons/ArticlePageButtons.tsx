@@ -5,7 +5,7 @@ import cx from 'clsx';
 import { useSelector } from 'react-redux';
 import { RoutePath } from '@/shared/const/router';
 import { getArticleData } from '@/entities/Article';
-import { Button } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
 import { getArticleCanEdit } from '../../model/selectors/article';
 
 import classes from './ArticlePageButtons.module.css';

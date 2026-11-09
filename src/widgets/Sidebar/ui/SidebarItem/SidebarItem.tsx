@@ -3,9 +3,8 @@ import { memo } from 'react';
 import cx from 'clsx';
 import { useSelector } from 'react-redux';
 import { useMediaQuery } from '@mantine/hooks';
-import { LinkTheme } from '@/shared/ui/LinkComponent/LinkComponent.model';
+import { LinkComponent, LinkTheme } from '@/shared/ui/LinkComponent';
 import { getUserAuthData } from '@/entities/User';
-import { LinkComponent } from '@/shared/ui';
 import { SidebarItemType } from '../../model/types/sidebar';
 
 import classes from './SidebarItem.module.css';
